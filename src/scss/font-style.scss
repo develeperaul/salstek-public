@@ -1,0 +1,43 @@
+@mixin avenir {
+  $path: '../fonts/avenir';
+  @font-face {
+    font-family: 'Avenir';
+    src: url(#{$path}/avenirnextcyr-regular.eot);
+    src: local('avenirnextcyr regular'), local('avenirnextcyr-regular'),
+      url(#{$path}/avenirnextcyr-regular.eot?#iefix) format('embedded-opentype'),
+      url(#{$path}/avenirnextcyr-regular.woff2) format('woff2'),
+      url(#{$path}/avenirnextcyr-regular.woff) format('woff'),
+      url(#{$path}/avenirnextcyr-regular.ttf) format('ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Avenir';
+    src: url(#{$path}/avenirnextcyr-bold.eot);
+    src: local('avenirnextcyr bold'), local('avenirnextcyr-bold'),
+      url(#{$path}/avenirnextcyr-bold.eot?#iefix) format('embedded-opentype'),
+      url(#{$path}/avenirnextcyr-bold.woff2) format('woff2'),
+      url(#{$path}/avenirnextcyr-bold.woff) format('woff'),
+      url(#{$path}/avenirnextcyr-bold.ttf) format('ttf');
+    font-weight: 700;
+    font-style: normal;
+  }
+}
+@include avenir();
+
+@mixin intro {
+  $path: '../fonts/intro';
+  
+  @font-face {
+    font-family: 'Avenir';
+    src: url(#{$path}/intro_back-bold.eot);
+    src: local('intro_back bold'), local('intro_back-bold'),
+      url(#{$path}/intro_back-bold.eot?#iefix) format('embedded-opentype'),
+      url(#{$path}/intro_back-bold.woff2) format('woff2'),
+      url(#{$path}/intro_back-bold.woff) format('woff'),
+      url(#{$path}/intro_back-bold.ttf) format('ttf');
+    font-weight: 900;
+    font-style: normal;
+  }
+}
+@include intro();
