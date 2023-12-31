@@ -27,7 +27,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      cerapro: 'CeraPro',
+      intro: 'Intro',
+      avenit: "Avenir"
     },
     colors: {
     },

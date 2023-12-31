@@ -29,13 +29,13 @@
   $path: '../fonts/intro';
   
   @font-face {
-    font-family: 'Avenir';
-    src: url(#{$path}/intro_back-bold.eot);
-    src: local('intro_back bold'), local('intro_back-bold'),
-      url(#{$path}/intro_back-bold.eot?#iefix) format('embedded-opentype'),
-      url(#{$path}/intro_back-bold.woff2) format('woff2'),
-      url(#{$path}/intro_back-bold.woff) format('woff'),
-      url(#{$path}/intro_back-bold.ttf) format('ttf');
+    font-family: 'Intro';
+    src: url(#{$path}/intro_black.eot);
+    src: local('intro_black'), local('intro_black'),
+      url(#{$path}/intro_black.eot?#iefix) format('embedded-opentype'),
+      url(#{$path}/intro_black.woff2) format('woff2'),
+      url(#{$path}/intro_black.woff) format('woff'),
+      url(#{$path}/intro_black.ttf) format('ttf');
     font-weight: 900;
     font-style: normal;
   }
