@@ -1,0 +1,8 @@
+include ./svg.pug
+
+mixin input(name, placeholder, type='text')
+  .field
+    input(type=type, name=name, placeholder=placeholder)&attributes(attributes)
+    button(class='del') 
+      +svg('close', 24)
+    label #{placeholder}

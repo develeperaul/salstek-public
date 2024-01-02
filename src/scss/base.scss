@@ -4,6 +4,12 @@
     font-size: 100%;
     scroll-behavior: smooth;
   }
+  body {
+    @apply text-dark;
+  }
 
-  
+  h2 {
+    @apply font-intro font-black -tracking-3.5 text-sec_500 text-h3;
+    @apply lg2:text-h2;
+  }
 }

@@ -1,12 +1,17 @@
 import validate from 'validate.js';
 import IMask from 'imask';
-const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`)
-console.log(r);
-var constraints = {
+const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`);
+const constraints = {
   name: {
     presence: { message: 'поле обязательно для заполнения' },
   },
-  email : {
+  institute: {
+    presence: true,
+  },
+  department: {
+    presence: true,
+  },
+  email: {
     presence: true,
     email: true,
   },
@@ -15,9 +20,10 @@ var constraints = {
 
     format: {
       pattern: new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`),
-      message:  'поле обязательно для заполнения' 
+      message: 'поле обязательно для заполнения',
     },
   },
+
   creditCardZip: function (
     value,
     attributes,
@@ -33,17 +39,18 @@ var constraints = {
   },
 };
 var form = document.querySelector('form#footer-form');
-form.addEventListener('submit', function (ev) {
-  ev.preventDefault();
-  const checkbox = form.querySelector("input[type='checkbox']")
-  if(checkbox.checked)
+if (form) {
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
     handleFormSubmit(form);
-});
+  });
+}
 
 var inputs = document.querySelectorAll('input, textarea, select');
 for (var i = 0; i < inputs.length; ++i) {
   inputs.item(i).addEventListener('change', function (ev) {
     var errors = validate(form, constraints) || {};
+    checkInvalid(errors);
     showErrorsForInput(this, errors[this.name]);
   });
 }
@@ -53,16 +60,14 @@ for (var i = 0; i < inputs.length; ++i) {
   if (mask)
     IMask(inp, {
       mask,
-      validate: function (value, maked) {
-        // console.log(value);
-        // console.log(maked);
-      },
+      validate: function (value, maked) {},
     });
 });
 
 function handleFormSubmit(form, input) {
   // validate the form against the constraints
   var errors = validate(form, constraints);
+  checkInvalid(errors);
   // then we update the form to reflect the results
   showErrors(form, errors || {});
   if (!errors) {
@@ -78,14 +83,20 @@ function showErrors(form, errors) {
 
 function showErrorsForInput(input, errors) {
   const field = closestParent(input.parentNode, 'field');
-  if(field){
-
+  const select = closestParent(input.parentNode, 'select');
+  // console.log(form.submit.disabled);
+  if (field) {
     if (errors) {
       field.classList.add('field__invalid');
-      console.log(input);
-      console.log(errors);
     } else {
       field.classList.remove('field__invalid');
+    }
+  }
+  if (select) {
+    if (errors) {
+      select.classList.add('select__invalid');
+    } else {
+      select.classList.remove('select__invalid');
     }
   }
 }
@@ -98,5 +109,13 @@ function closestParent(child, className) {
     return child;
   } else {
     return closestParent(child.parentNode, className);
+  }
+}
+
+function checkInvalid(errors) {
+  if (Object.keys(errors).length === 0) {
+    form.querySelector("button[type='submit']").removeAttribute('disabled');
+  } else {
+    form.querySelector("button[type='submit']").setAttribute('disabled', true);
   }
 }

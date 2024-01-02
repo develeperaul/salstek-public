@@ -1,0 +1,42 @@
+.write-to-us {
+  .form {
+    @apply border border-prim_100 rounded-4xl px-4 py-8;
+    @apply lg2:py-20 lg2:px-10;
+    .title {
+      @apply mb-6 lg2:mb-12;
+    }
+    &__content {
+      @apply grid gap-6;
+    }
+    .fields {
+      @apply grid gap-4;
+      @screen lg2 {
+        grid-template-areas:
+          'a a b b c c'
+          'd d d e e e'
+          'f f f f f f';
+      }
+      & > *:nth-child(1) {
+        grid-area: a;
+      }
+      & > *:nth-child(2) {
+        grid-area: b;
+      }
+      & > *:nth-child(3) {
+        grid-area: c;
+      }
+      & > *:nth-child(4) {
+        grid-area: d;
+      }
+      & > *:nth-child(5) {
+        grid-area: e;
+      }
+      & > *:nth-child(6) {
+        grid-area: f;
+      }
+    }
+    p > a {
+      @apply text-prim_600;
+    }
+  }
+}
