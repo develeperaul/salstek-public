@@ -22,4 +22,5 @@ import '../index.pug';
 //modules
 import './validate-form-footer';
 import './animation';
-import "./accordeon"
+import './accordeon';
+import '../components/generalSlider';

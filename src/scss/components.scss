@@ -139,6 +139,14 @@
     @apply disabled:text-100 disabled:border-100 disabled:border disabled:bg-white;
   }
 
+  .btn-prev,
+  .btn-next {
+    @apply p-4 w-16 h-16;
+    & > svg {
+      @apply w-full h-full;
+    }
+  }
+
   .btn-fit {
     @apply w-12 h-12 grid place-self-center p-3 rounded-xl border border-prim_100 bg-50 text-sec_500;
     @apply [@media(hover:hover)]:hover:bg-prim_200 [@media(hover:hover)]:hover:text-prim_700;

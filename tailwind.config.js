@@ -71,6 +71,8 @@ module.exports = {
       3: '0.03rem',
       3.5: '0.035rem',
       4: '0.04rem',
+      6: '0.06rem',
+      8: '0.08rem',
     },
     boxShadow: {
       input: '0px 0px 6px 0px rgba(87, 195, 219, 0.32)',

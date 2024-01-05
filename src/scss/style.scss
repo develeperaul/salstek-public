@@ -435,14 +435,22 @@ video {
   display: none;
 }
 
+:root {
+  --swiper-pagination-color: #2490A8;
+  --swiper-pagination-bullet-inactive-color: #FFFFFF;
+  --swiper-pagination-bullet-inactive-opacity: 0.9;
+  --swiper-pagination-bottom: 1.75rem;
+  @media (min-width: 1024px) {
+    --swiper-pagination-bottom: 2.5rem;
+  }
+}
+
 html {
   font-size: 100%;
   scroll-behavior: smooth;
 }
 
 body {
-  display: grid;
-  gap: 1rem;
   --tw-text-opacity: 1;
   color: rgb(61 78 92 / var(--tw-text-opacity));
 }
@@ -1193,6 +1201,19 @@ h2 {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(228 245 255 / var(--tw-text-opacity));
+}
+
+.btn-prev,
+  .btn-next {
+  height: 4rem;
+  width: 4rem;
+  padding: 1rem;
+  & > svg {
+    height: 100%;
+  }
+  & > svg {
+    width: 100%;
+  }
 }
 
 .btn-fit {

@@ -1,11 +1,20 @@
 @tailwind base;
 @layer base {
+  :root {
+    --swiper-pagination-color: theme(colors.prim_600);
+    --swiper-pagination-bullet-inactive-color: theme(colors.white);
+    --swiper-pagination-bullet-inactive-opacity: 0.9;
+    --swiper-pagination-bottom: 1.75rem;
+    @screen lg2 {
+      --swiper-pagination-bottom: 2.5rem;
+    }
+  }
   html {
     font-size: 100%;
     scroll-behavior: smooth;
   }
   body {
-    @apply text-dark grid gap-4;
+    @apply text-dark;
   }
   main {
     @apply grid gap-4;

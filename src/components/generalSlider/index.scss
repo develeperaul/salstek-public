@@ -1,0 +1,32 @@
+.general-slider {
+  @apply relative;
+  border-radius: 0 0 5rem 5rem;
+  @apply h-screen;
+  .swiper-wrapper,
+  .swiper-slide {
+    @apply h-full;
+  }
+  img {
+    @apply h-full w-full object-cover;
+  }
+  .btn-controls,
+  .content {
+    @apply absolute top-1/2 transform -translate-y-1/2 text-white;
+    z-index: 1;
+  }
+  .btn-controls {
+    @apply hidden lg2:flex left-4 right-4 items-center justify-between;
+  }
+
+  .content {
+    @apply px-4 lg2:px-32 grid gap-1;
+    @apply lg2:gap-2;
+    .title {
+      @apply text-h4 lg2:text-h1 font-intro uppercase -tracking-8;
+    }
+    .text {
+      @apply text-body_m -tracking-4 font-bold;
+      @apply lg2:text-h4 lg2:-tracking-6;
+    }
+  }
+}
