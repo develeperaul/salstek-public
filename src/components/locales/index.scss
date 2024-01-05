@@ -1,0 +1,11 @@
+.locales {
+  @apply flex gap-2;
+}
+.btn-locale {
+  @apply w-12 h-12 text-body_m -tracking-4 rounded-xl bg-500 border border-prim_100 text-sec_300 grid place-content-center;
+  @apply [@media(hover:hover)]:hover:bg-prim_600 [@media(hover:hover)]:hover:text-white;
+  @apply [@media(hover:none)]:active:bg-prim_600 active:text-white;
+  &.active {
+    @apply bg-prim_600 text-white;
+  }
+}

@@ -1,0 +1,74 @@
+include ../svg.pug
+#sidebar.sidebar.active(data-animate-open='fadeInLeft' data-animate-close='fadeOutLeft')
+  .container 
+    .sidebar__wrapper
+      .sidebar__mob 
+        .content 
+          .accordeon 
+            .item.active
+              .item__head 
+                +svg('warning', 24)
+                span О компании 
+              .item__body 
+                .item__body-wrapper
+                  a.active(href="#") Структура холдинга
+            .item
+              .item__head 
+                +svg('scan', 24)
+                span Продукты
+              .item__body 
+                .item__body-wrapper
+                  a(href="#") Структура холдинга
+            .item
+              a.item__head(href="#")
+                +svg('scan', 24)
+                span Продукты
+                
+        .content-other 
+          a(href="#" class='logo') 
+            +svg('logo', 90, 48)
+          .links 
+            a.btn-fit(href="#") 
+              +svg('telega', 24)
+            a.btn-fit(href="#") 
+              +svg('youtube', 24)
+          p © 2023 АО «Салаватстекло»<br/>При использовании материалов ссылка<br/>на сайт АО «Салаватстекло» обязательна
+          a.politics(href="#") Политика обработки данных
+          a.yesidea(href="#") 
+            span 3D-визуализация, <br/> дизайн и разработка
+            span.separator
+            +svg('yesidea',76,24)
+      .sidebar__desc
+        .sidebar__desc-left 
+          ul.list 
+            li.active  
+              +svg('warning', 24)
+              span О компании 
+            li  
+              +svg('scan', 24)
+              span Продукты
+          .links 
+            a.btn-fit(href="#") 
+              +svg('telega', 24)
+            a.btn-fit(href="#") 
+              +svg('youtube', 24)
+        .sidebar__desc-right
+          .content
+            h2.title О компании 
+              +svg('top-line-r', 24)
+            nav   
+              a(href="#") Структура холдинга
+              a(href="#") Экология
+              a(href="#") История холдинга
+              a(href="#") Инновации
+              a(href="#") Менеджмент качества
+          .content-other
+            .content-other__left
+              p © 2023 АО «Салаватстекло»<br/>При использовании материалов ссылка<br/>на сайт АО «Салаватстекло» обязательна
+              a(href="#") Политика обработки данных
+            .content-other__right
+              a(href="#") 
+                span 3D-визуализация, <br/> дизайн и разработка
+                span.separator
+                +svg('yesidea',76,24)
+          

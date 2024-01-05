@@ -138,4 +138,78 @@
     @apply [@media(hover:none)]:active:bg-prim_700 active:bg-prim_700;
     @apply disabled:text-100 disabled:border-100 disabled:border disabled:bg-white;
   }
+
+  .btn-fit {
+    @apply w-12 h-12 grid place-self-center p-3 rounded-xl border border-prim_100 bg-50 text-sec_500;
+    @apply [@media(hover:hover)]:hover:bg-prim_200 [@media(hover:hover)]:hover:text-prim_700;
+    & > svg {
+      @apply w-full h-full;
+    }
+    &_sm {
+      @apply w-8 h-8 p-2;
+    }
+    &_lg {
+      @apply w-16 h-16 p-4;
+    }
+  }
+
+  /* accordeon */
+  .accordeon {
+    @apply grid gap-4;
+    .item {
+      &__head {
+        @apply p-3 rounded-xl grid grid-cols-[24px_1fr] gap-3 font-bold text-sec_500;
+      }
+      &__body {
+        @apply grid;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        &-wrapper {
+          min-height: 0;
+          & > * {
+            @apply p-3 pr-3 pl-12 block rounded-xl;
+            &.active {
+              @apply bg-100;
+            }
+          }
+        }
+      }
+      &.active .item__head {
+        @apply bg-100 text-prim_600;
+      }
+      &.active .item__body {
+        grid-template-rows: 1fr;
+      }
+    }
+  }
+
+  /*  breadcrumbs */
+  ul.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Display list items side by side */
+  ul.breadcrumb li {
+    font-size: 1rem;
+    line-height: 160%;
+    @apply -tracking-4 text-sec_300;
+  }
+
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.breadcrumb li + li:before {
+    @apply text-prim_600 px-2;
+    content: '—';
+  }
+
+  /* Add a color to all links inside the list */
+  ul.breadcrumb li a {
+    @apply underline text-prim_600;
+  }
+
+  /* Add a color on mouse-over */
+  ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
 }

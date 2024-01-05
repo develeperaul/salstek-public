@@ -1,13 +1,25 @@
 import '../scss/style.scss';
+import 'animate.css';
+import 'swiper/css/bundle';
 
+//core
 import '../components/select';
 
-import '../index.pug';
+//components
+import '../components/locales';
+import '../components/sidebar';
 
-import '../sections/writeToUs';
-
+//general-sections
 import '../sections/header/index';
 import '../sections/footer/index';
 
+//sections
+import '../sections/writeToUs';
+
+//pages
+import '../index.pug';
+
+//modules
 import './validate-form-footer';
-import 'swiper/css/bundle';
+import './animation';
+import "./accordeon"

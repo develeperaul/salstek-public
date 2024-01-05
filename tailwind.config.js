@@ -5,8 +5,11 @@ module.exports = {
     extend: {
       spacing: {
         14.5: '3.625rem',
+        22: '5.5rem',
+        30: '7.5rem',
       },
       borderRadius: {
+        '2xl': '1.25rem',
         '4xl': '2.5rem',
       },
     },
@@ -64,6 +67,7 @@ module.exports = {
       180: '180%',
     },
     letterSpacing: {
+      1.75: '0.0175rem',
       3: '0.03rem',
       3.5: '0.035rem',
       4: '0.04rem',
