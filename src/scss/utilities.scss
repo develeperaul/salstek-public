@@ -1,4 +1,74 @@
 @tailwind utilities;
 @layer utilities {
-  
+  .section {
+    @apply border border-prim_100 rounded-4xl py-8 px-4;
+    @apply lg2:rounded-6xl lg2:py-20 lg2:px-10;
+  }
+  .section-first {
+    @apply bg-500 rounded-b-4xl  px-4 pb-10  overflow-hidden mb-4;
+    @apply lg2:h-[544px] lg2:px-10 lg2:pb-20 lg2:rounded-b-6xl;
+    @apply grid gap-12;
+    @apply lg2:grid-cols-2 lg2:gap-0;
+    padding-top: calc(89px + 32px);
+    @screen lg2 {
+      padding-top: calc(89px + 40px);
+    }
+    .breadcrumbs {
+      @apply mb-8;
+      @apply lg2:mb-[2.75rem];
+    }
+    &__top {
+      @apply grid gap-8;
+      @apply lg2:content-between lg2:pr-16 lg2:gap-0;
+      .breadcrumb {
+        @apply lg2:mb-[2.75rem];
+      }
+      .links {
+        @apply hidden;
+        @apply lg2:flex lg2:gap-5 lg2:flex-wrap lg2:mt-16;
+      }
+    }
+    &__bottom {
+      @apply overflow-hidden grid gap-16;
+
+      .links {
+        @apply flex flex-nowrap overflow-auto whitespace-nowrap pb-4;
+        @apply lg2:hidden;
+        scrollbar-color: theme(colors.prim_600) theme(colors.50); /* «цвет ползунка» «цвет полосы скроллбара» */
+        scrollbar-width: thin; /* толщина */
+
+        /* полоса прокрутки (скроллбар) */
+        &::-webkit-scrollbar {
+          height: 4px; /* высота для горизонтального скролла */
+          background-color: theme(colors.50);
+          border-radius: 18px;
+        }
+
+        /* ползунок скроллбара */
+        &::-webkit-scrollbar-thumb {
+          background-color: theme(colors.prim_600);
+          border-radius: 18px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: #253861;
+        }
+      }
+    }
+  }
+
+  .tabs {
+    @apply grid overflow-hidden w-full;
+    &__wrapper {
+      @apply flex gap-5 overflow-auto;
+      -ms-overflow-style: none; /* IE и Edge */
+      scrollbar-width: none; /* Firefox */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      & > * {
+        @apply w-full;
+      }
+    }
+  }
 }

@@ -1,1 +1,82 @@
+include ../../components/svg.pug
 footer
+  .container 
+    .footer__wrapper
+      .footer__mob
+        .footer__mob-top
+          .accordeon 
+            .item.active
+              .item__head 
+                span О компании 
+                +svg('down',24)(class='icon')
+              .item__body 
+                .item__body-wrapper
+                  a.active(href="#") Структура холдинга
+            .item
+              .item__head 
+                span Продукты
+                +svg('down',24)(class='icon')
+              .item__body 
+                .item__body-wrapper
+                  a(href="#") Структура холдинга
+            .item
+              a.item__head(href="#")
+                span Продукты
+        .footer__mob-bottom
+          .content-other 
+            a(href="#" class='logo') 
+              +svg('logo', 112, 60)
+            .phone-list
+              .item 
+                a(href="tel:+7 (3476) 37-71-55") +7 (3476) 37-71-55
+                span АО «Салаватстекло»
+              .item 
+                a(href="tel:+7 (8452) 305-505") +7 (8452) 305-505
+                span АО «Саратовстройстекло»
+              .item 
+                a(href="tel:8 800 770 02 08") 8 800 770 02 08
+                span ООО «Салаватстекло Каспий»
+            
+            .links 
+              a.btn-fit(href="#") 
+                +svg('telega', 24)
+              a.btn-fit(href="#") 
+                +svg('youtube', 24)
+            p © 2023 АО «Салаватстекло»<br/>При использовании материалов ссылка<br/>на сайт АО «Салаватстекло» обязательна
+            a.politics(href="#") Политика обработки данных
+            a.yesidea(href="#") 
+              span 3D-визуализация, <br/> дизайн и разработка
+              span.separator
+              +svg('yesidea',76,24)
+      .footer__desc
+        .footer__desc-left 
+          a(href="#" class='logo') 
+            +svg('logo', 112, 60)
+          .links 
+            a.btn-fit(href="#") 
+              +svg('telega', 24)
+            a.btn-fit(href="#") 
+              +svg('youtube', 24)
+        .footer__desc-right
+          .list 
+            a.item(href="#") О компании
+            a.item(href="#") Сервис и поддержка
+            a.item(href="#") Новости и события
+            a.item(href="#") Продукты
+            a.item(href="#") Акционерам и инвесторам
+            a.item(href="#") Партнеры
+            a.item(href="#") Проекты
+            a.item(href="#") Карьера
+            a.item(href="#") Контакты 
+          .content-other
+            .content-other__left
+              p © 2023 АО «Салаватстекло»<br/>При использовании материалов ссылка<br/>на сайт АО «Салаватстекло» обязательна
+              a(href="#") Политика обработки данных
+            .content-other__right
+              a(href="#") 
+                span 3D-визуализация, <br/> дизайн и разработка
+                span.separator
+                +svg('yesidea',76,24)
+          
+
+

@@ -10,10 +10,12 @@ html(lang="ru")
     
     include ./sections/header/index.pug
     include ./components/generalSlider/index.pug
-    main
+    main.container
+      include ./sections/products/index.pug  
+      include ./sections/structure/index.pug  
+      include ./sections/about/index.pug  
+      include ./sections/regions/index.pug  
       include ./sections/writeToUs/index.pug  
           
     include ./sections/footer/index.pug
-    //- div()
-    //-   svg(width='20' height='20' )
-    //-       use(xlink:href=`/svg/sprite.svg#about`)
+    

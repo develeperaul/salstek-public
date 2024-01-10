@@ -13,12 +13,23 @@
   }
   @font-face {
     font-family: 'Avenir';
-    src: url(#{$path}/avenirnextcyr-bold.eot);
-    src: local('avenirnextcyr bold'), local('avenirnextcyr-bold'),
-      url(#{$path}/avenirnextcyr-bold.eot?#iefix) format('embedded-opentype'),
-      url(#{$path}/avenirnextcyr-bold.woff2) format('woff2'),
-      url(#{$path}/avenirnextcyr-bold.woff) format('woff'),
-      url(#{$path}/avenirnextcyr-bold.ttf) format('ttf');
+    src: url(#{$path}/avenirnextcyr-medium.eot);
+    src: local('avenirnextcyr medium'), local('avenirnextcyr-medium'),
+      url(#{$path}/avenirnextcyr-medium.eot?#iefix) format('embedded-opentype'),
+      url(#{$path}/avenirnextcyr-medium.woff2) format('woff2'),
+      url(#{$path}/avenirnextcyr-medium.woff) format('woff'),
+      url(#{$path}/avenirnextcyr-medium.ttf) format('ttf');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Avenir';
+    src: url(#{$path}/avenirnextcyr-demi.eot);
+    src: local('avenirnextcyr demi'), local('avenirnextcyr-demi'),
+      url(#{$path}/avenirnextcyr-demi.eot?#iefix) format('embedded-opentype'),
+      url(#{$path}/avenirnextcyr-demi.woff2) format('woff2'),
+      url(#{$path}/avenirnextcyr-demi.woff) format('woff'),
+      url(#{$path}/avenirnextcyr-demi.ttf) format('ttf');
     font-weight: 700;
     font-style: normal;
   }
@@ -27,7 +38,7 @@
 
 @mixin intro {
   $path: '../fonts/intro';
-  
+
   @font-face {
     font-family: 'Intro';
     src: url(#{$path}/intro_black.eot);

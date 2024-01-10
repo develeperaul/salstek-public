@@ -11,6 +11,7 @@ module.exports = {
       borderRadius: {
         '2xl': '1.25rem',
         '4xl': '2.5rem',
+        '6xl': '5rem',
       },
     },
     fontFamily: {
@@ -55,7 +56,7 @@ module.exports = {
       h2: ['3rem', '120%'], //48px 120%
       h3: ['1.75rem', '130%'], //28px 130%
       h4: ['1.5rem', '130%'], //24px 130%
-      h3: ['1.25rem', '130%'], //20px 130%
+      h5: ['1.25rem', '130%'], //20px 130%
       body_m: ['1rem', '140%'], //16px 140%
       body_s: ['0.875rem', '140%'], //14px 140%
     },
@@ -71,7 +72,9 @@ module.exports = {
       3: '0.03rem',
       3.5: '0.035rem',
       4: '0.04rem',
+      5: '0.05rem',
       6: '0.06rem',
+      7: '0.07rem',
       8: '0.08rem',
     },
     boxShadow: {

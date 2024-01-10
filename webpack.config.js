@@ -110,7 +110,7 @@ module.exports = {
     open: true,
     compress: true,
     hot: true,
-    port: 3004,
+    port: 3003,
   },
   optimization: optimization(),
   plugins: [

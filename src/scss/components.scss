@@ -133,9 +133,16 @@
 
   /* button */
   .btn {
-    @apply h-[3.875rem] px-6 rounded-xl font-bold -tracking-4  text-body_m bg-prim_600 text-white;
+    @apply h-[3.875rem] px-6 rounded-xl font-medium -tracking-4  text-body_m bg-prim_600 text-white inline-flex items-center justify-center whitespace-nowrap;
     @apply [@media(hover:hover)]:hover:bg-prim_500;
     @apply [@media(hover:none)]:active:bg-prim_700 active:bg-prim_700;
+    @apply disabled:text-100 disabled:border-100 disabled:border disabled:bg-white;
+  }
+
+  .btn-round {
+    @apply h-[3.875rem] bg-500 px-6 border border-prim_100 rounded-xl font-medium -tracking-4  text-body_m  text-sec_500 inline-flex items-center justify-center whitespace-nowrap;
+    @apply [@media(hover:hover)]:hover:bg-75;
+    @apply [@media(hover:none)]:active:bg-100 active:bg-100;
     @apply disabled:text-100 disabled:border-100 disabled:border disabled:bg-white;
   }
 
@@ -166,7 +173,7 @@
     @apply grid gap-4;
     .item {
       &__head {
-        @apply p-3 rounded-xl grid grid-cols-[24px_1fr] gap-3 font-bold text-sec_500;
+        @apply p-3 rounded-xl font-bold text-sec_500;
       }
       &__body {
         @apply grid;
@@ -175,7 +182,7 @@
         &-wrapper {
           min-height: 0;
           & > * {
-            @apply p-3 pr-3 pl-12 block rounded-xl;
+            @apply p-3 px-3 block rounded-xl;
             &.active {
               @apply bg-100;
             }
@@ -219,5 +226,38 @@
   ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
+  }
+
+  .downl-item {
+    @apply p-4 rounded-3xl border border-prim_100  flex gap-3 items-start;
+    &__icon {
+      @apply w-12 h-12 bg-50 rounded-xl grid place-content-center text-sec_500;
+    }
+    &__title {
+      @apply text-body_m font-bold -tracking-4 text-sec_500 mb-1;
+    }
+    &__text {
+      @apply text-sec_300 text-body_s -tracking-3.5;
+    }
+    .icon-hover {
+      display: none;
+    }
+    @media (hover: hover) {
+      &:hover &__icon,
+      &:hover &__title {
+        @apply text-prim_600;
+      }
+
+      &:hover &__text {
+        @apply text-sec_500;
+      }
+
+      &:hover .icon-file {
+        display: none;
+      }
+      &:hover .icon-hover {
+        display: block;
+      }
+    }
   }
 }

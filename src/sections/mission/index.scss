@@ -1,0 +1,56 @@
+.mission {
+  @apply bg-50 grid gap-12;
+  @apply lg2:gap-16;
+  &__list {
+    .item {
+      @apply grid gap-2;
+      @apply lg2:grid-cols-2;
+
+      &:not(:first-child) {
+        @apply pt-6;
+        @apply lg2:pt-8;
+      }
+      &:not(:last-child) {
+        @apply border-b border-prim_100 pb-6;
+        @apply lg2:pb-8;
+      }
+      .title {
+        @apply text-prim_600;
+      }
+      .text,
+      .content-text {
+        @apply text-sec_500 text-body_m -tracking-4;
+        @apply lg2:text-h5 lg2:-tracking-5;
+        ul {
+          @apply marker:text-sec_500 list-disc pl-5;
+        }
+      }
+      .content-text {
+        @apply grid gap-2;
+        @apply lg2:gap-4;
+      }
+    }
+  }
+  &__video {
+    @apply rounded-lg relative overflow-hidden;
+    @apply lg2:rounded-[2rem];
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.16) 0%,
+        rgba(0, 0, 0, 0.16) 100%
+      );
+    }
+    .play {
+      @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+      @apply h-16 w-[4.5rem] grid place-content-center bg-50 border border-prim_100 rounded-xl;
+      & > svg {
+        @apply w-6 h-6 text-sec_500;
+      }
+    }
+  }
+}

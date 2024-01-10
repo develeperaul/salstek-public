@@ -1,0 +1,65 @@
+.products {
+  .title {
+    @apply mb-6;
+    @apply lg2:mb-16;
+  }
+  .content {
+    @apply grid gap-4;
+    @apply lg2:h-[39.75rem] lg2:gap-5;
+    .item {
+      @apply rounded-3xl overflow-hidden w-full h-[14.875rem] relative;
+      &::before {
+        @apply absolute w-full h-full top-0 left-0;
+        content: '';
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.16) 0%,
+          rgba(0, 0, 0, 0.16) 100%
+        );
+        background-blend-mode: multiply, multiply, normal;
+      }
+      img {
+        @apply object-cover w-full h-full;
+      }
+      &__title {
+        @apply text-white absolute top-6 left-4;
+      }
+    }
+    .item-all {
+      @apply relative py-6 px-4 bg-100 grid gap-6 rounded-3xl grid-rows-[auto_1fr_auto];
+      @apply lg2:py-8;
+
+      &__title {
+        @apply text-sec_500 -tracking-6 text-h4;
+      }
+      .img {
+        @apply rounded-[2rem] overflow-hidden relative h-[19.43rem];
+        @apply lg2:h-full;
+        img {
+          @apply w-full h-full object-cover;
+        }
+      }
+    }
+
+    @screen lg2 {
+      grid-template-areas:
+        'a b d'
+        'a c d';
+      & > *:nth-child(1) {
+        grid-area: a;
+      }
+      & > * {
+        @apply !h-full;
+      }
+      & > *:nth-child(2) {
+        grid-area: b;
+      }
+      & > *:nth-child(3) {
+        grid-area: c;
+      }
+      & > *:nth-child(4) {
+        grid-area: d;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+include ../../components/svg.pug
+section.section.structure 
+  .structure__top
+    h2.title Структура <br/> холдинга
+    p.text Группа Компаний «Салаватстекло» — это один из крупнейших производителей стекла и стекольной продукции в России. Компания начала свою деятельность в 1962 году, и до сих пор сохраняет свои лучшие традиции и преемственность поколений.
+  .structure__bottom
+    .item 
+      .item__top
+        +svg('logo-agidel', 175, 93)
+        +svg('map-r-bash', 160, 100)(class="map")
+      .item__bottom.item__contacts
+        .item__contacts-name АО «Салаватстекло»
+        .item__contacts__links
+          a(href="#").item__contacts-location
+            +svg('location', 24)
+            span 453253, РФ, Республика Башкортостан, <br/> г. Салават, ул. Индустриальная, 18
+          a(href="tel:+7 (3476) 37-71-55").item__contacts-phone
+            +svg('phone', 24)
+            span +7 (3476) 37-71-55
+          a(href="mailto:sales@salstek.ru").item__contacts-email 
+            +svg('mail', 24)
+            span sales@salstek.ru
+    .item 
+      .item__top
+        +svg('logo-volga', 175, 93)
+        +svg('map-r-sar', 160, 100)(class="map")
+      .item__bottom.item__contacts
+        .item__contacts-name АО «Саратовстройстекло»
+        .item__contacts__links
+          a(href="#").item__contacts-location
+            +svg('location', 24)
+            span 410041, РФ, г. Саратов, <br/> ул. Ломоносова, 1
+          a(href="tel:+7 (8452) 305-505").item__contacts-phone
+            +svg('phone', 24)
+            span +7 (8452) 305-505
+          a(href="mailto:sales@salstek.ru").item__contacts-email 
+            +svg('mail', 24)
+            span sales@salstek.ru
+    .item 
+      .item__top
+        +svg('logo-kasp', 175, 93)
+        +svg('map-r-kasp', 160, 100)(class="map")
+      .item__bottom.item__contacts
+        .item__contacts-name ООО «Салаватстекло Каспий»
+        .item__contacts__links
+          a(href="#").item__contacts-location
+            +svg('location', 24)
+            span 368085, РФ, Республика Дагестан, <br/> Кумторкалинский район, п. Тюбе
+          a(href="tel:+7 (499) 681-06-23").item__contacts-phone
+            +svg('phone', 24)
+            span +7 (499) 681-06-23
+          a(href="mailto:sales@salstek.ru").item__contacts-email 
+            +svg('mail', 24)
+            span sales@salstek.ru
+
+

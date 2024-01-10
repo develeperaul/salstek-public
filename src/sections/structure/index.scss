@@ -1,0 +1,35 @@
+.structure {
+  @apply grid gap-6;
+  &__top {
+    @apply grid gap-6;
+    @apply lg2:flex lg2:justify-between;
+    .text {
+      @apply lg2:w-[500px];
+    }
+  }
+  &__bottom {
+    @apply grid gap-6;
+    @apply lg2:grid-cols-3;
+  }
+  .item {
+    @apply rounded-3xl py-6 px-4 border border-prim_100;
+    @apply lg2:p-10;
+    &__top {
+      @apply relative grid gap-10 mb-10;
+      .map {
+        @apply lg2:absolute lg2:-right-6;
+      }
+    }
+    &__contacts {
+      &-name {
+        @apply text-prim_600 -tracking-5 font-bold text-h5 mb-6;
+      }
+      &__links {
+        @apply grid gap-2;
+        & > a {
+          @apply flex gap-3 text-sec_500 font-bold -tracking-4;
+        }
+      }
+    }
+  }
+}

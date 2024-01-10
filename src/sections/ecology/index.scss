@@ -1,0 +1,51 @@
+.ecology {
+  .title {
+    @apply mb-6;
+    @apply lg2:mb-8;
+  }
+  .subitle {
+    @apply text-h4 font-bold -tracking-6 text-sec_500 mb-6;
+    @apply lg2:mb-8;
+  }
+  .list {
+    @apply grid gap-4;
+    @apply lg2:grid-cols-2 lg2:gap-5;
+    .item {
+      @apply p-6 rounded-[2rem] bg-500 grid content-between min-h-[16.25rem];
+      @apply lg2:p-8 lg2:min-h-60;
+      &__title {
+        @apply text-prim_600 text-h3 -tracking-3.5 uppercase font-intro;
+        @apply lg2:text-h2 lg2:-tracking-6;
+      }
+      &__text {
+        @apply text-body_m leading-160 -tracking-4;
+      }
+    }
+  }
+
+  .advantages {
+    @apply grid gap-4;
+    @apply lg2:grid-cols-2 lg2:gap-5;
+    .item {
+      @apply rounded-3xl border border-prim_100 px-4 py-6 grid gap-6;
+      @apply lg2:p-8  lg2:grid-cols-[1fr_auto] lg2:gap-[3rem];
+
+      &__top {
+        @apply grid gap-3 content-start;
+      }
+      &__bottom {
+        @apply rounded-[3rem] overflow-hidden w-[19.4375rem] h-[19.4375rem];
+        @apply lg2:w-[9.75rem] lg2:h-[9.75rem] lg2:rounded-3xl;
+        & > svg {
+          @apply w-full h-full;
+        }
+      }
+      &__title {
+        @apply text-sec_500 text-h4 -tracking-6 font-bold;
+      }
+      &__text {
+        @apply text-body_s  leading-160 -tracking-3.5;
+      }
+    }
+  }
+}

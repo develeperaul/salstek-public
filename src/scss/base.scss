@@ -14,13 +14,13 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply text-dark;
+    @apply text-dark text-body_m font-avenit;
   }
   main {
     @apply grid gap-4;
   }
   h2 {
-    @apply font-intro font-black -tracking-3.5 text-sec_500 text-h3;
+    @apply font-intro font-black -tracking-3.5 text-sec_500 text-h3 uppercase;
     @apply lg2:text-h2;
   }
 }

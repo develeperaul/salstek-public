@@ -12,6 +12,12 @@
   padding-top: 89px;
   &__mob {
     @apply grid gap-8  grid-rows-[1fr_auto] lg2:hidden pb-8 px-4 pt-8;
+    .content .accordeon .item .item__head {
+      @apply grid grid-cols-[24px_1fr] gap-3;
+    }
+    .content .accordeon .item .item__body .item__body-wrapper > * {
+      @apply pl-12;
+    }
     .content-other {
       @apply pt-8 border-t border-prim_100 grid;
       .logo,

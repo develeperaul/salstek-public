@@ -1,0 +1,10 @@
+include ./svg.pug
+mixin downlItem(title, descr, icon, className)
+  a.downl-item(href="#" download)
+    .downl-item__icon
+      +svg(icon,24)(class="icon-file")
+      +svg('file-download',24)(class="icon-hover")
+    .downl-item__content
+      h4.downl-item__title #{title}
+      p.downl-item__text #{descr}
+

@@ -1,0 +1,22 @@
+.other-slider {
+  @apply pb-8;
+  @apply lg2:pb-10;
+  .prev,
+  .next {
+    @apply absolute cursor-pointer;
+    @apply hidden lg2:block;
+    z-index: 1;
+    top: calc(50% - 1rem);
+    transform: translateY(-50%);
+  }
+  .swiper-pagination {
+    --swiper-pagination-bullet-inactive-color: theme(colors.50);
+    --swiper-pagination-bottom: 0rem;
+  }
+  .prev {
+    @apply left-20;
+  }
+  .next {
+    @apply right-20;
+  }
+}

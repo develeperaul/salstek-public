@@ -1,0 +1,10 @@
+.docs-download {
+  .title {
+    @apply mb-6;
+    @apply lg2:mb-8;
+  }
+  .list-file {
+    @apply grid gap-4;
+    @apply lg2:grid-cols-2;
+  }
+}
