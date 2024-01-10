@@ -29,6 +29,7 @@ import '../sections/delusion-system';
 import '../sections/innovative-activity';
 import '../sections/docs-download';
 import '../sections/ecology';
+import '../sections/not-found';
 //pages
 import '../index.pug';
 

@@ -56,7 +56,43 @@
       }
     }
   }
+  .not-found {
+    @apply bg-500 rounded-b-4xl  px-4 pb-10  overflow-hidden mb-4 h-screen relative;
+    @apply lg2:p-10 lg2:rounded-6xl;
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url(../assets/images/404.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      bottom: 0;
+      right: 0;
 
+      width: 52rem;
+      height: 29.21rem;
+      transform: translate(46%, 6%) rotate(192deg);
+      @screen lg2 {
+        width: 112rem;
+        height: 63rem;
+        transform: translate(28%, 27%) rotate(192deg);
+      }
+    }
+    padding-top: calc(89px + 32px);
+    @screen lg2 {
+      padding-top: calc(89px + 40px);
+    }
+    &__content {
+      @apply relative grid grid-rows-[1fr_auto] h-full;
+    }
+    .title {
+      @apply text-prim_600 text-h3  font-intro -tracking-3.5 self-center;
+      @apply lg2:text-h1;
+    }
+    .btn {
+      @apply w-full;
+      @apply lg2:w-fit;
+    }
+  }
   .tabs {
     @apply grid overflow-hidden w-full;
     &__wrapper {
