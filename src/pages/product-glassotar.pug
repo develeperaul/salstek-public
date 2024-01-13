@@ -1,0 +1,12 @@
+extend ../layouts/main.pug
+block top
+  include ../sections/product-glassotar-head/index.pug  
+block content
+  include ../sections/product-glassotar/index.pug
+  include ../sections/product-all/index.pug
+  include ../sections/writeToUs/index.pug
+  section.btns-section 
+    button.btn-section 
+        span Связаться с менеджером
+        +svg('forward',24)
+  

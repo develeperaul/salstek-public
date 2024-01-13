@@ -1,0 +1,24 @@
+
+mixin project()
+  .project
+    .project__top
+      h4.project__title Дворец водных видов спорта в Саратове
+      .project__country 
+        img(src=require("/assets/images/test-flag.png"), alt="")
+        span Казахстан
+    .project__types
+
+    .project__slider
+      .swiper.small-slider
+        .swiper-wrapper 
+          .swiper-slide
+            img(src=require("/assets/images/test.jpg"), alt="")
+          //- .swiper-slide
+          //-   img(src=require("/assets/images/test.jpg"), alt="")
+        .swiper-pagination
+      
+        button.prev
+          +svg('back',24)
+        button.next
+          +svg('forward',24)
+

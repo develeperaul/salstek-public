@@ -1,0 +1,18 @@
+.product-section {
+  &__content {
+    @apply grid gap-4 mb-6;
+    @apply grid-cols-[1fr_31.25rem] lg2:mb-12;
+    .title {
+      @apply text-h4 text-sec_500 font-bold -tracking-6;
+      @apply lg2:text-h3 -tracking-7;
+    }
+  }
+  .tabs {
+    @apply mb-8;
+    @apply lg2:mb-12;
+  }
+  .list {
+    @apply grid gap-4;
+    @apply lg2:grid-cols-4 lg2:gap-5;
+  }
+}

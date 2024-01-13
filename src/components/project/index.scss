@@ -1,0 +1,24 @@
+.project {
+  @apply py-8 px-4 rounded-[2.5rem] border border-prim_100 grid;
+  @apply lg2:p-6;
+  &__top {
+    @apply grid gap-6 mb-3;
+    @apply lg2:gap-3 lg2:mb-6;
+  }
+  &__title {
+    @apply text-h4 font-bold text-sec_500 -tracking-6;
+    @apply lg2:text-h3 lg2:order-2;
+  }
+
+  &__country {
+    @apply py-2 px-3 bg-500 text-sec_500 text-body_m -tracking-4 font-bold rounded-xl inline-flex gap-3 items-center w-fit;
+    @apply lg2:order-1;
+  }
+  &__slider {
+    @apply overflow-hidden;
+  }
+  .small-slider .swiper-slide img {
+    @apply rounded-3xl overflow-hidden w-full h-[13.75rem] object-cover;
+    @apply lg2:h-[17.125rem];
+  }
+}

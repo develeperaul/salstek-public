@@ -1,0 +1,19 @@
+include ../../components/productCard/index.pug
+section.section.product-section 
+  .tabs
+    .tabs__wrapper
+      button.btn Стекло окрашенное в массе
+      button.btn-round Зеркало Mirroline
+      button.btn-round Зеркало Mirroline
+      button.btn-round Зеркало Mirroline
+      button.btn-round Зеркало Mirroline
+      button.btn-round Зеркало Mirroline
+      button.btn-round Зеркало Mirroline
+  .product-section__content 
+    .title Стекло с лакокрасочным <br/> покрытием Privaline
+    .content-text 
+      p Стекло с лакокрасочным покрытием серии Privaline - это бесцветное листовое стекло, покрытое специальной краской, благодаря чему  имеет идеальную зеркально-глянцевую поверхность с обеих сторон.
+      p Лакокрасочные покрытия, используемые для производства такого стекла, не содержат вредных для окружающей среды тяжелых металлов и химикатов, что позволяет применять изделия даже в больницах и детских садах.
+  .list 
+    each val in [1, 2, 3, 4, 5]
+      +productCard()

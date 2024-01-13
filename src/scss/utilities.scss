@@ -27,6 +27,12 @@
         @apply hidden;
         @apply lg2:flex lg2:gap-5 lg2:flex-wrap lg2:mt-16;
       }
+      .content {
+        @apply grid gap-4;
+        .text {
+          @apply text-body_m leading-160 -tracking-4;
+        }
+      }
     }
     &__bottom {
       @apply overflow-hidden grid gap-16;
@@ -106,5 +112,39 @@
         @apply w-full;
       }
     }
+  }
+
+  .btn-show {
+    @apply mt-4;
+    @apply lg2:mt-8 lg2:flex lg2:justify-center;
+    & > * {
+      @apply w-full;
+      @apply lg2:w-fit;
+    }
+  }
+
+  .btns-section {
+    @apply grid gap-4;
+  }
+
+  .share {
+    @apply flex gap-6 items-center;
+    &__content {
+      @apply text-prim_700 text-body_m -tracking-4 leading-160 flex items-center gap-2.5;
+      & > svg {
+        @apply text-sec_500;
+      }
+    }
+    &__list {
+      @apply flex gap-2 items-center;
+    }
+  }
+
+  .content-share {
+    @apply grid gap-6 lg2:gap-8;
+  }
+
+  .content-text {
+    @apply text-body_m leading-180 -tracking-4 grid gap-4 max-w-[42.5rem];
   }
 }

@@ -1,0 +1,6 @@
+.product-arh {
+  .list {
+    @apply grid gap-4;
+    @apply lg2:grid-cols-4 lg2:gap-5;
+  }
+}

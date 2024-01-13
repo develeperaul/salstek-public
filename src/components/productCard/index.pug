@@ -1,0 +1,12 @@
+include ../svg.pug
+mixin productCard(label1,label2)
+  a(href="#").product-card
+    .product-card__img 
+      img(src=require("/assets/images/test.jpg"), alt="")
+    .product-card__content 
+      if label1
+        .product-card__label Артикул: В-500-28
+      h4.product-card__title Бутылка бесцветная
+      if label2
+        .product-card__label2 500 мл
+    +svg('forward-line',24)(class='icon')

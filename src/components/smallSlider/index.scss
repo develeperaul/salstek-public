@@ -1,0 +1,34 @@
+.small-slider {
+  @apply pb-8 relative;
+
+  .prev,
+  .next {
+    @apply absolute cursor-pointer;
+    @apply hidden lg2:block;
+    z-index: 1;
+    top: calc(50% - 1rem);
+    transform: translateY(-50%);
+  }
+  .swiper-pagination {
+    --swiper-pagination-bullet-inactive-color: theme(colors.50);
+    --swiper-pagination-bottom: 0rem;
+  }
+  .prev > svg,
+  .next > svg {
+    @apply text-white;
+  }
+  .prev {
+    @apply left-2;
+  }
+  .next {
+    @apply right-2;
+  }
+  .next.swiper-button-lock,
+  .prev.swiper-button-lock {
+    display: none;
+  }
+  .prev,
+  .next {
+    @apply p-3;
+  }
+}

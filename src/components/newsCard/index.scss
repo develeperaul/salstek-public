@@ -1,0 +1,23 @@
+.news-card {
+  @apply rounded-[2rem] p-6 border border-prim_100 grid gap-6 w-fit;
+  @apply hover:bg-50;
+  &__top {
+    @apply relative rounded-[1rem] overflow-hidden h-[18.4375rem];
+    @apply lg2:h-[17.5rem];
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+  &__label {
+    @apply absolute top-3 left-3;
+  }
+  &__bottom {
+    @apply grid gap-3;
+  }
+  &__date {
+    @apply text-body_s -tracking-3.5 leading-160 text-sec_300;
+  }
+  &__title {
+    @apply text-h5 -tracking-5 font-bold text-sec_500;
+  }
+}

@@ -1,0 +1,11 @@
+.news-item {
+  @apply grid gap-3;
+  @apply lg2:gap-12;
+  .content-img {
+    @apply h-60 w-full rounded-3xl overflow-hidden;
+    @apply lg2:h-[47.8125rem] lg2:rounded-[2rem];
+    & > img {
+      @apply w-full h-full object-cover;
+    }
+  }
+}

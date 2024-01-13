@@ -133,17 +133,37 @@
 
   /* button */
   .btn {
-    @apply h-[3.875rem] px-6 rounded-xl font-medium -tracking-4  text-body_m bg-prim_600 text-white inline-flex items-center justify-center whitespace-nowrap;
+    @apply h-[3.875rem] px-6 rounded-xl font-medium -tracking-4  text-body_m bg-prim_600 text-white inline-flex gap-3 items-center justify-center whitespace-nowrap;
     @apply [@media(hover:hover)]:hover:bg-prim_500;
     @apply [@media(hover:none)]:active:bg-prim_700 active:bg-prim_700;
     @apply disabled:text-100 disabled:border-100 disabled:border disabled:bg-white;
   }
 
   .btn-round {
-    @apply h-[3.875rem] bg-500 px-6 border border-prim_100 rounded-xl font-medium -tracking-4  text-body_m  text-sec_500 inline-flex items-center justify-center whitespace-nowrap;
+    @apply h-[3.875rem] bg-500 px-6 border border-prim_100 rounded-xl font-medium -tracking-4  text-body_m  text-sec_500 inline-flex gap-3 items-center justify-center whitespace-nowrap;
     @apply [@media(hover:hover)]:hover:bg-75;
     @apply [@media(hover:none)]:active:bg-100 active:bg-100;
     @apply disabled:text-100 disabled:border-100 disabled:border disabled:bg-white;
+  }
+
+  .btn-chips {
+    @apply h-[3.875rem] bg-white px-6 border border-prim_100  rounded-2xl font-medium -tracking-4  text-body_m  text-sec_500 inline-flex gap-3 items-center justify-center whitespace-nowrap;
+    @apply [@media(hover:hover)]:hover:bg-prim_200;
+    @apply [@media(hover:none)]:active:bg-prim_200 active:bg-prim_200;
+    @apply disabled:border-100 disabled:border disabled:bg-white;
+    &_disabled {
+      @apply text-100 border-100;
+    }
+  }
+
+  .btn-section {
+    @apply py-6 px-10 rounded-[2rem] font-bold -tracking-6  text-h4 bg-prim_600 text-white flex gap-3 items-center justify-between whitespace-nowrap;
+    @apply [@media(hover:hover)]:hover:bg-prim_500;
+    @apply [@media(hover:none)]:active:bg-prim_500;
+    @apply disabled:border-100 disabled:border disabled:bg-white;
+    &_disabled {
+      @apply text-100 border-100 bg-white;
+    }
   }
 
   .btn-prev,
@@ -155,16 +175,19 @@
   }
 
   .btn-fit {
-    @apply w-12 h-12 grid place-self-center p-3 rounded-xl border border-prim_100 bg-50 text-sec_500;
+    @apply w-12 h-12 grid place-self-center p-3  rounded-xl border border-prim_100 bg-50 text-sec_500;
     @apply [@media(hover:hover)]:hover:bg-prim_200 [@media(hover:hover)]:hover:text-prim_700;
     & > svg {
       @apply w-full h-full;
     }
     &_sm {
-      @apply w-8 h-8 p-2;
+      @apply w-8 h-8 p-2 rounded-lg;
     }
     &_lg {
       @apply w-16 h-16 p-4;
+    }
+    &_fill {
+      @apply border-50;
     }
   }
 
@@ -257,6 +280,29 @@
       }
       &:hover .icon-hover {
         display: block;
+      }
+    }
+  }
+
+  .tag {
+    @apply border  border-sec_100 rounded-[22.5rem] bg-white px-3 py-2 text-sec_500 text-body_m -tracking-4 font-bold w-fit;
+  }
+
+  .content-slider {
+    @apply overflow-hidden;
+    .small-slider .swiper-slide {
+      @apply h-60 w-full rounded-3xl overflow-hidden;
+      @apply lg2:h-[47.8125rem] lg2:rounded-[2rem];
+      & > img {
+        @apply w-full h-full object-cover;
+      }
+    }
+    .small-slider {
+      @apply lg2:pb-0;
+    }
+    .small-slider .swiper-pagination {
+      @screen lg2 {
+        --swiper-pagination-bottom: 1.5rem;
       }
     }
   }

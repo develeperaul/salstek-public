@@ -1,0 +1,15 @@
+extend ../layouts/main.pug
+block top
+  include ../sections/product-window-head/index.pug  
+block content
+  include ../sections/product-window/index.pug
+  include ../sections/product-all/index.pug
+  include ../sections/writeToUs/index.pug
+  section.btns-section 
+    a(href="#").btn-section 
+        span Заказ образцов
+        +svg('forward',24)
+    a(href="#").btn-section 
+      span Конфигуратор расчета стеклопакетов
+      +svg('forward',24)
+  

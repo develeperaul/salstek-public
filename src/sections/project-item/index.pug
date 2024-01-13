@@ -1,0 +1,32 @@
+include ../../components/svg.pug
+section.section.project-item
+  div.content-text
+    p За 60 лет предприятием АО «Салаватстекло» пройден путь от небольшого завода технического стекла до крупнейшего комплекса стекольных производств, объединив АО «Салаватстекло», АО «Саратовстройстекло» и ООО «Салаватстекло Каспий».
+    p Отличительная черта комплекса – непрерывное развитие: практически ежегодно вводятся новые мощности и внедряются передовые технологии. За весь период работы завода построено и реконструировано более 40 печей различной мощности и конструкций.
+  .content-share
+    .content-slider
+      .swiper.small-slider 
+        .swiper-wrapper 
+          .swiper-slide
+            img(src=require("/assets/images/test.jpg"), alt="")
+          .swiper-slide
+            img(src=require("/assets/images/test.jpg"), alt="")
+        .swiper-pagination
+          
+        button.prev
+          +svg('back',24)
+        button.next
+          +svg('forward',24)
+    .share
+      .share__content
+        +svg("share",24)
+        span Поделиться
+      .share__list
+        a(href="#").btn-fit.btn-fit_sm.btn-fit_fill
+          +svg("whatsapp",16) 
+        a(href="#").btn-fit.btn-fit_sm.btn-fit_fill
+          +svg("telega",16) 
+        a(href="#").btn-fit.btn-fit_sm.btn-fit_fill
+          +svg("mail",16) 
+        a(href="#").btn-fit.btn-fit_sm.btn-fit_fill
+          +svg("link",16) 

@@ -1,0 +1,29 @@
+.news-item-head {
+  @apply pb-10 px-4 bg-50 rounded-4xl;
+  @apply lg2:px-10;
+  padding-top: calc(89px + 32px);
+  @screen lg2 {
+    padding-top: calc(89px + 40px);
+  }
+  .breadcrumb {
+    @apply mb-8;
+    @apply lg2:mb-12;
+  }
+  .tag {
+    @apply mb-4;
+    @apply lg2:mb-8;
+  }
+  .title {
+    @apply mb-8;
+    @apply lg2:mb-3;
+  }
+  &__date {
+    @apply flex gap-3 items-center text-sec_500;
+    p {
+      @apply text-body_s font-bold -tracking-1.75;
+      span {
+        @apply font-normal -tracking-3.5;
+      }
+    }
+  }
+}

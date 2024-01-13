@@ -1,0 +1,21 @@
+.other-news {
+  .title {
+    @apply mb-6;
+    @apply lg2:mb-12;
+  }
+  .list {
+    @apply grid gap-4;
+    @apply lg2:gap-5 lg2:grid-cols-4;
+    .item {
+      @apply grid content-between p-6 rounded-3xl border border-prim_100 h-[21-4375rem];
+      @apply lg2:h-[20.5rem];
+      @apply hover:bg-50;
+      &__date {
+        @apply text-sec_300 text-body_s leading-160 mb-3;
+      }
+      &__descr {
+        @apply text-sec_500 text-h5 font-bold -tracking-5;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.product-card {
+  @apply rounded-3xl border border-prim_100 grid gap-6 p-4 relative;
+  &__img {
+    @apply h-[19.4375rem] w-full rounded-3xl overflow-hidden;
+    & > img {
+      @apply w-full h-full object-cover;
+    }
+  }
+  &__content {
+  }
+  &__label {
+    @apply text-sec_300 text-body_s -tracking-3.5 leading-160 mb-2;
+  }
+  &__label2 {
+    @apply text-sec_300 text-body_m -tracking-4 leading-160 mt-1;
+  }
+  &__title {
+    @apply text-sec_500 text-h4 -tracking-6 font-bold;
+  }
+  .icon {
+    @apply opacity-0 absolute right-4 bottom-4 text-prim_600;
+  }
+  &:hover {
+    @apply bg-50;
+    .icon {
+      opacity: 1;
+    }
+  }
+}
