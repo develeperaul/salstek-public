@@ -50,7 +50,6 @@ window.addEventListener('resize', (e) => {
 });
 
 function windowTarget(e) {
-  if (!e.composedPath().includes(activeType)) {
+  if (activeType && !e.composedPath().includes(activeType))
     activeType.classList.remove('active');
-  }
 }
