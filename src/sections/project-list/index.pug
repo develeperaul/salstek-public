@@ -14,11 +14,12 @@ section.section.project-list
     //-     .swiper-slide
     //-       +select('institute','Категория объекта', {name:1,val:'0'})
     //-   .swiper-scrollbar
-  .filters
+  form.filters
     +select('institute','Категория объекта', {name:1,val:'0'})
     +select('institute','Продукт', {name:1,val:'0'})
     +select('institute','Вид стекла', {name:1,val:'0'})
     +select('institute','Все города', {name:1,val:'0'})
+    button.btn Применить
   .list 
     each val in [1, 2, 3, 4, 5]
       +project()

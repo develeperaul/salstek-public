@@ -1,35 +1,8 @@
 .project-list {
   @apply grid;
   .filters {
-    @apply grid gap-5 mb-6 pb-4;
-    grid-template-columns: repeat(4, minmax(100%, 1fr));
-
-    overflow-x: auto;
-    scrollbar-color: theme(colors.prim_600) theme(colors.50); /* «цвет ползунка» «цвет полосы скроллбара» */
-    scrollbar-width: thin; /* толщина */
-
-    /* полоса прокрутки (скроллбар) */
-    &::-webkit-scrollbar {
-      height: 4px; /* высота для горизонтального скролла */
-      background-color: theme(colors.50);
-      border-radius: 18px;
-    }
-
-    /* ползунок скроллбара */
-    &::-webkit-scrollbar-thumb {
-      background-color: theme(colors.prim_600);
-      border-radius: 18px;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: #253861;
-    }
-    @screen lg2 {
-      @apply mb-16 grid-cols-4 pb-0;
-    }
-    & > * {
-      @apply w-full;
-    }
+    @apply grid gap-5 mb-6;
+    @apply lg2:grid-cols-5;
   }
   .list {
     @apply grid gap-4;
