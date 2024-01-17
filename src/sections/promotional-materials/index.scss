@@ -1,0 +1,6 @@
+.promotional-materials {
+  .list {
+    @apply grid gap-4;
+    @apply lg2:gap-5 lg2:grid-cols-2;
+  }
+}

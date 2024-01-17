@@ -161,6 +161,10 @@
     @apply [@media(hover:hover)]:hover:bg-prim_500;
     @apply [@media(hover:none)]:active:bg-prim_500;
     @apply disabled:border-100 disabled:border disabled:bg-white;
+    .label {
+      @apply text-body_s font-bold -tracking-1.75 text-sec_100 mb-1;
+      @apply mb-3;
+    }
     &_disabled {
       @apply text-100 border-100 bg-white;
     }
@@ -254,7 +258,7 @@
   .downl-item {
     @apply p-4 rounded-3xl border border-prim_100  flex gap-3 items-start;
     &__icon {
-      @apply w-12 h-12 bg-50 rounded-xl grid place-content-center text-sec_500;
+      @apply w-12 h-12 bg-50 rounded-xl grid place-content-center text-sec_500 shrink-0;
     }
     &__title {
       @apply text-body_m font-bold -tracking-4 text-sec_500 mb-1;

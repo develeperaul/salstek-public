@@ -1,0 +1,39 @@
+.product-list {
+  .list {
+    @apply grid gap-6;
+    @apply lg2:grid-cols-2;
+    .item {
+      @apply grid gap-6 px-4 py-6 rounded-3xl border border-prim_100;
+      @apply lg2:p-8 lg2:rounded-[2rem] lg2:grid-cols-[1fr_9.75rem] lg2:gap-14;
+
+      @apply [@media(hover:hover)]:hover:bg-50;
+      @apply [@media(hover:none)]:active:bg-50;
+      @media (hover: hover) {
+        &:hover .item__title {
+          @apply text-prim_600;
+        }
+      }
+      @media (hover: none) {
+        &:active .item__title {
+          @apply text-prim_600;
+        }
+      }
+      &__title {
+        @apply text-h4 font-bold -tracking-6 text-sec_500;
+      }
+      &__text {
+        @apply text-body_s leading-160 -tracking-3.5;
+      }
+      &__top {
+        @apply grid gap-3;
+      }
+      &__bottom {
+        @apply rounded-3xl h-[19.4375rem] w-full  overflow-hidden;
+        @apply lg2:h-[9.75rem] lg2:w-[9.75rem] shrink-0;
+        & > img {
+          @apply w-full h-full object-cover;
+        }
+      }
+    }
+  }
+}

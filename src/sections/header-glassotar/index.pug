@@ -1,0 +1,16 @@
+include ../../components/svg.pug
+section.header-second.header-glassotar
+  .header-second__top 
+    div
+      include ../../components/breadcrumbs.pug
+      h2.title Бутылка бесцветная 
+    .btns
+      button.btn Связаться с менеджером
+      a(href="#").btn-round 
+        +svg("pdf",24)
+        span Скачать PDF 
+    
+      
+  .header-second__bottom 
+    img(src=require('/assets/images/head-bg/header-glassotar.png'), alt="")
+    

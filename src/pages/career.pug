@@ -1,0 +1,16 @@
+extend ../layouts/main.pug
+include ../components/svg.pug
+block top
+  include ../sections/header-career/index.pug  
+block content
+  include ../sections/advantages/index.pug
+  section.btns-section 
+    a(href="#").btn-section 
+        div
+          .label Заполните форму
+          span Отправить резюме
+        +svg('forward',24)
+  include ../sections/writeToUs/index.pug
+  include ../sections/vacancies/index.pug
+  include ../sections/trade-union/index.pug
+  

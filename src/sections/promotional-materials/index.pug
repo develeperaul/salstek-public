@@ -1,0 +1,6 @@
+include ../../components/downlItem.pug
+section.section.promotional-materials 
+  h2.title Рекламные материалы
+  .list 
+    each val in [1, 2, 3, 4, 5]
+      +downlItem('Название документа', 'doc, 247.0 Кб','file')

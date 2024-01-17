@@ -1,0 +1,24 @@
+.characteristics-glassotar {
+  .title {
+    @apply mb-6;
+    @apply lg2:mb-12;
+  }
+  .list {
+    @apply max-w-[40rem];
+    .item {
+      &:not(:last-child) {
+        @apply pb-6;
+      }
+      &:not(:first-child) {
+        @apply border-t border-prim_100 pt-6;
+      }
+      @apply grid gap-4;
+      &__title {
+        @apply text-sec_500 text-h5 font-bold -tracking-5;
+      }
+      ul {
+        @apply marker:text-dark leading-160 list-disc pl-5 -tracking-4;
+      }
+    }
+  }
+}

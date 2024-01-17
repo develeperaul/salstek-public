@@ -1,0 +1,18 @@
+.map-container {
+  @apply relative;
+  .card-map {
+    @apply rounded-[1rem] p-4 bg-dark grid gap-4 absolute w-[17.5rem];
+    &__middle {
+      @apply overflow-hidden;
+      .swiper-slide {
+        @apply h-[8.75rem] rounded-[1rem] overflow-hidden w-full;
+        & > img {
+          @apply w-full h-full object-cover;
+        }
+      }
+    }
+    &__link {
+      @apply rounded-xl py-3 px-4 border border-sec_500 h-12 flex items-center justify-between w-full text-sec_500 text-body_m  font-bold -tracking-4;
+    }
+  }
+}

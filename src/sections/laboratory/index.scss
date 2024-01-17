@@ -1,0 +1,32 @@
+.laboratory {
+  .title {
+    @apply mb-6;
+    @apply lg2:mb-12;
+  }
+
+  .content {
+    @apply grid gap-6;
+    @apply lg2:grid-cols-2;
+  }
+
+  .contacts-item {
+    @apply p-4 bg-50 rounded-3xl grid gap-6 content-start h-fit;
+    @apply lg2:p-6 lg2:w-[31.25rem] lg2:justify-self-end;
+    &__title {
+      @apply text-h5 font-bold text-sec_500 -tracking-5;
+    }
+    &__links {
+      @apply grid gap-4;
+      @apply lg2:flex lg2:gap-10 lg2:flex-wrap;
+    }
+    &__link {
+      @apply flex gap-3;
+      svg {
+        @apply text-sec_500;
+      }
+      a {
+        @apply text-body_m font-bold -tracking-4 text-prim_600 block;
+      }
+    }
+  }
+}

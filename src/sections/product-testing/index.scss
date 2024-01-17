@@ -1,0 +1,18 @@
+.product-testing {
+  &__content {
+    @apply grid gap-6;
+    @apply lg2:gap-12;
+  }
+  .title {
+    @apply mb-6;
+    @apply mb-12;
+  }
+  .subtitle {
+    @apply text-h5 font-bold -tracking-5 text-sec_500 mb-4;
+    @apply lg2:mb-6;
+  }
+  ul {
+    @apply marker:text-dark leading-160 list-disc pl-5 -tracking-4 grid gap-4;
+    @apply lg2:grid-cols-2;
+  }
+}

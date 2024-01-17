@@ -23,4 +23,8 @@
     @apply font-intro font-black -tracking-3.5 text-sec_500 text-h3 uppercase;
     @apply lg2:text-h2;
   }
+  h3 {
+    @apply font-bold -tracking-6 text-sec_500 text-h4;
+    @apply lg2:text-h3 lg2:-tracking-7;
+  }
 }

@@ -1,0 +1,42 @@
+include ../../components/svg.pug
+include ../../components/downlItem.pug
+section.section.download-docs 
+  h2.title Документы для скачивания
+  .download-docs__wrapper
+    div
+      .content 
+        .list 
+          each val in [1, 2, 3, 4, 5]
+            +downlItem('Название документа', 'doc, 247.0 Кб','file')
+    div 
+      h2.title Скачать Салаватстекло конфигуратор
+      .links 
+        .item 
+          .item__qr 
+            img(src=require("/assets/images/qr-ios.png"), alt="")
+            div 
+              h4.item__title Салаватстекло конфигуратор
+              h5.item__subtitle App Store 
+          a(href="#" target="_blank") 
+            img(src=require("/assets/images/app-store.png"), alt="")
+        .item 
+          .item__qr 
+            img(src=require("/assets/images/qr-android.png"), alt="")
+            div 
+              h4.item__title Салаватстекло конфигуратор
+              h5.item__subtitle Google Play
+          a(href="#" target="_blank") 
+            img(src=require("/assets/images/google-play.png"), alt="")
+    .contacts-item 
+      div
+        .contacts-item__title Контакты
+        .contacts-item__text По всем вопросам, связанным с работой конфигуратора стеклопакетов, обращайтесь в службу технической поддержки:
+      .contacts-item__links
+        .contacts-item__link
+          +svg('phone',24)
+          div 
+            a(href="tel:+7 (347) 37-70-72") +7 (347) 37-70-72
+            a(href="tel:+7 (3476) 37-71-18") +7 (3476) 37-71-18
+        .contacts-item__link
+          +svg("mail",24)
+          a(href="mailto:support@rsalstek.ru") support@rsalstek.ru

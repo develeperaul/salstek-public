@@ -38,7 +38,7 @@
       @apply overflow-hidden grid gap-16;
 
       .links {
-        @apply flex flex-nowrap overflow-auto whitespace-nowrap pb-4;
+        @apply flex flex-nowrap gap-4 overflow-auto whitespace-nowrap pb-4;
         @apply lg2:hidden;
         scrollbar-color: theme(colors.prim_600) theme(colors.50); /* «цвет ползунка» «цвет полосы скроллбара» */
         scrollbar-width: thin; /* толщина */
@@ -59,6 +59,52 @@
         &::-webkit-scrollbar-thumb:hover {
           background-color: #253861;
         }
+      }
+    }
+  }
+
+  .header-second {
+    @apply grid mb-4;
+    @apply lg2:grid-cols-2 lg2:h-screen;
+    &__top {
+      @apply px-4 pb-8 bg-50 grid gap-8 grid-rows-[1fr_auto];
+      @apply lg2:rounded-bl-6xl lg2:pb-10 lg2:pl-10 lg2:pr-16;
+      padding-top: calc(89px + 32px);
+      @screen lg2 {
+        padding-top: calc(89px + 40px);
+      }
+      & > *:first-child {
+        @apply grid gap-8 content-start;
+      }
+      .content-text {
+        @apply text-sec_500 lg2:w-[33.3125rem];
+      }
+    }
+    &__bottom {
+      @apply h-[26.25rem] w-full rounded-b-4xl overflow-hidden;
+      @apply lg2:h-full lg2:rounded-bl-none lg2:rounded-br-6xl;
+      & > img {
+        @apply w-full h-full object-cover;
+      }
+    }
+  }
+
+  .header-second.header-glassotar {
+    .btns {
+      @apply grid gap-2;
+      @apply lg2:flex lg2:gap-4;
+    }
+    .header-second__bottom {
+      @screen lg2 {
+        padding-top: calc(89px + 40px);
+      }
+    }
+  }
+  .header-second.header-glass-configurator {
+    .header-second__bottom {
+      @apply bg-75;
+      @screen lg2 {
+        padding-top: calc(89px + 40px);
       }
     }
   }
@@ -114,6 +160,13 @@
     }
   }
 
+  .tab-content {
+    @apply hidden;
+    &.active {
+      @apply block;
+    }
+  }
+
   .btn-show {
     @apply mt-4;
     @apply lg2:mt-8 lg2:flex lg2:justify-center;
@@ -145,6 +198,6 @@
   }
 
   .content-text {
-    @apply text-body_m leading-180 -tracking-4 grid gap-4 max-w-[42.5rem];
+    @apply text-body_m leading-180 -tracking-4 grid gap-4 max-w-[42.5rem] content-start;
   }
 }

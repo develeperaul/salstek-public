@@ -1,0 +1,46 @@
+.vacancies {
+  .tabs {
+    @apply mb-8;
+    @apply lg2:mb-12;
+  }
+  .title {
+    @apply text-h3 -tracking-3.5 flex items-start gap-1 mb-6;
+    @apply lg2:mb-12;
+    .count {
+      @apply text-body_m -tracking-4 text-sec_200 font-avenit;
+    }
+  }
+  .list {
+    @apply grid gap-4;
+    @apply lg2:gap-6;
+    .item {
+      @apply rounded-[2rem] p-4 border border-prim_100 grid gap-6;
+      @apply lg2:p-8 lg2:gap-8;
+      &__top {
+        @apply grid gap-3;
+        @apply lg2:grid-cols-[1fr_auto];
+      }
+      &__middle {
+        @apply grid gap-6;
+        @apply lg2:grid-cols-2 lg2:gap-5;
+      }
+      &__title {
+        @apply text-h4 text-sec_500 -tracking-6 font-bold mb-2;
+        @apply lg2:text-h3 lg2:mb-3;
+      }
+      &__text {
+        @apply text-body_m leading-160 -tracking-4;
+      }
+      &__price {
+        @apply text-h5 leading-120 font-bold -tracking-5 text-sec_500;
+        @apply lg2:text-h4 lg2:leading-130;
+      }
+      &__subtitle {
+        @apply text-body_m text-sec_500 -tracking-4 font-bold mb-4;
+      }
+      ul {
+        @apply marker:text-dark leading-160 list-disc pl-5 -tracking-4 grid gap-3;
+      }
+    }
+  }
+}

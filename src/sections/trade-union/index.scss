@@ -1,0 +1,65 @@
+.trade-union {
+  &__wrapper {
+    @apply grid gap-8;
+    @apply lg2:gap-12;
+  }
+  .title {
+    @apply mb-6;
+    @apply lg2:text-h3 lg2:mb-12;
+  }
+  .list {
+    @apply grid gap-6;
+    @apply lg2:gap-12;
+    .item {
+      @apply grid gap-6;
+      @apply lg2:grid-cols-2;
+      &__content {
+        @apply grid gap-4;
+
+        &-title {
+          @apply flex gap-3 text-sec_500 text-h4 font-bold -tracking-6;
+          & > svg {
+            @apply shrink-0 text-prim_600;
+          }
+        }
+        &-text {
+          @apply leading-180 -tracking-4 grid gap-4;
+          @apply lg2:w-[33.3125rem];
+        }
+      }
+      &__contacts {
+        @apply rounded-[2rem] p-4 bg-50 grid gap-6 content-start h-fit;
+        @apply lg2:p-6 lg2:w-[31.25rem] lg2:justify-self-end;
+        &-title {
+          @apply text-h5 text-sec_500 font-bold -tracking-5;
+        }
+        &-links {
+          @apply grid gap-4;
+          @apply lg2:flex lg2:gap-8 lg2:flex-wrap;
+        }
+        &-link {
+          @apply flex gap-3;
+          svg {
+            @apply text-sec_500;
+          }
+          a {
+            @apply text-body_m font-bold -tracking-4 text-prim_600 block;
+          }
+        }
+      }
+      &__text {
+        @apply text-h5 font-bold -tracking-5 text-prim_600;
+        @apply lg2:w-[31.25rem] lg2:justify-self-end;
+      }
+    }
+  }
+  .download-list {
+    &__title {
+      @apply mb-6;
+    }
+    ul {
+      @apply grid gap-4;
+      @apply lg2:grid-cols-2 lg2:w-1/2;
+    }
+  }
+}

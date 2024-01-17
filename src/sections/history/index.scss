@@ -8,8 +8,8 @@
     & > *:last-child {
       @apply mr-4 lg2:mr-10;
     }
+    @apply lg2:-mx-10 lg2:mb-10;
     @screen lg2 {
-      @apply -mx-10 mb-10;
       width: calc(100% + 5rem);
     }
   }

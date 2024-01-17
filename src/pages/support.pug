@@ -1,0 +1,23 @@
+extend ../layouts/main.pug
+include ../components/svg.pug
+block top
+  include ../sections/header-support/index.pug  
+block content
+  include ../sections/technical-calculations/index.pug
+  section.btns-section 
+    a(href="#").btn-section 
+        div
+          .label Description
+          span Конфигуратор расчета стеклопакетов
+        +svg('forward',24)
+  include ../sections/writeToUs/index.pug
+  include ../sections/laboratory/index.pug
+  include ../sections/product-testing/index.pug
+  section.btns-section 
+    a(href="#").btn-section 
+        span Заказ образцов
+        +svg('forward',24)
+  include ../sections/support-illiquid/index.pug
+  include ../sections/docs-download-support/index.pug
+        
+  
