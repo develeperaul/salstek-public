@@ -1,0 +1,42 @@
+include ../../components/svg.pug
+section.section.contacts-links
+  .contacts-links__top
+    a(href="#").link.active
+      +svg('logo-agidel', 175, 93)
+      +svg('map-r-bash', 175, 175)(class="map")
+      h4.link__title АО «Салаватстекло»
+    a(href="#").link 
+      +svg('logo-volga', 175, 93)
+      +svg('map-r-sar', 175, 175)(class="map")
+      h4.link__title АО «Саратовстройстекло»
+    a(href="#").link 
+      +svg('logo-kasp', 175, 93)
+      +svg('map-r-kasp', 175, 175)(class="map")
+      h4.link__title ООО «Салаватстекло Каспий»
+  .contacts-links__bottom
+    .list 
+      .item
+        .item__top 
+          +svg('user',24)
+          span Приемная генерального <br/> директора
+        .item__bottom 
+          a(href="tel:+7 (3476) 37-71-55") +7 (3476) 37-71-55
+      .item
+        .item__top 
+          +svg('phone',24)
+          span  Приемная коммерческого <br/> директора
+        .item__bottom 
+          a(href="tel:+7 (3476) 37-71-20") +7 (3476) 37-71-20
+      .item
+        .item__top 
+          +svg('mail',24)
+          span E-mail
+        .item__bottom 
+          a(href="mail:info@salstek.ru") info@salstek.ru
+      .item
+        .item__top 
+          +svg('location',24)
+          span  Адрес
+        .item__bottom 
+          span.address 453253, РФ, Республика Башкортостан, <br/> г. Салават, ул. Индустриальная, 18
+          a(href="#" target="_blank").link Схема проезда

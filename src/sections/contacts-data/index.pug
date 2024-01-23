@@ -1,0 +1,41 @@
+include ../../components/svg.pug
+section.section.contacts-data 
+  .tabs
+    .tabs__wrapper
+      button.btn.active(data-target='data-1') Контакты структурных подразделений
+      button.btn-round(data-target='data-2') Отдел продаж 
+      button.btn-round(data-target='data-3') Клиентский сервис
+      button.btn-round(data-target='data-4') Отдел закупок
+      button.btn-round(data-target='data-5') Реквизиты компании
+  #data-1.tab-content.active
+    .contacts-data__tables
+      .contacts-data__table
+        .contacts-data__table-top
+          h3.contacts-data__title Контакты структурных подразделений
+        .contacts-data__table-content
+          each val in [1, 2, 3, 4, 5]
+            .item(class='lg2:grid-cols-4')
+              div Главный инженер
+              div Киреев Сергей Александрович
+              div +7 (3476) 37-70-18
+              div AEliseev@sar-steklo.ru
+        
+  #data-2.tab-content
+  #data-3.tab-content
+  #data-4.tab-content
+  #data-5.tab-content
+    .contacts-data__tables
+      .contacts-data__table
+        .contacts-data__table-top
+          h3.contacts-data__title Контакты структурных подразделений
+          a(href="#" target="_blank").btn-round
+            +svg('pdf',24)
+            span Скачать  
+        .contacts-data__table-content
+          each val in [1, 2, 3, 4, 5]
+            .item(class='lg2:grid-cols-4')
+              div Главный инженер
+              div Киреев Сергей Александрович
+              div +7 (3476) 37-70-18
+              div AEliseev@sar-steklo.ru
+        

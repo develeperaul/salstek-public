@@ -1,0 +1,36 @@
+.contacts-links {
+  @apply grid gap-4;
+  @apply lg2:gap-8;
+  &__top {
+    @apply grid gap-4;
+    @apply lg2:flex lg2:gap-5;
+    .link {
+      @apply rounded-4xl py-8 px-4 grid gap-2 border border-prim_100 w-full;
+      &__title {
+        @apply text-h5 text-sec_500 font-bold;
+      }
+      &.active {
+        @apply bg-50;
+      }
+    }
+  }
+  &__bottom {
+    .list {
+      @apply grid gap-2;
+      @apply lg2:flex lg2:gap-5;
+      .item {
+        @apply rounded-[2rem] bg-50 p-6 grid gap-6 w-full content-between;
+        &__top {
+          @apply text-sec_500 font-bold flex gap-3 text-body_m -tracking-4;
+        }
+        &__bottom {
+          @apply text-body_m -tracking-4 grid gap-2;
+
+          .link {
+            @apply font-bold text-prim_600;
+          }
+        }
+      }
+    }
+  }
+}

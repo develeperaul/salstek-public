@@ -1,0 +1,26 @@
+.contacts-data {
+  @apply grid gap-8;
+  @apply gap-12;
+  &__table {
+    @apply grid gap-6;
+    @apply lg2:gap-8;
+    &-top {
+      @apply grid gap-6;
+      @apply lg2:flex lg2:items-center lg2:justify-between;
+    }
+    &-content {
+      @apply grid gap-4;
+    }
+    .item {
+      @apply grid gap-2 leading-160 text-body_m;
+      @apply lg2:gap-3;
+      & > :first-child {
+        @apply font-bold text-sec_500 leading-140;
+      }
+      &:not(:last-child) {
+        @apply pb-4 border-b border-prim_100;
+        @apply lg2:pb-6;
+      }
+    }
+  }
+}
