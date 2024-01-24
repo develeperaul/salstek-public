@@ -1,0 +1,76 @@
+
+include ../../components/svg.pug
+include ../../components/downlItem.pug
+section.section.shareholders-data 
+  .tabs
+    .tabs__wrapper
+      button.btn.active(data-target='data-1') Объявления
+      button.btn-round(data-target='data-2') Информация о существенных фактах и сообщения эмитента
+      button.btn-round(data-target='data-3') Информация об аффилированных лицах
+      button.btn-round(data-target='data-4') Выплата дивидендов
+      button.btn-round(data-target='data-5') Сведения, которые могут оказать существенное влияние на стоимость ценных бумаг эмитента
+      button.btn-round(data-target='data-6') Собрания акционеров
+      button.btn-round(data-target='data-7') Ежеквартальные отчёты эмитента
+      button.btn-round(data-target='data-8') Проспект эмиссии ценных бумаг эмитента, отчёт об итогах выпуска ценных бумаг
+      button.btn-round(data-target='data-9') Прочие документы
+      button.btn-round(data-target='data-10') Материалы к годовому собранию
+
+  #data-1.tab-content.active
+    .ads 
+      h2.title Объявления
+      .list 
+        each val in [1, 2, 3, 4, 5]
+          .item 
+            .tag АО «Салаватстекло»
+            .item__bottom 
+              .item__data 06.06.2023 г.
+              .item__title Сообщение о проведении годового общего собрания акционеров АО “САЛАВАТСТЕКЛО”
+  #data-2.tab-content     
+    div 
+      h2.title Информация о существенных фактах и сообщения эмитента   
+      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
+        each val in [1, 2, 3, 4, 5]
+          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+  #data-3.tab-content     
+    div 
+      h2.title Информация об аффилированных лицах
+      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
+        each val in [1, 2, 3, 4, 5]
+          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+  #data-5.tab-content     
+    div 
+      h2.title Сведения, которые могут оказать существенное влияние на стоимость ценных бумаг эмитента
+      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
+        each val in [1, 2, 3, 4, 5]
+          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+  #data-6.tab-content     
+    div 
+      div(class='grid lg2:flex lg2:justify-between')
+        h2.title Собрание акционеров
+        p.content-text(class='lg2:w-[31.25rem]') Уважаемые акционеры АО «Салаватстекло», в связи с произошедшими изменениями в гражданском законодательстве РФ и внесенными в Устав Общества измененяими и дополнениями от 15.10.2014г. на официальном сайте АО "Салаватстекло" в данном разделе будет размещаться информация об итогах голосования по принятым решениям на общих собраниях акционеров.
+  #data-7.tab-content     
+    div 
+      h2.title Ежеквартальные отчёты эмитента
+      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
+        each val in [1, 2, 3, 4, 5]
+          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file') 
+  #data-8.tab-content     
+    div 
+      h2.title Проспект эмиссии ценных бумаг эмитента, отчёт об итогах выпуска ценных бумаг
+      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
+        each val in [1, 2, 3, 4, 5]
+          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file') 
+  #data-9.tab-content     
+    div 
+      h2.title Прочие документы
+      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
+        each val in [1, 2, 3, 4, 5]
+          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+  #data-10.tab-content     
+    div 
+      h2.title Материалы к годовому собранию
+      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
+        each val in [1, 2, 3, 4, 5]
+          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+            
+      

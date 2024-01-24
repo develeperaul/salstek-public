@@ -1776,12 +1776,20 @@ ul.breadcrumb li a:hover {
   display: block;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
 
 .resize {
   resize: both;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .overflow-hidden {
@@ -7420,16 +7428,147 @@ footer {
   }
 }
 
+.shareholders-data {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .shareholders-data {
+    gap: 3rem;
+  }
+}
+
+.shareholders-data {
+  @media (min-width: 1024px) {
+    .tabs__wrapper {
+      flex-wrap: wrap;
+    }
+  }
+  .tabs__wrapper {
+    @media (min-width: 1024px) {
+      & > button {
+        width: -moz-fit-content;
+        width: fit-content;
+      }
+    }
+  }
+  .title {
+    margin-bottom: 1.5rem;
+  }
+  .title {
+    font-size: 1.75rem;
+    line-height: 130%;
+  }
+  @media (min-width: 1024px) {
+    .title {
+      margin-bottom: 3rem;
+    }
+  }
+  .ads {
+    .list {
+      display: grid;
+    }
+    .list {
+      gap: 1rem;
+    }
+    @media (min-width: 1024px) {
+      .list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 1024px) {
+      .list {
+        gap: 1.25rem;
+      }
+    }
+    .item {
+      display: grid;
+    }
+    .item {
+      height: 23.4375rem;
+    }
+    .item {
+      align-content: space-between;
+    }
+    .item {
+      border-radius: 2rem;
+    }
+    .item {
+      border-width: 1px;
+    }
+    .item {
+      --tw-border-opacity: 1;
+      border-color: rgb(213 240 246 / var(--tw-border-opacity));
+    }
+    .item {
+      padding: 1.5rem;
+    }
+    .item {
+      &__bottom {
+        display: grid;
+      }
+      &__bottom {
+        gap: 0.75rem;
+      }
+      &__data {
+        font-size: 0.875rem;
+        line-height: 140%;
+      }
+      &__data {
+        line-height: 160%;
+      }
+      &__data {
+        letter-spacing: -0.035rem;
+      }
+      &__data {
+        --tw-text-opacity: 1;
+        color: rgb(163 180 194 / var(--tw-text-opacity));
+      }
+      &__title {
+        font-size: 1.25rem;
+        line-height: 130%;
+      }
+      &__title {
+        font-weight: 700;
+      }
+      &__title {
+        letter-spacing: -0.05rem;
+      }
+      &__title {
+        --tw-text-opacity: 1;
+        color: rgb(123 147 167 / var(--tw-text-opacity));
+      }
+    }
+  }
+}
+
 @media (min-width: 1024px) {
   .lg2\:block {
     display: block;
+  }
+
+  .lg2\:flex {
+    display: flex;
   }
 
   .lg2\:hidden {
     display: none;
   }
 
+  .lg2\:w-\[31\.25rem\] {
+    width: 31.25rem;
+  }
+
   .lg2\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg2\:justify-between {
+    justify-content: space-between;
+  }
+
+  .lg2\:gap-5 {
+    gap: 1.25rem;
   }
 }

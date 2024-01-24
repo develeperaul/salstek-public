@@ -1,0 +1,32 @@
+.shareholders-data {
+  @apply grid gap-6;
+  @apply lg2:gap-12;
+  .tabs__wrapper {
+    @apply lg2:flex-wrap;
+    & > button {
+      @apply lg2:w-fit;
+    }
+  }
+  .title {
+    @apply mb-6 text-h3;
+    @apply lg2:mb-12;
+  }
+  .ads {
+    .list {
+      @apply grid gap-4;
+      @apply lg2:grid-cols-4 lg2:gap-5;
+    }
+    .item {
+      @apply rounded-[2rem] p-6 border border-prim_100 h-[23.4375rem] grid content-between;
+      &__bottom {
+        @apply grid gap-3;
+      }
+      &__data {
+        @apply text-sec_300 text-body_s leading-160 -tracking-3.5;
+      }
+      &__title {
+        @apply text-h5 font-bold text-sec_500 -tracking-5;
+      }
+    }
+  }
+}
