@@ -1,2 +1,153 @@
+include ../../components/svg.pug
+include ../../components/downlItem.pug
+-
+  const head = [
+      'MultiComfort° Select One 48/29 ',
+      'MultiComfort° Select One 58/34',
+      'MultiComfort° Select One 70/37',
+      'MultiComfort° Select One 48/29 ',
+      'MultiComfort° Select One 58/34',
+      'MultiComfort° Select One 70/37'
+    ]
 section.section.characteristics 
   h2.title Характеристики MultiComfort° Select One 
+  .characteristics__list.characteristics__list-desk
+    .item
+      h4.item__title Ассортимент
+      ul.list
+        li MultiComfort° Select One 48/29 
+        li MultiComfort° Select One 58/34
+        li MultiComfort° Select One 70/37
+    .item 
+      h4.item__title Показатели
+      .item__content
+        div(role="region", aria-labelledby="caption", tabindex="0")
+          table
+            
+            thead
+              tr
+                th Показатель/<br/>Продукт
+                each val in head
+                  th= val
+                
+            tbody
+              
+              tr
+                th
+                  .left-title
+                    +svg('light-bulb',24)
+                    span Светопропускание (LT)
+                each val in [1, 2, 3, 4, 5,6]
+                  td= val
+        +downlItem('Технические характеристики стекла с покрытием', 'pdf, 247.0 Кб','pdf') 
+    .item 
+      h4.item__title Применение
+      p.item__text Уникальные характеристики стекла  MultiComfort° Select One направлены на создание архитектуры будущего, максимально точно передавая задумку, подчеркивая детали, создавая объем и глубину объекта. Является лучшим решением для больших площадей остекления.
+    .item 
+      h4.item__title Стандартные размеры, мм
+      ul.list
+        li 2250 х 3210
+        li 2550 х 3210
+        li 6000 х 3210
+    .item 
+      h4.item__title Толщины, мм
+      p.item__text От 4 до 12
+    .item 
+      h4.item__title Место производства
+      ul.list
+        li АО «Салаватстекло»
+        li АО «Саратовстройстекло»
+    .item
+      h4.item__title Сертификаты
+      .item__content.item__content-col2
+        +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+        +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+        +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+        +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+        +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+        +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+  .characteristics__list.characteristics__list-mob 
+    .accordeon  
+      .item
+        .item__head 
+          span Ассортимент
+          +svg('down',24)(class='icon')
+        .item__body 
+          .item__body-wrapper
+            div
+              ul.list
+                li MultiComfort° Select One 48/29 
+                li MultiComfort° Select One 58/34
+                li MultiComfort° Select One 70/37
+      .item
+        .item__head 
+          span Показатели
+          +svg('down',24)(class='icon')
+        .item__body 
+          .item__body-wrapper
+            div 
+              div.table-mob 
+                div.table-mob__head 
+                  .tr
+                    each val in head
+                      div.th= val
+                .table-mob__body 
+                  div.tr
+                    
+                    div.th 
+                      +svg('light-bulb',24)
+                      span Светопропускание (LT)
+                    .tr__wrapper
+                      each val in [1, 2, 3, 4, 5,6]
+                        div.td= val
+              +downlItem('Технические характеристики стекла с покрытием', 'pdf, 247.0 Кб','pdf') 
+      .item
+        .item__head 
+          span Применение
+          +svg('down',24)(class='icon')
+        .item__body 
+          .item__body-wrapper
+            div
+              p.item__text Уникальные характеристики стекла  MultiComfort° Select One направлены на создание архитектуры будущего, максимально точно передавая задумку, подчеркивая детали, создавая объем и глубину объекта. Является лучшим решением для больших площадей остекления.
+      .item
+        .item__head 
+          span Стандартные размеры, мм
+          +svg('down',24)(class='icon')
+        .item__body 
+          .item__body-wrapper
+            div
+              ul.list
+                li 2250 х 3210
+                li 2550 х 3210
+                li 6000 х 3210
+      .item
+        .item__head 
+          span Толщины, мм
+          +svg('down',24)(class='icon')
+        .item__body 
+          .item__body-wrapper
+            div
+              p.item__text От 4 до 12
+      .item
+        .item__head 
+          span Место производства
+          +svg('down',24)(class='icon')
+        .item__body 
+          .item__body-wrapper
+            div
+              ul.list
+                li АО «Салаватстекло»
+                li АО «Саратовстройстекло»
+      .item
+        .item__head 
+          span Сертификаты
+          +svg('down',24)(class='icon')
+        .item__body 
+          .item__body-wrapper
+            div
+              +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+              +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+              +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+              +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+              +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 
+              +downlItem('Декларация_для_уксусной_бутылки.pdf', 'pdf, 247.0 Кб','pdf') 

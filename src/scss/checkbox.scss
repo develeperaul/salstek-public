@@ -1,97 +1,68 @@
-.checkbox-other {
-  
-  color: green;
-  display: block;
-  margin-top: 20px;
-  line-height: 22px;
+.checkbox__wrapper {
+  /* меняем внешний вид курсора */
   cursor: pointer;
-  user-select: none;
-  position: relative;
-  opacity: 0.8;
+  /* выравниваем элементы по центру */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.checkbox-other input[type="checkbox"] {
+/* отдельные настройки для самого чекбокса */
+.checkbox__input {
+  /* устанавливаем абсолютное позиционирование */
   position: absolute;
-  z-index: -1;
+  /* задаём высоту и ширину */
+  width: 18px;
+  height: 18px;
+  /* делаем чекбокс непрозрачным, чтобы скрыть исходный элемент и заменить его потом нарисованным */
   opacity: 0;
-  display: block;
-  width: 0;
-  height: 0;
+  /* меняем внешний вид курсора */
+  cursor: pointer;
 }
 
-.checkbox-other p {
-  display: inline-block;
-  position: relative;
-  padding: 0 0 0 28px;
-  line-height: 120%;
-  color: white;
+/* настройки для SVG-иконки */
+.checkbox__icon {
+  /* размеры совпадают с размерами скрытого чекбокса */
+  width: 18px;
+  height: 18px;
+  /* убираем ограничение по наименьшей ширине блока */
+  flex-shrink: 0;
+  /* разрешаем отображать содержимое за пределами блока */
+  overflow: visible;
+}
+.checkbox__icon rect {
+  transition: all 0.2s ease-out;
 }
 
-.checkbox-other p:before {
-  content: "";
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  left: 0;
-  top: 3px;
-  border: 1px solid #fff;
-  border-radius: 9999px;
+/* общие настройки для нового чекбокса и галочки */
+.checkbox__icon .tick {
+  /* рисовать будем всё отрезками по 20 пикселей */
+  stroke-dasharray: 20px;
+  /* но сместим начало всех отрезков тоже на 20 пикселей, чтобы пока галочка не рисовалась */
+  stroke-dashoffset: 20px;
+  /* это даст нам плавную анимацию отрисовки галочки */
+  transition: stroke-dashoffset 0.2s ease-out;
 }
 
-input.checkbox_invalid + p:before {
-  border: 1px solid red;
+/* настройки для подписи чекбокса */
+.checkbox__label {
+  /* добавляем отступ слева */
+  @apply text-body_s -tracking-3.5 text-sec_500;
+  margin-left: 0.5em;
+  transition: color 0.2s ease-out;
 }
 
-/* Checked */
-.checkbox-other input[type="checkbox"] + p:after {
-  content: "";
-  opacity: 0;
-  transition: opacity 0.3s ease;
+/* включаем возможность поставить галочку */
+.checkbox__input:checked + .checkbox__icon rect {
+  fill: rgba(36, 144, 168, 0.2);
 }
-
-.checkbox-other input[type="checkbox"]:checked + p:after {
-  position: absolute;
-  content: "";
-  background-image: url(../assets/icons/other/check.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  width: 8px;
-  height: 6px;
-  left: 3px;
-  top: 7px;
-  opacity: 1;
+.checkbox__input:checked + .checkbox__icon rect {
+  stroke: #2490a8;
 }
-
-/* Focus */
-.focused p:before {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+.checkbox__input:checked ~ .checkbox__label {
+  @apply text-dark;
 }
-
-/* Hover */
-.checkbox-other p:hover:after {
-  filter: brightness(110%);
-}
-
-/* Active */
-.checkbox-other p:active:before,
-.checkbox-other p:active:after {
-  /* filter: brightness(30%); */
-}
-
-/* Disabled */
-.checkbox-other input[type="checkbox"]:disabled + p {
-  color: #666;
-  cursor: default;
-}
-
-.checkbox-other input[type="checkbox"]:disabled + p:before,
-.checkbox-other input[type="checkbox"]:disabled + p:after {
-  filter: grayscale(100%);
-  opacity: 0.6;
-}
-
-.checkbox__link {
-  text-decoration: underline;
+.checkbox__input:checked + .checkbox__icon .tick {
+  /* убираем смещение для отрезков, чтобы включить анимацию галочки */
+  stroke-dashoffset: 0;
 }

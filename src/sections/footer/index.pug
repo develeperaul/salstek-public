@@ -1,4 +1,114 @@
 include ../../components/svg.pug
+include ../../components/edit.pug
+
+include ../../components/quantity/index.pug
+include ../../components/progress.pug
+include ../../components/input.pug
+include ../../components/textarea.pug
+include ../../components/select/index.pug
+button.btn(data-target="popup" data-action="open") Open
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup2")
+  button.btn-fit.btn-close(data-target="popup2"  data-action="close") 
+    +svg('close')
+  .content 
+    form#ordering.content__wrapper.stepper.ordering-samples-form
+      .content__top 
+        button.btn-close(data-target="popup2" data-action="close" type='button')
+          +svg('close')
+        .content__top-text--content 
+          .content__title проверьте комплектацию заказа
+          .content__text Проверьте комплектацию заказа и заполните контактную формы для отправки образцов
+        div 
+          .progresses 
+            .progresses__wrapper
+              +progress('Проверка комплектации заказа')(class="active")
+              +progress('Контакные данные')
+          .stepper__content
+            .stepper__content-slide
+              h2.stepper__content-title Проверка комплектации заказа
+              div#ordering
+              template#ordering-elements
+                .item-label
+                  .item-label__head
+                    +svg("cheks",16)
+                  .item-label__body
+                .item-child
+                  .item-child__label
+                  .item-child__btns
+                    .item-quantity
+                      +quantity()
+                    .item-child__count
+                    button(type='button').item-action
+                      +svg('dots', 24)
+                  .item-edit
+                    +edit()
+                  
+                .item-parent
+                  .item-parent__label
+                    +svg("cheks",16)
+                  .item-parent__btns
+                    .item-quantity
+                      +quantity()
+                    
+                    .item-parent__count
+                    button(type='button').item-action
+                      +svg('dots', 24)
+                  .item-edit
+                    +edit()
+
+
+            .stepper__content-slide
+                h2.stepper__content-title Оставьте контакные данные
+                .form__content
+                  .fields
+                    +input('organization','Название организации*')
+                    +input('name','Фамилия Имя Отчество*')
+                    +input('phone','Номер телефона*')(data-mask="+{7}(000)-000-00-00")
+                    +input('email','E-mail')
+                    +input('address','Адрес поставки*')
+                    +textarea('comment','Комментарий ...')
+                  p Отправляя форму, вы даёте своё согласие на обработку 
+                    a(href="#") персональных данных
+      .stepper__btns(data-step="first") 
+        .content__bottom
+          button.btn.btn-next(type='button') Продолжить
+        //- .stepper__btns
+        //-   button.btn.btn-back(type='button') Назад
+      .stepper__btns
+        .content__bottom
+          button.btn.btn-back(type='button') Назад
+          button.btn.btn-next(type='button') Продолжить
+      .stepper__btns(data-step="last") 
+        .content__bottom
+          button.btn.btn-back(type='button') Назад
+          button.btn(type='submit') Подтвердить заказ
+          
+
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup")
+  button.btn-fit.btn-close(data-target="popup"  data-action="close") 
+    +svg('close')
+  .content 
+    form.content__wrapper
+      .content__top 
+        button.btn-close(data-target="popup" data-action="close")
+          +svg('close')
+        .content__top-text--content
+          .content__title Связаться с менеджером
+          .content__text Оставьте контактные данные
+        .form__content
+          .fields
+            +input('name','Фамилия Имя Отчество*')
+            +input('phone','Номер телефона*')(data-mask="+{7}(000)-000-00-00")
+            +input('email','E-mail')
+            +select('institute','Выберите завод', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+            +select('department','Выберите отдел', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+            +textarea('comment','Комментарий ...')
+          p Отправляя форму, вы даёте своё согласие на обработку 
+            a(href="#") персональных данных
+          
+      .content__bottom
+        button.btn(type='submit' inc) Отправить
+      
 footer
   .container 
     .footer__wrapper

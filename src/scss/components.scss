@@ -1,6 +1,10 @@
 @tailwind components;
 
 @layer components {
+  /*list*/
+  ul.list {
+    @apply marker:text-dark leading-160 list-disc pl-5 -tracking-4;
+  }
   /* input */
   .field {
     @apply w-full relative;
@@ -61,7 +65,7 @@
   .select {
     @apply relative;
     &__head {
-      @apply rounded-xl border border-100 h-14.5 w-full bg-white pl-4 pr-12 flex items-center text-body_m relative;
+      @apply rounded-xl border border-100 h-14.5 w-full bg-white pl-4 pr-12 flex items-center text-body_m relative cursor-pointer;
       &:after {
         content: '';
         position: absolute;
@@ -91,11 +95,44 @@
         @apply bottom-0 transform translate-y-full;
       }
       &-wrapper {
-        @apply rounded-xl border border-100;
+        @apply rounded-xl border border-100 overflow-y-auto;
+        max-height: 360px;
+        &::-webkit-scrollbar {
+          height: 4px; /* высота для горизонтального скролла */
+          width: 4\px;
+          background-color: theme(colors.white);
+          border-radius: 18px;
+        }
+
+        /* ползунок скроллбара */
+        &::-webkit-scrollbar-thumb {
+          background-color: theme(colors.100);
+          border-radius: 18px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: #253861;
+        }
+        .checkbox__wrapper {
+          &:hover {
+            @apply bg-500;
+          }
+          &:has(> input:checked) {
+            @apply bg-50;
+          }
+          @apply py-2 px-4 rounded-lg;
+          &.active {
+            @apply bg-prim_600;
+          }
+        }
+        .checkbox__childs {
+          @apply grid gap-1 mt-1;
+          padding-left: 30px;
+        }
       }
     }
     &__options {
-      @apply grid px-3 py-3;
+      @apply grid gap-1 px-3 py-3;
 
       & > div {
         @apply rounded-lg text-body_s -tracking-3.5 text-sec_500 flex items-center cursor-pointer px-4 py-2;
@@ -157,13 +194,16 @@
   }
 
   .btn-section {
-    @apply py-6 px-10 rounded-[2rem] font-bold -tracking-6  text-h4 bg-prim_600 text-white flex gap-3 items-center justify-between whitespace-nowrap;
+    @apply px-6 py-5 lg2:py-6 lg2:px-10 rounded-3xl lg2:rounded-[2rem] font-bold -tracking-6 text-h5 lg2:text-h4 bg-prim_600 text-white flex gap-3 items-center justify-between;
     @apply [@media(hover:hover)]:hover:bg-prim_500;
     @apply [@media(hover:none)]:active:bg-prim_500;
     @apply disabled:border-100 disabled:border disabled:bg-white;
     .label {
       @apply text-body_s font-bold -tracking-1.75 text-sec_100 mb-1;
       @apply mb-3;
+    }
+    svg {
+      @apply shrink-0;
     }
     &_disabled {
       @apply text-100 border-100 bg-white;
@@ -200,7 +240,17 @@
     @apply grid gap-4;
     .item {
       &__head {
-        @apply p-3 rounded-xl font-bold text-sec_500;
+        @apply p-3 rounded-xl font-bold text-sec_500 flex justify-between items-center;
+        .icon {
+          @apply transition duration-300 ease-in-out;
+        }
+      }
+      &.active {
+        .item__head {
+          .icon {
+            @apply transform rotate-180;
+          }
+        }
       }
       &__body {
         @apply grid;
@@ -208,17 +258,9 @@
         overflow: hidden;
         &-wrapper {
           min-height: 0;
-          & > * {
-            @apply p-3 px-3 block rounded-xl;
-            &.active {
-              @apply bg-100;
-            }
-          }
         }
       }
-      &.active .item__head {
-        @apply bg-100 text-prim_600;
-      }
+
       &.active .item__body {
         grid-template-rows: 1fr;
       }
@@ -257,6 +299,7 @@
 
   .downl-item {
     @apply p-4 rounded-3xl border border-prim_100  flex gap-3 items-start;
+    overflow-wrap: anywhere;
     &__icon {
       @apply w-12 h-12 bg-50 rounded-xl grid place-content-center text-sec_500 shrink-0;
     }
@@ -307,6 +350,345 @@
     .small-slider .swiper-pagination {
       @screen lg2 {
         --swiper-pagination-bottom: 1.5rem;
+      }
+    }
+  }
+
+  /*table*/
+  table {
+    margin: 0;
+    border: none;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    border: none;
+    width: 100%;
+  }
+  table td,
+  table th {
+    padding: 0.5rem 1rem;
+  }
+  table th {
+    font-weight: 400;
+  }
+  table thead th {
+    @apply text-body_s -tracking-3;
+    padding: 16px 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 200px;
+    background: white;
+  }
+  table td {
+    @apply text-body_m font-bold text-sec_500 border-t border-prim_100;
+    background: #fff;
+    padding: 4px 5px;
+    text-align: center;
+  }
+  table thead th:not(:first-child) {
+    width: 146px;
+  }
+  table tbody th {
+    text-align: left;
+    position: relative;
+  }
+  table thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    text-align: left;
+  }
+  table tbody th {
+    @apply text-body_s -tracking-3  border-t border-prim_100;
+    position: sticky;
+    left: 0;
+    background: white;
+    z-index: 1;
+    width: 200px;
+    height: auto;
+  }
+  caption {
+    text-align: left;
+    padding: 0.25rem;
+    position: sticky;
+    left: 0;
+  }
+
+  [role='region'][aria-labelledby][tabindex] {
+    width: 100%;
+    max-height: 98vh;
+    overflow: auto;
+    /* полоса прокрутки (скроллбар) */
+    &::-webkit-scrollbar {
+      height: 4px; /* высота для горизонтального скролла */
+      width: 4\px;
+      background-color: theme(colors.50);
+      border-radius: 18px;
+    }
+
+    /* ползунок скроллбара */
+    &::-webkit-scrollbar-thumb {
+      background-color: theme(colors.prim_600);
+      border-radius: 18px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #253861;
+    }
+  }
+  [role='region'][aria-labelledby][tabindex]:focus {
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+    outline: 0;
+  }
+
+  .left-title {
+    @apply flex items-center gap-4;
+    & > svg {
+      @apply shrink-0 text-prim_600;
+    }
+  }
+
+  .table-mob {
+    @apply w-full overflow-auto;
+    &::-webkit-scrollbar {
+      height: 4px; /* высота для горизонтального скролла */
+      width: 4\px;
+      background-color: theme(colors.50);
+      border-radius: 18px;
+    }
+
+    /* ползунок скроллбара */
+    &::-webkit-scrollbar-thumb {
+      background-color: theme(colors.prim_600);
+      border-radius: 18px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #253861;
+    }
+    &__head {
+      display: contents;
+      .tr {
+        @apply inline-flex flex-nowrap gap-4;
+
+        .th {
+          @apply w-[120px] shrink-0 border-b border-sec_100 py-4 px-2 text-body_s tracking-3.5 text-center;
+        }
+      }
+    }
+    &__body {
+      display: contents;
+      .tr {
+        display: contents;
+        &__wrapper {
+          @apply inline-flex flex-nowrap gap-4;
+          position: relative;
+        }
+        .th {
+          @apply text-body_s -tracking-3.5;
+          position: sticky;
+          top: 0;
+          left: 0;
+          height: 3rem;
+          padding: 0 0.5rem;
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          width: 0;
+          & > svg {
+            @apply shrink-0 text-prim_600;
+          }
+        }
+        .td {
+          @apply w-[120px] shrink-0 py-3 px-1 grid place-content-center;
+        }
+      }
+    }
+  }
+  .country {
+    @apply py-2 px-3 bg-white text-sec_500 text-body_m -tracking-4 font-bold rounded-xl inline-flex gap-3 items-center w-fit;
+  }
+  .tooltip {
+    @apply rounded-xl py-2 px-3 bg-white relative inline-flex items-center text-body_s leading-160 tracking-3.5 gap-0.5 overflow-hidden h-10;
+    &::before {
+      content: '';
+      @apply w-2.5 h-2.5 rounded-full  mb-0.5 mx-2 bg-[#90B1DA];
+    }
+  }
+
+  .progress {
+    @apply flex justify-between gap-8 min-w-[260px] items-center text-body_s -tracking-3.5  text-sec_200 font-bold pb-3 relative w-full;
+    svg {
+      @apply text-sec_200 transition-all duration-300 ease-in-out;
+    }
+    &::after {
+      content: '';
+      @apply absolute h-1 w-0 bg-prim_600 rounded-xl transition-all duration-300 ease-in-out bottom-0;
+    }
+    &::before {
+      content: '';
+      @apply absolute h-1 w-full bg-50 rounded-xl  bottom-0;
+    }
+    &.active {
+      svg {
+        @apply text-prim_600;
+      }
+      &::after {
+        @apply w-full;
+      }
+    }
+  }
+  .stepper {
+    .progresses {
+      @apply mb-8;
+      @apply lg2:mb-12;
+    }
+    &__title {
+      @apply text-h4 -tracking-4 font-bold text-sec_500 mb-6;
+      @apply lg2:mb-8;
+    }
+    &__content {
+      &-title {
+        @apply text-h4 font-bold  mb-6;
+        @apply lg2:mb-8;
+      }
+      &-slide {
+        &--hide {
+          display: none;
+        }
+      }
+    }
+    &__btns {
+      &-hidden {
+        display: none;
+      }
+    }
+  }
+  #ordering {
+    @apply grid;
+    & > *:not(:last-child) {
+      @apply border-b border-prim_100 pb-6;
+    }
+    & > *:not(:first-child) {
+      @apply pt-6;
+    }
+  }
+  .edit {
+    @apply w-fit grid text-sec_100 -tracking-4 bg-dark rounded-xl p-1;
+
+    box-shadow: 0px 303px 85px 0px #00000000;
+
+    & > * {
+      @apply flex items-center p-2 px-3 gap-3;
+      svg {
+        @apply shrink-0;
+      }
+    }
+  }
+  .item-label {
+    @apply grid gap-4;
+    &__head {
+      @apply flex gap-4;
+      @apply lg2:py-4;
+      svg {
+        @apply text-prim_600 shrink-0 w-6 h-6;
+      }
+      .checkbox__label {
+        @apply text-h5 text-dark m-0;
+      }
+    }
+    &__body {
+      @apply grid gap-4;
+      @apply lg2:flex lg2:flex-wrap;
+    }
+  }
+
+  .item-child {
+    @apply border border-prim_100 rounded-lg px-3 py-2 flex items-center justify-between gap-4 relative;
+    @apply lg2:w-fit;
+
+    .item-child__label {
+      .checkbox__label {
+        @apply text-body_s text-dark;
+      }
+    }
+    .item-child__btns {
+      @apply shrink-0 flex gap-2;
+      .item-quantity {
+        @apply hidden;
+        &.active {
+          @apply block;
+        }
+      }
+      .item-child__count {
+        @apply py-2 px-3 text-body_m -tracking-4 bg-500 rounded-lg shrink-0 min-w-[42px] text-center;
+      }
+      .item-action {
+        @apply text-sec_200 bg-white h-[42px] shrink-0;
+      }
+    }
+    .item-quantity.active + .item-child__count {
+      display: none;
+    }
+    .item-edit {
+      display: none;
+      .edit {
+        @apply absolute bottom-0 right-0 transform translate-y-full;
+        z-index: 1;
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+  .item-parent {
+    @apply grid gap-5 relative;
+    @apply lg2:flex lg2:items-center lg2:justify-between;
+    .item-parent__label {
+      @apply flex gap-4;
+      svg {
+        @apply text-prim_600 shrink-0 w-6 h-6;
+      }
+      .checkbox__label {
+        @apply text-h5 text-dark m-0;
+      }
+    }
+    .item-parent__btns {
+      @apply grid grid-cols-[1fr,auto] gap-4;
+      @apply flex;
+      .item-quantity {
+        @apply hidden;
+        &.active {
+          @apply block;
+        }
+        .quantity {
+          @apply h-[50px] text-body_m tracking-4;
+        }
+      }
+      .item-parent__count {
+        @apply text-body_m tracking-4 min-w-[50px] h-[50px] grid place-content-center bg-500 rounded-lg shrink-0;
+      }
+      .item-action {
+        @apply h-[50px] w-[50px] border border-sec_200 rounded-lg grid place-content-center;
+        svg {
+          @apply text-sec_300 w-6 h-6;
+        }
+      }
+
+      .item-quantity.active + .item-parent__count {
+        display: none;
+      }
+    }
+    .item-edit {
+      display: none;
+      .edit {
+        @apply absolute bottom-0 right-0 transform translate-y-full;
+        z-index: 1;
+      }
+      &.active {
+        display: block;
       }
     }
   }

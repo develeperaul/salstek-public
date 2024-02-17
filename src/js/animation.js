@@ -1,8 +1,14 @@
-const animateCSS = (element, animation, prefix = 'animate__') =>
-  // We create a Promise and return it
-  new Promise((resolve, reject) => {
+export const animateCSS = (element, animation, prefix = 'animate__') => {
+  let node;
+  // console.log(element);
+  if (typeof element === 'string') {
+    node = document.querySelector(element);
+  } else {
+    console.log('dsds');
+    node = element;
+  }
+  return new Promise((resolve, reject) => {
     const animationName = `${prefix}${animation}`;
-    const node = document.querySelector(element);
 
     node.classList.add(`${prefix}animated`, animationName);
 
@@ -14,7 +20,10 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
     }
 
     node.addEventListener('animationend', handleAnimationEnd, { once: true });
+
+    // We create a Promise and return it
   });
+};
 
 const btns = document.querySelectorAll('[data-action]');
 [...btns].forEach((btn) => {
@@ -27,23 +36,29 @@ function clickBtn(e) {
     const el = document.querySelector(`#${target}`);
     if (el) {
       if (el.dataset?.animateOpen && el.dataset?.animateClose) {
-        if (action === 'open')
-          animateCSS(`#${target}`, el.dataset.animateOpen).then(() =>
-            el.classList.add('active')
-          );
+        if (action === 'open') {
+          el.classList.add('open');
+          animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
+            el.classList.remove('open');
+            el.classList.add('active');
+          });
+        }
         if (action === 'close')
           animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
             el.classList.remove('active')
           );
         if (action === 'toggle') {
-          if (el.classList.contains('active'))
+          if (el.classList.contains('active')) {
             animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
               el.classList.remove('active')
             );
-          else
-            animateCSS(`#${target}`, el.dataset.animateOpen).then(() =>
-              el.classList.add('active')
-            );
+          } else {
+            el.classList.add('open');
+            animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
+              el.classList.remove('open');
+              el.classList.add('active');
+            });
+          }
         }
       } else {
         if (action === 'open') el.classList.add('active');

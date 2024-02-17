@@ -12,6 +12,9 @@ header {
       @apply hidden lg2:block lg2:col-span-5 lg2:self-center lg2:justify-self-center;
     }
     &__right {
+      & > * {
+        @apply shrink-0;
+      }
       @apply flex gap-8 items-center lg2:col-span-2 lg2:justify-end;
       .link {
         @apply text-prim_600 text-body_s font-bold -tracking-1.75 lg2:hidden;

@@ -1,0 +1,34 @@
+mixin select(name,placeholder, items)
+  .select.select-check 
+    input(type="text" name=name hidden)
+    .select__head #{placeholder}
+    .select__body  
+      .select__body-wrapper
+        .select__options 
+          each item in items
+            
+            if(item.childs)
+              label(data-valcheck=item.val).checkbox 
+                .checkbox__wrapper
+                  input(type="checkbox" name="" hidden disabled).checkbox__input
+                  svg.checkbox__icon(viewbox='0 0 22 22')
+                    path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                    rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                  span.checkbox__label #{item.name}
+                .checkbox__childs 
+                  each item2 in item.childs
+                    label(data-valcheck=item2.val).checkbox 
+                      .checkbox__wrapper
+                        input(type="checkbox" name="" hidden).checkbox__input
+                        svg.checkbox__icon(viewbox='0 0 22 22')
+                          path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                          rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                        span.checkbox__label #{item2.name}
+            else
+              label(data-val-check=item.val).checkbox 
+                .checkbox__wrapper
+                  input(type="checkbox" name="" hidden).checkbox__input
+                  svg.checkbox__icon(viewbox='0 0 22 22')
+                    path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                    rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                  span.checkbox__label #{item.name}

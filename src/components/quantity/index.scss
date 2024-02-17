@@ -1,0 +1,16 @@
+.quantity {
+  @apply inline-flex flex-nowrap items-center gap-2 text-body_m -tracking-4 py-2 px-3 rounded-lg bg-white border border-prim_100;
+  &:hover {
+    @apply border-prim_200;
+  }
+  &:has(button:active) {
+    @apply border-prim_400;
+    box-shadow: 0px 0px 8px 0px rgba(87, 195, 219, 0.32);
+  }
+  &.disabled {
+    @apply border-100 text-100;
+  }
+  & > button {
+    @apply text-sec_500;
+  }
+}

@@ -1,0 +1,16 @@
+
+extend ../layouts/main.pug
+include ../components/svg.pug
+block top
+  include ../sections/header-product-arh/index.pug  
+block content
+  include ../sections/orderingSamples/index.pug
+  
+  
+  section.btns-section 
+    button(data-target="popup2" data-action="open").btn-section 
+      span Заказ образцов
+      +svg('forward',24)
+  include ../sections/writeToUs/index.pug
+  
+  

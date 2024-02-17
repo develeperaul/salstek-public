@@ -18,6 +18,24 @@
     .content .accordeon .item .item__body .item__body-wrapper > * {
       @apply pl-12;
     }
+    .accordeon {
+      .item {
+        &.active .item__head {
+          @apply bg-100 text-prim_600;
+        }
+        &__body {
+          &-wrapper {
+            min-height: 0;
+            & > * {
+              @apply p-3 px-3 block rounded-xl;
+              &.active {
+                @apply bg-100;
+              }
+            }
+          }
+        }
+      }
+    }
     .content-other {
       @apply pt-8 border-t border-prim_100 grid;
       .logo,

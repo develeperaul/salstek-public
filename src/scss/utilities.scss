@@ -17,6 +17,7 @@
       @apply mb-8;
       @apply lg2:mb-[2.75rem];
     }
+
     &__top {
       @apply grid gap-8;
       @apply lg2:content-between lg2:pr-16 lg2:gap-0;
@@ -108,6 +109,68 @@
       }
     }
   }
+
+  .header-project {
+    @apply grid content-between relative  rounded-b-4xl mb-4;
+    @apply lg2:rounded-b-6xl;
+    height: 594px;
+
+    padding-bottom: 40px;
+    padding-inline: 16px;
+    position: relative;
+    padding-top: calc(89px + 32px);
+    @screen lg2 {
+      padding-top: calc(89px + 40px);
+      padding-inline: 40px;
+      padding-bottom: 80px;
+      height: 740px;
+    }
+    &::before {
+      @apply rounded-b-4xl;
+      @apply lg2:rounded-b-6xl;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.24) 0%,
+        rgba(0, 0, 0, 0.24) 100%
+      );
+    }
+    & > * {
+      position: relative;
+    }
+    &__top {
+      ul.breadcrumb li {
+        @apply text-sec_300;
+        &::before {
+          @apply text-white;
+        }
+        a {
+          @apply text-white;
+        }
+      }
+    }
+    &__bottom {
+      @apply grid gap-4;
+      @apply lg2:gap-6;
+      .list {
+        @apply grid gap-2;
+        @apply lg2:flex lg2:flex-wrap;
+      }
+    }
+    .title {
+      @apply text-white;
+      @screen lg2 {
+        max-width: 864px;
+        width: 100%;
+      }
+    }
+  }
+
   .not-found {
     @apply bg-500 rounded-b-4xl  px-4 pb-10  overflow-hidden mb-4 h-screen relative;
     @apply lg2:p-10 lg2:rounded-6xl;
@@ -199,5 +262,179 @@
 
   .content-text {
     @apply text-body_m leading-180 -tracking-4 grid gap-4 max-w-[42.5rem] content-start;
+  }
+  .env-t {
+    padding-top: max(20px, env(safe-area-inset-top, 20px));
+  }
+
+  .env-b {
+    padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+  }
+  .modal {
+    @apply fixed opacity-0 top-0 left-0 w-0 h-0 overflow-hidden  bg-500;
+    z-index: 100;
+    @screen lg2 {
+      background: rgba(0, 0, 0, 0.34);
+    }
+    &.open {
+      @apply opacity-100 w-full h-full;
+    }
+    &.active {
+      @apply opacity-100 w-full h-full;
+    }
+    & > .btn-close {
+      @apply hidden lg2:grid absolute top-12 right-12;
+    }
+    .content {
+      @apply lg2:py-8 lg2:px-4 lg2:absolute lg2:top-1/2 lg2:left-1/2 lg2:transform lg2:-translate-x-1/2 lg2:-translate-y-1/2;
+      @media screen and (max-width: 1024px) {
+        height: 100%;
+      }
+      @screen lg2 {
+        padding-top: 0;
+        padding-bottom: 0;
+        max-width: 1160px;
+        width: 100%;
+      }
+      &__wrapper {
+        @apply grid grid-rows-[1fr_auto] gap-2.5 overflow-auto;
+        @apply lg2:gap-12 lg2:p-12 lg2:rounded-4xl lg2:bg-white lg2:border lg2:border-prim_100;
+        @media screen and (max-width: 1024px) {
+          padding-top: max(16px, env(safe-area-inset-top, 16px));
+          height: 100%;
+        }
+      }
+      &__title {
+        @apply font-intro uppercase -tracking-3.5 text-h3 text-sec_500;
+      }
+      &__text {
+        @apply text-sec_500;
+      }
+      &__top {
+        @media screen and (max-width: 1024px) {
+          background-color: theme('colors.white');
+          border: 1px solid theme('colors.prim_100');
+          padding: theme(spacing.8) theme(spacing.4);
+          border-radius: theme(borderRadius.3xl);
+          position: relative;
+          margin-inline: theme(spacing.4);
+          margin-bottom: calc(98px + 0.625rem);
+        }
+        &-text--content {
+          @apply grid gap-3.5 mb-6;
+          @apply lg2:mb-12;
+        }
+        & .btn-close {
+          @apply w-8 h-8 text-sec_300 absolute top-4 right-4  lg2:hidden;
+          & > svg {
+            @apply w-full h-full;
+          }
+        }
+        .form__content {
+          @apply grid gap-4;
+          @apply lg2:gap-6;
+          p > a {
+            @apply text-prim_600;
+          }
+        }
+        .fields {
+          @apply grid gap-4 lg2:gap-5;
+          @screen lg2 {
+            grid-template-areas:
+              'a a b b c c'
+              'd d d e e e'
+              'f f f f f f';
+            & > *:nth-child(1) {
+              grid-area: a;
+            }
+            & > *:nth-child(2) {
+              grid-area: b;
+            }
+            & > *:nth-child(3) {
+              grid-area: c;
+            }
+            & > *:nth-child(4) {
+              grid-area: d;
+            }
+            & > *:nth-child(5) {
+              grid-area: e;
+            }
+            & > *:nth-child(6) {
+              grid-area: f;
+            }
+          }
+        }
+      }
+      &__bottom {
+        @apply flex gap-5;
+        & button {
+          @apply w-full;
+        }
+        @media screen and (max-width: 1024px) {
+          background-color: theme('colors.white');
+          padding-inline: theme(spacing.4);
+          padding-top: theme(spacing.4);
+          padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+          border-radius: theme(spacing.3) theme(spacing.3) 0 0;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+  }
+  .progresses {
+    @apply grid;
+    &__wrapper {
+      @apply flex gap-4 overflow-auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    & > * {
+      width: 100%;
+    }
+  }
+  .ordering-samples-form {
+    @screen lg2 {
+      height: 880px;
+    }
+
+    .form__content {
+      @apply grid gap-4;
+      @apply lg2:gap-6;
+      p > a {
+        @apply text-prim_600;
+      }
+    }
+    .fields {
+      @apply grid gap-4 lg2:gap-5;
+      @screen lg2 {
+        grid-template-areas:
+          'a a b b c c'
+          'd d d e e e'
+          'f f f f f f';
+        & > *:nth-child(1) {
+          grid-area: a;
+        }
+        & > *:nth-child(2) {
+          grid-area: b;
+        }
+        & > *:nth-child(3) {
+          grid-area: c;
+        }
+        & > *:nth-child(4) {
+          grid-area: d;
+        }
+        & > *:nth-child(5) {
+          grid-area: e;
+        }
+        & > *:nth-child(6) {
+          grid-area: f;
+        }
+      }
+    }
   }
 }

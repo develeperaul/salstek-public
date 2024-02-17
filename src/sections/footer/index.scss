@@ -104,18 +104,20 @@ footer {
   .links {
     @apply flex gap-4;
   }
+
   .accordeon {
     .item {
-      &__head {
-        @apply flex justify-between items-center;
-        .icon {
-          @apply transition duration-300 ease-in-out;
-        }
+      &.active .item__head {
+        @apply bg-100 text-prim_600;
       }
-      &.active {
-        .item__head {
-          .icon {
-            @apply transform rotate-180;
+      &__body {
+        &-wrapper {
+          min-height: 0;
+          & > * {
+            @apply p-3 px-3 block rounded-xl;
+            &.active {
+              @apply bg-100;
+            }
           }
         }
       }

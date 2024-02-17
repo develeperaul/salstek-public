@@ -1,0 +1,108 @@
+include ../components/svg.pug
+-
+  const rand = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const makeRandomScores = () => {
+    let scoreArray = [];
+    for (let inning = 1; inning < 10; inning++) {
+      scoreArray.push(rand(0, 4));
+    }
+    scoreArray.push(scoreArray.reduce((a, b) => a + b, 0));
+    return scoreArray;
+  }
+
+  const teams = [
+    { "name": "Milwaukee Brewers", scores: makeRandomScores() },
+    { "name": "Los Angles Dodgers", scores: makeRandomScores() },
+    { "name": "New York Mets", scores: makeRandomScores() },
+    { "name": "St. Louis Cardinals", scores: makeRandomScores() },
+    { "name": "Houston Astros", scores: makeRandomScores() },
+    { "name": "Toronto Blue Jays", scores: makeRandomScores() },
+    { "name": "Boston Red Sox", scores: makeRandomScores() },
+    { "name": "Chicago Cubs", scores: makeRandomScores() },
+    { "name": "Philadelphia Phillies", scores: makeRandomScores() },
+    { "name": "Chicago White Sox", scores: makeRandomScores() },
+    { "name": "San Diego Padres", scores: makeRandomScores() },
+    { "name": "Cleveland Indians", scores: makeRandomScores() },
+    { "name": "San Francisco Giants", scores: makeRandomScores() },
+    { "name": "Cincinatti Reds", scores: makeRandomScores() },
+    { "name": "Minnesota Twins", scores: makeRandomScores() },
+    { "name": "Tampa Bay Rays", scores: makeRandomScores() },
+    { "name": "Miami Marlins", scores: makeRandomScores() },
+    { "name": "Oakland Athletics", scores: makeRandomScores() },
+    { "name": "Detroit Tigers", scores: makeRandomScores() },
+    { "name": "Pittsburgh Pirates", scores: makeRandomScores() },
+    { "name": "Seattle Mariners", scores: makeRandomScores() },
+    { "name": "Atlanta Braves", scores: makeRandomScores() }
+  ];
+  const head = [
+    
+    'MultiComfort° Select One 48/29 ',
+    'MultiComfort° Select One 58/34',
+    'MultiComfort° Select One 70/37',
+    'MultiComfort° Select One 48/29 ',
+    'MultiComfort° Select One 58/34',
+    'MultiComfort° Select One 70/37',
+
+  ]
+
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+  body
+    div(class='hidden lg2:block')
+      div(role="region", aria-labelledby="caption", tabindex="0")
+        table
+          
+          thead
+            tr
+              th Показатель/<br/>Продукт
+              each val in head
+                th= val
+              
+          tbody
+            each team in teams
+              tr
+                th
+                  .left-title
+                    +svg('light-bulb',24)
+                    span Светопропускание (LT)
+                each val in [1, 2, 3, 4, 5,6]
+                  td= val
+      div(role="region", aria-labelledby="caption", tabindex="0")
+        table
+          caption#caption Baseball numbers mmkay.
+          thead
+            tr
+              th Teams
+              each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                th= val
+              th Runs
+          tbody
+            each team in teams
+              tr
+                th= team.name
+                each score in team.scores
+                  td= score
+    div(class="lg2:hidden")
+      div.table-mob 
+        div.table-mob__head 
+          .tr
+            each val in head
+              div.th= val
+        .table-mob__body 
+          div.tr
+            
+            div.th 
+              +svg('light-bulb',24)
+              span Светопропускание (LT)
+            .tr__wrapper
+              each val in [1, 2, 3, 4, 5,6]
+                div.td= val

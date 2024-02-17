@@ -1,0 +1,7 @@
+include ./svg.pug
+
+mixin progress(text)
+  .progress&attributes(attributes) 
+    .progress__title #{text}
+    .progress__icon
+      +svg('check',16)

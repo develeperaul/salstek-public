@@ -1,7 +1,33 @@
 .map-container {
-  @apply relative;
+  @apply relative overflow-auto bg-white rounded-[2rem];
+  &__wrapper {
+    height: 540px;
+    overflow: auto;
+    width: 100%;
+  }
+
+  .map {
+    height: 100%;
+    left: 0;
+    overflow: visible !important;
+    position: absolute;
+    top: 0;
+    width: auto;
+    @screen lg2 {
+      width: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
   .card-map {
-    @apply rounded-[1rem] p-4 bg-dark grid gap-4 absolute w-[17.5rem];
+    @apply absolute hidden w-[17.5rem]  overflow-hidden opacity-0;
+
+    &.active {
+      @apply opacity-100 block;
+    }
+    &__wrapper {
+      @apply rounded-[1rem] p-4 bg-dark grid gap-4;
+    }
     &__middle {
       @apply overflow-hidden;
       .swiper-slide {

@@ -1,0 +1,44 @@
+.characteristics {
+  .title {
+    @apply lg2:mb-12;
+  }
+  &__list {
+    &-desk {
+      @apply hidden lg2:block;
+      width: 640px;
+      .item {
+        &:not(:first-child) {
+          @apply pt-8;
+        }
+        &:not(:last-child) {
+          @apply border-b border-prim_100 pb-8;
+        }
+        &__title {
+          @apply text-h5 -tracking-5 font-bold text-sec_500 mb-4;
+        }
+        &__content {
+          @apply grid lg2:gap-6;
+          &-col2 {
+            @apply grid-cols-2;
+          }
+        }
+      }
+    }
+    &-mob {
+      @apply lg2:hidden;
+      .accordeon {
+        .item {
+          @apply py-6 px-4 rounded-3xl border border-prim_200;
+          &__head {
+            padding: 0;
+          }
+          &__body-wrapper {
+            & > * {
+              @apply pt-4 grid gap-6;
+            }
+          }
+        }
+      }
+    }
+  }
+}

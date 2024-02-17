@@ -12,16 +12,20 @@ import '../components/project';
 import '../components/newsCard';
 import '../components/productCard';
 import '../components/map';
+import '../components/quantity';
 //general-sections
 
 //pages
 import '../index.pug';
 import '../pages/glass-configurator.pug';
+import '../pages/test.pug';
 //modules
 import './validate-form-footer';
 import './animation';
 import './accordeon';
 import './tabs';
+import './orderingSamples';
+import './stepper';
 import '../components/generalSlider';
 import '../components/otherSlider';
 import '../components/smallSlider';

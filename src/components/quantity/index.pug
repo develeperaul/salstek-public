@@ -1,0 +1,8 @@
+include ../svg.pug
+mixin quantity()
+  .quantity
+    button.quantity__dec(type='button')
+      +svg('minus',24)
+    .quantity__count 0
+    button.quantity__inc(type='button')
+      +svg('plus',24)

@@ -1,0 +1,47 @@
+.ordering-samples {
+  &__list {
+    @apply grid;
+    .item {
+      @apply grid;
+      &__body {
+        @apply grid;
+        @apply lg2:px-10;
+        grid-template-rows: 0fr;
+        overflow: hidden;
+        margin-top: 0;
+        &-wrapper {
+          min-height: 0;
+          @apply grid gap-5;
+          @apply lg2:grid-cols-2;
+        }
+      }
+      &.active .item__body {
+        grid-template-rows: 1fr;
+        margin-top: 20px;
+      }
+    }
+    .item:not(:last-child) {
+      @apply border-b border-prim_100 grid pb-8;
+    }
+    .item:not(:first-child) {
+      @apply pt-8;
+    }
+  }
+  .checkbox {
+    @apply pl-1 pr-10 py-4 text-h5 flex justify-between;
+    @screen lg2 {
+      height: 58px;
+    }
+    &__quantity {
+      @apply hidden;
+    }
+    &.active {
+      .checkbox__quantity {
+        @apply block;
+      }
+    }
+    &__child {
+      @apply py-2 px-3 bg-500 rounded-xl text-body_s;
+    }
+  }
+}

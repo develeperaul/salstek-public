@@ -1,0 +1,56 @@
+include ../../components/quantity/index.pug
+section.section.ordering-samples
+  h2.title Заказ образцов
+  .ordering-samples__list
+    .item 
+      .item__head 
+        label(data-id='1').checkbox 
+          .checkbox__wrapper
+            input(type="checkbox" name="" hidden).checkbox__input
+            svg.checkbox__icon(viewbox='0 0 22 22')
+              path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+              rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+            span.checkbox__label Мультифункциональное стекло MultiComfort° и MF в составе стеклопакета формата 200х300 мм
+      .item__body
+        .item__body-wrapper
+          each i in [1,2,3,4,5]
+            label(data-id=`1_${i}`).checkbox.checkbox__child 
+              .checkbox__wrapper
+                input(type="checkbox" name="" hidden).checkbox__input
+                svg.checkbox__icon(viewbox='0 0 22 22')
+                  path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                  rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                span.checkbox__label Мультифункциональное стекло
+              .checkbox__quantity
+                +quantity()
+    .item 
+      .item__head 
+        label(data-id='2').checkbox 
+          .checkbox__wrapper
+            input(type="checkbox" name="" hidden).checkbox__input
+            svg.checkbox__icon(viewbox='0 0 22 22')
+              path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+              rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+            span.checkbox__label Мультифункциональное стекло MultiComfort° и MF в составе стеклопакета формата 200х300 мм
+      .item__body
+        .item__body-wrapper
+          each i in [1,2,3,4,5]
+            label(data-id=`2_${i}`).checkbox.checkbox__child 
+              .checkbox__wrapper
+                input(type="checkbox" name="" hidden).checkbox__input
+                svg.checkbox__icon(viewbox='0 0 22 22')
+                  path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                  rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                span.checkbox__label Мультифункциональное стекло
+              .checkbox__quantity
+                +quantity()
+    .item 
+      label(data-id='3').checkbox 
+        .checkbox__wrapper
+          input(type="checkbox" name="" hidden).checkbox__input
+          svg.checkbox__icon(viewbox='0 0 22 22')
+            path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+            rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+          span.checkbox__label Мультифункциональное стекло MultiComfort° и MF в составе стеклопакета формата 200х300 мм
+        .checkbox__quantity
+          +quantity()

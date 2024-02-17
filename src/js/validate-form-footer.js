@@ -1,58 +1,71 @@
 import validate from 'validate.js';
 import IMask from 'imask';
+import constraintsObj from "../assets/validate.json"
+
 const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`);
-const constraints = {
-  name: {
-    presence: { message: 'поле обязательно для заполнения' },
-  },
-  institute: {
-    presence: true,
-  },
-  department: {
-    presence: true,
-  },
-  email: {
-    presence: true,
-    email: true,
-  },
-  phone: {
-    presence: true,
+// const constraints = {
+//   "name": {
+//     "presence": { "message": 'поле обязательно для заполнения' },
+//   },
+//   "institute": {
+//     "presence": true,
+//   },
+//   "department": {
+//     "presence": true,
+//   },
+//   "email": {
+//     "presence": true,
+//     "email": true,
+//   },
+//   "phone": {
+//     "presence": true,
 
-    format: {
-      pattern: new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`),
-      message: 'поле обязательно для заполнения',
-    },
-  },
+//     "format": {
+//       "pattern": "^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$",
+//       "message": "поле обязательно для заполнения",
+//     },
+//   },
 
-  creditCardZip: function (
-    value,
-    attributes,
-    attributeName,
-    options,
-    constraints
-  ) {
-    if (!/^(34|37).*$/.test(attributes.creditCardNumber)) return null;
-    return {
-      presence: { message: 'is required when using AMEX' },
-      length: { is: 5 },
-    };
-  },
-};
-var form = document.querySelector('form#footer-form');
-if (form) {
-  form.addEventListener('submit', function (ev) {
+// };
+//форма Напишите нам
+const  formFooterForm = document.querySelector('form#footer-form');
+if (formFooterForm) {
+  initialChangeInput(formFooterForm);
+  formFooterForm.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    handleFormSubmit(form);
+    handleFormSubmit(formFooterForm,requestFooterForm);
   });
 }
+function requestFooterForm (){
+  alert("Отправить запрос на сервер");
+}
 
-var inputs = document.querySelectorAll('input, textarea, select');
-for (var i = 0; i < inputs.length; ++i) {
-  inputs.item(i).addEventListener('change', function (ev) {
-    var errors = validate(form, constraints) || {};
-    checkInvalid(errors);
-    showErrorsForInput(this, errors[this.name]);
+//форма Заказа
+const  formOrdering = document.querySelector('form#ordering');
+if (formOrdering) {
+  initialChangeInput(formOrdering);
+  formOrdering.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    handleFormSubmit(formOrdering,requestOrdering);
   });
+}
+function requestOrdering (){
+  alert("Отправить запрос на сервер");
+}
+
+
+function initialChangeInput(form) {
+  const inputs = form.querySelectorAll('input, textarea, select');
+  
+  const constraints = form?.id ? constraintsObj[form.id] : {}
+  for (let i = 0; i < inputs.length; ++i) {
+    inputs.item(i).addEventListener('change', function (ev) {
+      var errors = validate(form, constraints) || {};
+      
+      checkInvalid(form, errors);
+      showErrorsForInput(this, errors[this.name]);
+    });
+  }
 }
 
 [].forEach.call(document.querySelectorAll('[data-mask]'), function (inp) {
@@ -64,13 +77,16 @@ for (var i = 0; i < inputs.length; ++i) {
     });
 });
 
-function handleFormSubmit(form, input) {
-  // validate the form against the constraints
-  var errors = validate(form, constraints);
-  checkInvalid(errors);
-  // then we update the form to reflect the results
+function handleFormSubmit(form, nameFunc) {
+  const constraints = form?.id ? constraintsObj[form.id] : {}
+  var errors = validate(form,constraints) || {};
+  
+  checkInvalid(form, errors);
+
   showErrors(form, errors || {});
-  if (!errors) {
+  console.log(errors);
+  if ( Object.keys(errors).length === 0 ) {
+    nameFunc()
     // alert('success');
   }
 }
@@ -112,7 +128,8 @@ function closestParent(child, className) {
   }
 }
 
-function checkInvalid(errors) {
+function checkInvalid(form, errors) {
+  console.log(errors);
   if (Object.keys(errors).length === 0) {
     form.querySelector("button[type='submit']").removeAttribute('disabled');
   } else {
