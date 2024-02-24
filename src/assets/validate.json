@@ -1,5 +1,5 @@
 {
-  "footer-form" :{
+  "footer-form": {
     "name": {
       "presence": { "message": "поле обязательно для заполнения" }
     },
@@ -21,8 +21,8 @@
       }
     }
   },
-  "ordering" : {
-    "organization" :{
+  "ordering": {
+    "organization": {
       "presence": { "message": "поле обязательно для заполнения" }
     },
     "name": {
@@ -42,5 +42,14 @@
     "address": {
       "presence": { "message": "поле обязательно для заполнения" }
     }
+  },
+
+  "rezume": {
+    "name": {
+      "presence": { "message": "поле обязательно для заполнения" }
+    }
+  },
+  "desired_position": {
+    "presence": { "message": "поле обязательно для заполнения" }
   }
 }

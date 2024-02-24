@@ -1,0 +1,10 @@
+include ./svg.pug
+
+mixin textareaFixed(name, label, placeholder)
+  .field-fixed
+    label #{label}
+    .field-fixed__input
+      textarea( cols="30", rows="10" name=name, placeholder=placeholder)&attributes(attributes)
+      button(class='del') 
+        +svg('close', 24)
+

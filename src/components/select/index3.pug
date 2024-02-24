@@ -1,0 +1,11 @@
+mixin select(name,label,placeholder, ...items)
+  .select 
+    input(type="text" name=name hidden)
+    label #{label}
+    .select__head #{placeholder}
+    .select__body  
+      .select__body-wrapper
+        .select__options 
+          each item in items
+            div(data-val=item.val data-init=item.choose) #{item.name}
+  

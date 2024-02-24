@@ -61,9 +61,88 @@
       @apply absolute top-1/2 transform -translate-y-1/2 right-4;
     }
   }
+  .field-fixed {
+    @apply grid gap-3;
+    label {
+      @apply text-body_s -tracking-3 text-sec_500 font-bold;
+    }
+    &__input {
+      @apply relative;
+    }
+    input {
+      @apply rounded-xl border border-prim_100 pl-4 pr-12 text-body_m  h-14.5 w-full;
+      @apply outline-none;
+      @apply transition-all duration-300 ease-in-out;
+    }
+    textarea {
+      @apply rounded-xl border border-prim_100 pl-4 pr-12 pt-4  text-body_m  h-40 w-full;
+      @apply outline-none;
+      @apply transition-all duration-300 ease-in-out;
+    }
+    &__invalid input {
+      @apply border-error;
+    }
+    textarea ~ button {
+      @apply absolute top-4  right-4;
+    }
+    input ~ &__after {
+      @apply flex gap-1.5 items-center absolute top-1/2  right-4 transform -translate-y-1/2;
+    }
+    input:focus {
+      @apply shadow-input border-prim_400;
+    }
+  }
+  .field-file {
+    @apply grid gap-3;
+    .field-file__label {
+      @apply text-body_s -tracking-3 font-bold text-sec_500;
+    }
+    &__input {
+      @apply relative flex items-center justify-between border border-dashed border-prim_100 rounded-xl h-[58px] px-4;
+
+      &-left {
+        @apply flex items-center gap-3;
+        svg {
+          @apply text-sec_500;
+        }
+        .name {
+          @apply hidden;
+        }
+      }
+
+      &-right {
+        @apply flex items-center;
+      }
+      input[type='file'] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        display: block;
+        width: 0;
+        height: 0;
+      }
+
+      input[value] {
+        z-index: 10;
+        position: static;
+      }
+    }
+    &.active .name {
+      @apply block;
+    }
+    &.active .name + .review {
+      @apply hidden;
+    }
+    &.active &__input {
+      @apply border-solid;
+    }
+  }
   /* select */
   .select {
     @apply relative;
+    label {
+      @apply text-body_s -tracking-3 font-bold text-sec_500 mb-3 block;
+    }
     &__head {
       @apply rounded-xl border border-100 h-14.5 w-full bg-white pl-4 pr-12 flex items-center text-body_m relative cursor-pointer;
       &:after {
@@ -191,6 +270,11 @@
     &_disabled {
       @apply text-100 border-100;
     }
+  }
+  .btn-red {
+    @apply h-[3.875rem] bg-error/70 px-6 border border-error rounded-xl font-medium -tracking-4  text-body_m  text-white inline-flex gap-3 items-center justify-center whitespace-nowrap;
+
+    @apply disabled:text-100 disabled:border-100 disabled:border disabled:bg-white;
   }
 
   .btn-section {
@@ -519,6 +603,7 @@
 
   .progress {
     @apply flex justify-between gap-8 min-w-[260px] items-center text-body_s -tracking-3.5  text-sec_200 font-bold pb-3 relative w-full;
+    @apply lg2:min-w-[auto];
     svg {
       @apply text-sec_200 transition-all duration-300 ease-in-out;
     }
@@ -690,6 +775,55 @@
       &.active {
         display: block;
       }
+    }
+  }
+}
+
+.datepicker {
+  position: absolute;
+  z-index: 20;
+  padding-top: 4px;
+  &:not(.active) {
+    display: none;
+  }
+  &-controls {
+    @apply grid;
+    grid-template-columns: auto 1fr auto;
+  }
+
+  &-picker {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: hsl(0, 0%, 100%);
+  }
+  &-cell {
+    @apply flex items-center justify-center;
+    height: 36px;
+  }
+  .days-of-week {
+    @apply grid text-center;
+    grid-template-columns: repeat(7, minmax(36px, 1fr));
+    height: 36px;
+    .dow {
+      @apply flex items-center justify-center;
+    }
+  }
+  &-grid {
+    @apply grid;
+    grid-template-columns: repeat(7, minmax(36px, 1fr));
+  }
+  &-view {
+    &.months,
+    &.years,
+    &.decades {
+      @apply grid;
+      grid-template-columns: repeat(4, minmax(42px, 1fr));
+      & > * {
+        height: 42px;
+      }
+    }
+    .days {
     }
   }
 }

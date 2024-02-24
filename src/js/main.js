@@ -1,10 +1,10 @@
 import '../scss/style.scss';
 import 'animate.css';
 import 'swiper/css/bundle';
-
+import './globalObj';
 //core
 import '../components/select';
-
+import '../components/inputFile';
 //components
 import '../components/locales';
 import '../components/sidebar';
@@ -25,11 +25,13 @@ import './animation';
 import './accordeon';
 import './tabs';
 import './orderingSamples';
+import './domObserver';
 import './stepper';
+import './datepicker';
+import './addel';
 import '../components/generalSlider';
 import '../components/otherSlider';
 import '../components/smallSlider';
-
 import Swiper from 'swiper';
 import { Scrollbar } from 'swiper/modules';
 var swiper = new Swiper('.mySwiper', {

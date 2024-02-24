@@ -1,0 +1,12 @@
+include ../svg.pug
+
+mixin inputFixed(name, label, placeholder, type='text', afterIcon)
+  .field-fixed
+    label #{label}
+    .field-fixed__input
+      input(type=type, name=name, placeholder=placeholder)&attributes(attributes)
+      .field-fixed__after
+        if(afterIcon)
+          +svg(afterIcon, 24)
+        button(class='del') 
+          +svg('close', 24)

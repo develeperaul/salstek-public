@@ -1,88 +1,181 @@
-let currentSlide = 0;
-let slideLength = 0;
-const initial = () => {
-  currentSlide = 0;
-  const steppers = document.querySelectorAll('.stepper');
-  [...steppers].forEach((stepper) => {
-    const slides = stepper.querySelectorAll('.stepper__content-slide');
-    const progressList = stepper.querySelectorAll('.progresses .progress');
+import validate from 'validate.js';
 
-    slideLength = slides.length;
-    [...slides].forEach((slide, index) => {
-      if (index !== 0) slide.classList.add('stepper__content-slide--hide');
+class Stepper {
+  constructor(el) {
+    this.el = el;
+    this.currentSlide = 0;
+    this.slideLength = 0;
+    this.constraints = {};
+    this.btnsContent = this.el.querySelectorAll('.stepper__btns');
+    this.slides = this.el.querySelectorAll('.stepper__content-slide');
+    this.progressList = this.el.querySelectorAll('.progresses .progress');
+
+    this.stepperIsForm = this.el.tagName === 'FORM' ? true : false;
+
+    window.constraints[this.el.id].addEventListener('set', /.*/, (res) => {
+      setTimeout(() => this.initial(), 0);
     });
-    const btnsContent = stepper.querySelectorAll('.stepper__btns');
-    [...btnsContent].forEach((btnContent) => {
+    window.constraints[this.el.id].addEventListener('delete', /.*/, (res) => {
+      setTimeout(() => this.initial(), 0);
+    });
+    this.initial();
+  }
+  initial() {
+    if (this.slides) this.slideLength = this.slides.length;
+    if (this.stepperIsForm) {
+      this.constraints = this.el?.id ? window.constraints[this.el.id].data : {};
+    }
+    [...this.slides].forEach((slide, index) => {
+      if (index !== 0) slide.classList.add('stepper__content-slide--hide');
+
+      const currentConstraints = {};
+      if (this.stepperIsForm) {
+        const inputsName = [];
+        const inputs = slide.querySelectorAll('input, textarea');
+        [...inputs].forEach((inpt) => {
+          inputsName.push(inpt.name);
+        });
+        for (let key in this.constraints) {
+          if (inputsName.includes(key)) {
+            currentConstraints[key] = this.constraints[key];
+          }
+        }
+        const errors = validate(this.el, currentConstraints) || {};
+        let buttonNext;
+        if (this.slideLength > 0) {
+          if (index === 0) {
+            buttonNext = this.el.querySelector(
+              '.stepper__btns[data-step="first"] .btn-next'
+            );
+            this.checkInvalid(buttonNext, errors);
+          } else
+            buttonNext = this.el.querySelector(
+              '.stepper__btns:not([data-step="first"]) .btn-next'
+            );
+        }
+
+        for (let i = 0; i < inputs.length; ++i) {
+          inputs.item(i).addEventListener('change', (ev) => {
+            console.log(currentConstraints);
+            const errors = validate(this.el, currentConstraints) || {};
+
+            if (buttonNext) this.checkInvalid(buttonNext, errors);
+          });
+        }
+      }
+    });
+
+    [...this.btnsContent].forEach((btnContent) => {
       if (btnContent.dataset.step !== 'first')
         btnContent.classList.add('stepper__btns-hidden');
       const btnBack = btnContent.querySelector('.btn-back');
       const btnNext = btnContent.querySelector('.btn-next');
       if (btnBack) {
-        btnBack.onclick = back.bind(btnBack, btnsContent, slides, progressList);
+        btnBack.onclick = this.back.bind(this);
       }
       if (btnNext) {
-        btnNext.onclick = next.bind(btnNext, btnsContent, slides, progressList);
+        btnNext.onclick = this.next.bind(this);
       }
     });
-    console.log(slides);
-  });
-};
-function back(btnsContent, slides, progressList, e) {
-  if (slides[currentSlide - 1]) {
-    slides[currentSlide].classList.add('stepper__content-slide--hide');
-    if (progressList[currentSlide])
-      progressList[currentSlide].classList.remove('active');
-    currentSlide--;
-    [...btnsContent].forEach((btnContent) => {
-      console.log(currentSlide === 0);
-      if (currentSlide === 0) {
-        if (btnContent.dataset.step === 'first') {
-          btnContent.classList.remove('stepper__btns-hidden');
-        } else {
-          if (!btnContent.classList.contains('stepper__btns-hidden'))
-            btnContent.classList.add('stepper__btns-hidden');
-        }
-      }
-      if (currentSlide > 0) {
-        if (!btnContent.dataset.step) {
-          btnContent.classList.remove('stepper__btns-hidden');
-        } else {
-          if (!btnContent.classList.contains('stepper__btns-hidden'))
-            btnContent.classList.add('stepper__btns-hidden');
-        }
-      }
-    });
-
-    slides[currentSlide].classList.remove('stepper__content-slide--hide');
   }
-}
-function next(btnsContent, slides, progressList, e) {
-  if (slides[currentSlide + 1]) {
-    slides[currentSlide].classList.add('stepper__content-slide--hide');
-    currentSlide++;
-    console.log(progressList[currentSlide]);
-    if (progressList[currentSlide])
-      progressList[currentSlide].classList.add('active');
-    if (currentSlide > 0) {
-      [...btnsContent].forEach((btnContent) => {
-        if (currentSlide === slideLength - 1) {
-          if (btnContent.dataset.step === 'last') {
-            btnContent.classList.remove('stepper__btns-hidden');
-          } else btnContent.classList.add('stepper__btns-hidden');
-        } else {
+  checkInvalid(btn, errors) {
+    if (Object.keys(errors).length === 0) {
+      btn.removeAttribute('disabled');
+    } else {
+      btn.setAttribute('disabled', true);
+    }
+  }
+  back(e) {
+    if (this.slides[this.currentSlide - 1]) {
+      this.slides[this.currentSlide].classList.add(
+        'stepper__content-slide--hide'
+      );
+      if (this.progressList[this.currentSlide])
+        this.progressList[this.currentSlide].classList.remove('active');
+      this.currentSlide--;
+      [...this.btnsContent].forEach((btnContent) => {
+        if (this.currentSlide === 0) {
           if (btnContent.dataset.step === 'first') {
-            btnContent.classList.add('stepper__btns-hidden');
+            btnContent.classList.remove('stepper__btns-hidden');
+          } else {
+            if (!btnContent.classList.contains('stepper__btns-hidden'))
+              btnContent.classList.add('stepper__btns-hidden');
           }
+        }
+        if (this.currentSlide > 0) {
           if (!btnContent.dataset.step) {
             btnContent.classList.remove('stepper__btns-hidden');
           } else {
-            btnContent.classList.add('stepper__btns-hidden');
+            if (!btnContent.classList.contains('stepper__btns-hidden'))
+              btnContent.classList.add('stepper__btns-hidden');
           }
         }
       });
-    }
 
-    slides[currentSlide].classList.remove('stepper__content-slide--hide');
+      this.slides[this.currentSlide].classList.remove(
+        'stepper__content-slide--hide'
+      );
+    }
+  }
+  next(e) {
+    if (this.slides[this.currentSlide + 1]) {
+      this.slides[this.currentSlide].classList.add(
+        'stepper__content-slide--hide'
+      );
+      this.currentSlide++;
+
+      const currentConstraints = {};
+      if (this.stepperIsForm) {
+        const inputsName = [];
+        const inputs =
+          this.slides[this.currentSlide].querySelectorAll('input, textarea');
+        [...inputs].forEach((inpt) => {
+          inputsName.push(inpt.name);
+        });
+        for (let key in this.constraints) {
+          if (inputsName.includes(key)) {
+            currentConstraints[key] = this.constraints[key];
+          }
+        }
+        const errors = validate(this.el, currentConstraints) || {};
+        const buttonNext = this.el.querySelector(
+          '.stepper__btns:not([data-step="first"]) .btn-next'
+        );
+        this.checkInvalid(buttonNext, errors);
+      }
+
+      if (this.progressList[this.currentSlide])
+        this.progressList[this.currentSlide].classList.add('active');
+      if (this.currentSlide > 0) {
+        [...this.btnsContent].forEach((btnContent) => {
+          console.log(this.currentSlide, this.slideLength);
+          if (this.currentSlide === this.slideLength - 1) {
+            if (btnContent.dataset.step === 'last') {
+              btnContent.classList.remove('stepper__btns-hidden');
+            } else btnContent.classList.add('stepper__btns-hidden');
+          } else {
+            if (btnContent.dataset.step === 'first') {
+              btnContent.classList.add('stepper__btns-hidden');
+            }
+            if (!btnContent.dataset.step) {
+              btnContent.classList.remove('stepper__btns-hidden');
+              const btnNext = btnContent.querySelector('.btn-next');
+              // if (btnNext) this.checkInvalid(btnNext, errors);
+            } else {
+              btnContent.classList.add('stepper__btns-hidden');
+            }
+          }
+        });
+      }
+
+      this.slides[this.currentSlide].classList.remove(
+        'stepper__content-slide--hide'
+      );
+    }
   }
 }
-initial();
+
+const steppers = document.querySelectorAll('.stepper');
+[...steppers].forEach((stepper) => {
+  new Stepper(stepper);
+});

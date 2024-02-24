@@ -1,0 +1,14 @@
+include ./../svg.pug
+
+mixin inputFile(name, label)
+  label.field-file
+    span.field-file__label #{label}
+    .field-file__input
+      .field-file__input-left
+        +svg('file-input', 24)
+        span.name
+        span.review Обзор
+      input(type="file", name=name)&attributes(attributes)
+      .field-file__input-right
+        button(class='del' type="button") 
+          +svg('close', 24)

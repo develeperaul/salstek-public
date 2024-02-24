@@ -1,9 +1,19 @@
 const selects = document.querySelectorAll('.select');
-
 [...selects].forEach((select) => {
-  select.onclick = actionSelect;
+  initSelect(select);
 });
-
+export function initSelect(select) {
+  select.onclick = actionSelect;
+  const initEl = select.querySelector('.select__options [data-init]');
+  if (initEl) {
+    const head = select.querySelector('.select__head');
+    const input = select.querySelector('input');
+    const val = initEl.dataset.val;
+    setVal(initEl, head, input, val);
+    // selectOpt()
+    // selectOpt.bind(null, opt, head, options, this, null);
+  }
+}
 function actionSelect(e) {
   const head = this.querySelector('.select__head');
   const body = this.querySelector('.select__body');
@@ -44,12 +54,13 @@ function selectOpt(opt, head, options, _this, parentChild = null, e) {
       if (o !== opt && o.classList.contains('active'))
         o.classList.remove('active');
     });
-    opt.classList.add('active');
     _this.classList.remove('active');
-    head.setAttribute('data-select', val);
-    input.value = val;
-    input.dispatchEvent(new Event('change'));
-    head.textContent = opt.textContent;
+    setVal(opt, head, input, val);
+    // opt.classList.add('active');
+    // head.setAttribute('data-select', val);
+    // input.value = val;
+    // input.dispatchEvent(new Event('change'));
+    // head.textContent = opt.textContent;
   }
   if (valcheck) {
     const checkboxInput = opt.querySelector('input');
@@ -92,4 +103,12 @@ function windowTarget(_this, e) {
   if (!e.composedPath().includes(_this)) {
     _this.classList.remove('active');
   }
+}
+
+function setVal(opt, head, input, val) {
+  opt.classList.add('active');
+  head.setAttribute('data-select', val);
+  input.value = val;
+  input.dispatchEvent(new Event('change'));
+  head.textContent = opt.textContent;
 }

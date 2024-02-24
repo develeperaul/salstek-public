@@ -1,0 +1,180 @@
+include ./svg.pug
+include ./textareaFixed.pug
+include ./inputFixed/index.pug
+include ./inputFile/index.pug
+include ./downlItem.pug
+include  ./select/index3.pug
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup3")
+  button.btn-fit.btn-close(data-target="popup3"  data-action="close") 
+    +svg('close')
+  .content 
+    form#rezume.content__wrapper.stepper.ordering-samples-form
+      .content__top 
+        button.btn-close(data-target="popup3" data-action="close" type='button')
+          +svg('close')
+        .content__top-text--content 
+          .content__title проверьте комплектацию заказа
+          .info
+            .info__title Вы можете воспользоваться формой ниже, или скачать шаблон резюме, <br class='hidden lg2:block'> заполнить его, и отправить по адресу puu7@salstek.ru
+            .accordeon  
+              .item
+                .item__body 
+                  .item__body-wrapper
+                    div 
+                      .info__content 
+                        .info__contact
+                          p Контакты отдела по работе <br> с персоналом АО «Салаватстекло»
+                          .info__contact-links
+                            .info__contact-link 
+                              +svg('phone', 24)
+                              a(href="tel:+7 (3476) 37-72-24") +7 (3476) 37-72-24
+                            .info__contact-link
+                              +svg('mail', 24)
+                              a(href="mailto:puu7@salstek.ru") puu7@salstek.ru
+                        .info__doc 
+                          h4 Документ для скачивания
+                          +downlItem('Название документа', 'doc, 247.0 Кб','file')
+                .item__head 
+                  +svg('down',24)(class='icon')
+        div 
+          .progresses 
+            .progresses__wrapper
+              +progress('Личная информация')(class="active")
+              +progress('Должность')
+              +progress('Образование')
+              +progress('Опыт работы')
+              +progress('Дополнительно')
+              
+              
+              
+          .stepper__content
+            .stepper__content-slide
+              h2.stepper__content-title Личная информация
+              .rezume-fields
+                +inputFile('rezume','Прикрепить резюме')
+                +inputFixed('surname','Фамилия', 'Иванов')
+                +inputFixed('name','Имя', 'Иван')
+                +inputFixed('patronymic','Отчество', 'Иванович')
+                +inputFile('photo','Прикрепить фото')
+                +inputFixed('date_birth','Дата рождения')
+                +select('family_status','Семейное положение','Выбрать', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                +select('amount_children','Количество детей', 'Выбрать',{name:1,val:'0',choose:true},{name:2,val:'01'},{name:3,val:'02'})
+                +inputFixed('citizenship','Гражданство', 'Российская Федерация')(value="Российская Федерация")
+                +inputFixed('city','Город', 'Салават')
+                +inputFixed('phone','Контактный телефон', '+7 (999) 999 - 99 - 99')
+                +inputFixed('mail','E-mail', 'mail@mail.com')
+                +inputFixed('messengers','Мессенджеры', 'Skype, Telegram и др.')
+            .stepper__content-slide
+              h2.stepper__content-title Должность
+              .rezume-fields
+                +select('family_status','Желаемая должность','Выберите должность', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                +textareaFixed('comment','Условия работы', 'Комментарий ...')
+                +inputFixed('income','Доход от', '000 000', 'text', 'rub')
+                label(data-id='1').checkbox 
+                  .checkbox__wrapper
+                    input(type="checkbox" name="" hidden).checkbox__input
+                    svg.checkbox__icon(viewbox='0 0 22 22')
+                      path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                      rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                    span.checkbox__label По договоренности
+            
+            .stepper__content-slide
+              h2.stepper__content-title Образование
+              .rezume__content
+                .rezume__content__title Основное образование
+                .rezume__content__list
+                  .item(data-content='basic-education')
+                    .rezume-fields
+                      +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                      +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
+                      +inputFile('rezume','Город', 'Уфа')
+                      div 
+                        span Период учебы
+                        div
+                          +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                          +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                        label(data-id='1').checkbox 
+                          .checkbox__wrapper
+                            input(type="checkbox" name="" hidden).checkbox__input
+                            svg.checkbox__icon(viewbox='0 0 22 22')
+                              path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                              rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                            span.checkbox__label По договоренности
+                      +textareaFixed('comment','Факультет', 'Комментарий ...')
+                      +textareaFixed('comment','Специальность', 'Комментарий ...')
+                      +textareaFixed('comment','Квалификация', 'Комментарий ...')
+                      +inputFile('rezume','Средний балл', '00')
+                      button.btn-round(type='button' data-add data-id='basic-education')
+                        +svg('plus', 24)
+                        span Добавить
+
+              .rezume__content
+                .rezume__content__title Дополнительное образование <br/> (курсы, семинары)      
+                .rezume__content__list
+                  .item(data-content)
+                    .rezume-fields
+                      +inputFile('rezume','Наименование обучающей организации', 'Наименование')
+                      +inputFile('rezume','Название программы обучения', 'Название ')
+                      +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
+                      +inputFile('rezume','Количество часов', '100 ')
+                      +select('family_status','Год обучения','2000', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                      +select('name','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    button.btn-round(type='button' data-add data-id='additional-education')
+                      +svg('plus', 24)
+                      span Добавить
+              template#additional-education
+                .item(data-content)
+                  .rezume-fields
+                    +inputFile('rezume','Наименование обучающей организации', 'Наименование')
+                    +inputFile('rezume','Название программы обучения', 'Название ')
+                    +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
+                    +inputFile('rezume','Количество часов', '100 ')
+                    +select('family_status','Год обучения','2000', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    +select('name','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                  button.btn-round(type='button' data-remove)
+                      +svg('trash', 24)
+                      span Удалить
+              template#basic-education
+                .item(data-content)
+                  .rezume-fields
+                    +select('name','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
+                    +inputFile('rezume','Город', 'Уфа')
+                    div 
+                      span Период учебы
+                      div
+                        +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                        +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                      label(data-id='1').checkbox 
+                        .checkbox__wrapper
+                          input(type="checkbox" name="" hidden).checkbox__input
+                          svg.checkbox__icon(viewbox='0 0 22 22')
+                            path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                            rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                          span.checkbox__label По договоренности
+                    +textareaFixed('comment','Факультет', 'Комментарий ...')
+                    +textareaFixed('comment','Специальность', 'Комментарий ...')
+                    +textareaFixed('comment','Квалификация', 'Комментарий ...')
+                    +inputFile('rezume','Средний балл', '00')
+                    button.btn-red(type='button' data-remove)
+                      +svg('trash', 24)
+                      span Удалить
+            .stepper__content-slide
+              h2.stepper__content-title Опыт работы
+            .stepper__content-slide
+              h2.stepper__content-title Дополнительно
+      .stepper__btns(data-step="first") 
+        .content__bottom
+          button.btn.btn-next(type='button') Продолжить
+        //- .stepper__btns
+        //-   button.btn.btn-back(type='button') Назад
+      .stepper__btns
+        .content__bottom
+          button.btn-round.btn-back(type='button') Назад
+          button.btn.btn-next(type='button') Продолжитьa
+      .stepper__btns(data-step="last") 
+        .content__bottom
+          button.btn-round.btn-back(type='button') Назад
+          button.btn(type='submit') Подтвердить заказ
+
