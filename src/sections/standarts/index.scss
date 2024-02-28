@@ -1,6 +1,6 @@
 .standarts {
   @apply grid gap-6;
-  @apply lg2:grid-cols-[27.5rem_36.625rem_18.375rem];
+  @apply lg2:grid-cols-[0.75fr_1fr_0.5fr] lg2:gap-5;
   .item {
     @apply min-h-[21.4375rem] rounded-3xl border border-prim_100 px-4 py-6 grid content-between gap-16;
     @apply lg2:h-[27.5rem] lg2:p-10 lg2:gap-0;
@@ -12,7 +12,7 @@
       @apply lg2:flex lg2:gap-12;
     }
     &__content {
-      @apply text-sec_500 grid gap-3;
+      @apply text-sec_500 grid gap-3 font-bold;
       @apply lg2:gap-4;
       &-title {
         @apply text-h5;

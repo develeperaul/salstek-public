@@ -440,7 +440,7 @@ video {
   --swiper-pagination-bullet-inactive-color: #FFFFFF;
   --swiper-pagination-bullet-inactive-opacity: 0.9;
   --swiper-pagination-bottom: 1.75rem;
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     --swiper-pagination-bottom: 2.5rem;
   }
 }
@@ -474,7 +474,7 @@ h2 {
   color: rgb(123 147 167 / var(--tw-text-opacity));
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   h2 {
     font-size: 3rem;
     line-height: 120%;
@@ -490,7 +490,7 @@ h3 {
   color: rgb(123 147 167 / var(--tw-text-opacity));
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   h3 {
     font-size: 1.75rem;
     line-height: 130%;
@@ -754,6 +754,19 @@ h3 {
   stroke-dashoffset: 0;
 }
 
+.checkbox-politic {
+  --tw-text-opacity: 1;
+  color: rgb(123 147 167 / var(--tw-text-opacity));
+  a {
+    --tw-text-opacity: 1;
+    color: rgb(36 144 168 / var(--tw-text-opacity));
+  }
+  .checkbox__input:checked ~ .checkbox__label {
+    --tw-text-opacity: 1;
+    color: rgb(123 147 167 / var(--tw-text-opacity));
+  }
+}
+
 .container {
   width: 100%;
   margin-right: auto;
@@ -766,9 +779,9 @@ h3 {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 1024px;
+    max-width: 1200px;
   }
 }
 
@@ -1845,7 +1858,7 @@ ul.list::marker {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .btn-section {
     border-radius: 2rem;
     padding-top: 1.5rem;
@@ -2225,12 +2238,12 @@ ul.breadcrumb li a:hover {
   .small-slider .swiper-slide {
     border-radius: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .small-slider .swiper-slide {
       height: 47.8125rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .small-slider .swiper-slide {
       border-radius: 2rem;
     }
@@ -2246,13 +2259,13 @@ ul.breadcrumb li a:hover {
       object-fit: cover;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .small-slider {
       padding-bottom: 0px;
     }
   }
   .small-slider .swiper-pagination {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       --swiper-pagination-bottom: 1.5rem;
     }
   }
@@ -2590,7 +2603,7 @@ caption {
   color: rgb(194 205 214 / var(--tw-text-opacity));
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .progress {
     min-width: auto;
   }
@@ -2682,7 +2695,7 @@ caption {
   .progresses {
     margin-bottom: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .progresses {
       margin-bottom: 3rem;
     }
@@ -2704,7 +2717,7 @@ caption {
     --tw-text-opacity: 1;
     color: rgb(123 147 167 / var(--tw-text-opacity));
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__title {
       margin-bottom: 2rem;
     }
@@ -2720,7 +2733,7 @@ caption {
     &-title {
       font-weight: 700;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &-title {
         margin-bottom: 2rem;
       }
@@ -2799,7 +2812,7 @@ caption {
   &__head {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__head {
       padding-top: 1rem;
       padding-bottom: 1rem;
@@ -2837,12 +2850,12 @@ caption {
   &__body {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__body {
       display: flex;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__body {
       flex-wrap: wrap;
     }
@@ -2865,7 +2878,7 @@ caption {
   padding-bottom: 0.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .item-child {
     width: -moz-fit-content;
     width: fit-content;
@@ -2983,7 +2996,7 @@ caption {
   gap: 1.25rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .item-parent {
     display: flex;
     align-items: center;
@@ -3271,7 +3284,7 @@ caption {
   padding-right: 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .section {
     border-radius: 5rem;
     padding-top: 5rem;
@@ -3293,7 +3306,7 @@ caption {
   padding-bottom: 2.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .section-first {
     height: 544px;
     border-bottom-right-radius: 5rem;
@@ -3309,7 +3322,7 @@ caption {
   gap: 3rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .section-first {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0px;
@@ -3318,13 +3331,13 @@ caption {
 
 .section-first {
   padding-top: calc(89px + 32px);
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     padding-top: calc(89px + 40px);
   }
   .breadcrumbs {
     margin-bottom: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .breadcrumbs {
       margin-bottom: 2.75rem;
     }
@@ -3335,23 +3348,23 @@ caption {
   &__top {
     gap: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       align-content: space-between;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       gap: 0px;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       padding-right: 4rem;
     }
   }
   &__top {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .breadcrumb {
         margin-bottom: 2.75rem;
       }
@@ -3359,22 +3372,22 @@ caption {
     .links {
       display: none;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .links {
         margin-top: 4rem;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .links {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .links {
         flex-wrap: wrap;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .links {
         gap: 1.25rem;
       }
@@ -3426,7 +3439,7 @@ caption {
     .links {
       padding-bottom: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .links {
         display: none;
       }
@@ -3460,7 +3473,7 @@ caption {
   display: grid;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .header-second {
     height: 100vh;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3488,29 +3501,29 @@ caption {
   &__top {
     padding-bottom: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       border-bottom-left-radius: 5rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       padding-bottom: 2.5rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       padding-left: 2.5rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       padding-right: 4rem;
     }
   }
   &__top {
     padding-top: calc(89px + 32px);
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       padding-top: calc(89px + 40px);
     }
     & > *:first-child {
@@ -3526,7 +3539,7 @@ caption {
       --tw-text-opacity: 1;
       color: rgb(123 147 167 / var(--tw-text-opacity));
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .content-text {
         width: 33.3125rem;
       }
@@ -3545,17 +3558,17 @@ caption {
     border-bottom-right-radius: 2.5rem;
     border-bottom-left-radius: 2.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__bottom {
       height: 100%;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__bottom {
       border-bottom-left-radius: 0px;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__bottom {
       border-bottom-right-radius: 5rem;
     }
@@ -3580,18 +3593,18 @@ caption {
   .btns {
     gap: 0.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .btns {
       display: flex;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .btns {
       gap: 1rem;
     }
   }
   .header-second__bottom {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       padding-top: calc(89px + 40px);
     }
   }
@@ -3603,7 +3616,7 @@ caption {
     background-color: rgb(240 249 255 / var(--tw-bg-opacity));
   }
   .header-second__bottom {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       padding-top: calc(89px + 40px);
     }
   }
@@ -3618,7 +3631,7 @@ caption {
   border-bottom-left-radius: 2.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .header-project {
     border-bottom-right-radius: 5rem;
     border-bottom-left-radius: 5rem;
@@ -3631,7 +3644,7 @@ caption {
   padding-inline: 16px;
   position: relative;
   padding-top: calc(89px + 32px);
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     padding-top: calc(89px + 40px);
 
     padding-inline: 40px;
@@ -3644,7 +3657,7 @@ caption {
     border-bottom-right-radius: 2.5rem;
     border-bottom-left-radius: 2.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &::before {
       border-bottom-right-radius: 5rem;
       border-bottom-left-radius: 5rem;
@@ -3688,7 +3701,7 @@ caption {
   &__bottom {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__bottom {
       gap: 1.5rem;
     }
@@ -3700,12 +3713,12 @@ caption {
     .list {
       gap: 0.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         flex-wrap: wrap;
       }
@@ -3716,7 +3729,7 @@ caption {
     color: rgb(255 255 255 / var(--tw-text-opacity));
   }
   .title {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       max-width: 864px;
 
       width: 100%;
@@ -3738,7 +3751,7 @@ caption {
   padding-bottom: 2.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .not-found {
     border-radius: 5rem;
     padding: 2.5rem;
@@ -3757,7 +3770,7 @@ caption {
     width: 52rem;
     height: 29.21rem;
     transform: translate(46%, 6%) rotate(192deg);
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       width: 112rem;
 
       height: 63rem;
@@ -3766,7 +3779,7 @@ caption {
     }
   }
   padding-top: calc(89px + 32px);
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     padding-top: calc(89px + 40px);
   }
   &__content {
@@ -3798,7 +3811,7 @@ caption {
     --tw-text-opacity: 1;
     color: rgb(36 144 168 / var(--tw-text-opacity));
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       font-size: 4rem;
       line-height: 110%;
@@ -3807,7 +3820,7 @@ caption {
   .btn {
     width: 100%;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .btn {
       width: -moz-fit-content;
       width: fit-content;
@@ -3819,6 +3832,7 @@ caption {
   display: grid;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 3rem;
   &__wrapper {
     display: flex;
   }
@@ -3849,11 +3863,26 @@ caption {
   }
 }
 
+.politics {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 140%;
+  letter-spacing: -0.035rem;
+  --tw-text-opacity: 1;
+  color: rgb(36 144 168 / var(--tw-text-opacity));
+  text-decoration-line: underline;
+}
+
+.politics:hover {
+  --tw-text-opacity: 1;
+  color: rgb(53 162 186 / var(--tw-text-opacity));
+}
+
 .btn-show {
   margin-top: 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .btn-show {
     margin-top: 2rem;
     display: flex;
@@ -3865,7 +3894,7 @@ caption {
   & > * {
     width: 100%;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     & > * {
       width: -moz-fit-content;
       width: fit-content;
@@ -3927,7 +3956,7 @@ caption {
   gap: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .content-share {
     gap: 2rem;
   }
@@ -3954,7 +3983,7 @@ caption {
   background-color: rgb(245 251 255 / var(--tw-bg-opacity));
   opacity: 0;
   z-index: 50;
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     background: rgba(0, 0, 0, 0.34);
   }
   &.open {
@@ -3987,50 +4016,50 @@ caption {
   & > .btn-close {
     display: none;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     & > .btn-close {
       display: grid;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       position: absolute;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       top: 50%;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       left: 50%;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       --tw-translate-x: -50%;
       transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       --tw-translate-y: -50%;
       transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       padding-top: 2rem;
       padding-bottom: 2rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       padding-left: 1rem;
       padding-right: 1rem;
@@ -4040,7 +4069,7 @@ caption {
     @media screen and (max-width: 1024px) {
       height: 100%;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       padding-top: 0;
 
       padding-bottom: 0;
@@ -4061,34 +4090,34 @@ caption {
     &__wrapper {
       overflow: auto;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__wrapper {
         gap: 3rem;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__wrapper {
         border-radius: 2.5rem;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__wrapper {
         border-width: 1px;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__wrapper {
         --tw-border-opacity: 1;
         border-color: rgb(213 240 246 / var(--tw-border-opacity));
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__wrapper {
         --tw-bg-opacity: 1;
         background-color: rgb(255 255 255 / var(--tw-bg-opacity));
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__wrapper {
         padding: 3rem;
       }
@@ -4146,7 +4175,7 @@ caption {
       &-text--content {
         gap: 0.875rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &-text--content {
           margin-bottom: 3rem;
         }
@@ -4170,7 +4199,7 @@ caption {
         --tw-text-opacity: 1;
         color: rgb(163 180 194 / var(--tw-text-opacity));
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         & .btn-close {
           display: none;
         }
@@ -4189,7 +4218,7 @@ caption {
       .form__content {
         gap: 1rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .form__content {
           gap: 1.5rem;
         }
@@ -4206,13 +4235,13 @@ caption {
       .fields {
         gap: 1rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .fields {
           gap: 1.25rem;
         }
       }
       .fields {
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           grid-template-areas:
               'a a b b c c'
               'd d d e e e'
@@ -4299,7 +4328,7 @@ caption {
 }
 
 .ordering-samples-form {
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     height: 880px;
   }
   .form__content {
@@ -4308,7 +4337,7 @@ caption {
   .form__content {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .form__content {
       gap: 1.5rem;
     }
@@ -4325,13 +4354,13 @@ caption {
   .fields {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .fields {
       gap: 1.25rem;
     }
   }
   .fields {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       grid-template-areas:
           'a a b b c c'
           'd d d e e e'
@@ -4362,6 +4391,12 @@ caption {
       }
     }
   }
+  .rezume__content {
+    button {
+      width: -moz-fit-content;
+      width: fit-content;
+    }
+  }
   .rezume-fields {
     display: grid;
   }
@@ -4371,9 +4406,98 @@ caption {
   .rezume-fields {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .rezume-fields {
       width: 540px;
+    }
+  }
+  .rezume-fields {
+    &__period {
+      display: grid;
+    }
+    &__period {
+      gap: 1rem;
+    }
+    &__period {
+      .label {
+        font-size: 0.875rem;
+        line-height: 140%;
+      }
+      .label {
+        font-weight: 700;
+      }
+      .label {
+        letter-spacing: -0.03rem;
+      }
+      .label {
+        --tw-text-opacity: 1;
+        color: rgb(123 147 167 / var(--tw-text-opacity));
+      }
+      &-selects {
+        display: flex;
+      }
+      &-selects {
+        align-items: center;
+      }
+      &-selects {
+        gap: 1rem;
+      }
+      &-to,
+        &-from {
+        display: flex;
+      }
+      &-to,
+        &-from {
+        align-items: center;
+      }
+      &-to,
+        &-from {
+        gap: 1rem;
+      }
+    }
+    &__checks {
+      display: grid;
+    }
+    &__checks {
+      gap: 1rem;
+    }
+    &__checks {
+      .label {
+        font-size: 0.875rem;
+        line-height: 140%;
+      }
+      .label {
+        font-weight: 700;
+      }
+      .label {
+        letter-spacing: -0.03rem;
+      }
+      .label {
+        --tw-text-opacity: 1;
+        color: rgb(123 147 167 / var(--tw-text-opacity));
+      }
+      &-list {
+        display: flex;
+      }
+      &-list {
+        gap: 1.25rem;
+      }
+      .checkbox__wrapper {
+        align-items: flex-start;
+      }
+      .checkbox__icon {
+        height: 1rem;
+      }
+      .checkbox__icon {
+        width: 1rem;
+      }
+      .checkbox__label {
+        font-size: 0.875rem;
+        line-height: 140%;
+      }
+      .checkbox__input:checked ~ .checkbox__label {
+        color: inherit;
+      }
     }
   }
 }
@@ -4396,12 +4520,12 @@ caption {
   &__content {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__content {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__content {
       gap: 4rem;
     }
@@ -4440,7 +4564,7 @@ caption {
     &-links {
       gap: 2rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &-links {
         display: flex;
       }
@@ -4504,7 +4628,7 @@ caption {
       --tw-bg-opacity: 1;
       background-color: rgb(255 255 255 / var(--tw-bg-opacity));
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .downl-item {
         min-width: 278px;
       }
@@ -4520,7 +4644,7 @@ caption {
     }
   }
   .accordeon {
-    .item{
+    .item {
       &__body {
         margin-bottom: 0px;
       }
@@ -4547,7 +4671,7 @@ caption {
         --tw-text-opacity: 1;
         color: rgb(36 144 168 / var(--tw-text-opacity));
       }
-      &__head{
+      &__head {
         .icon {
           height: 1rem;
         }
@@ -4640,30 +4764,30 @@ header {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .header__wrapper {
       display: grid;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .header__wrapper {
       grid-template-columns: repeat(9, minmax(0, 1fr));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .header__wrapper {
       border-bottom-right-radius: 2.5rem;
       border-bottom-left-radius: 2.5rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .header__wrapper {
       padding-left: 2.5rem;
       padding-right: 2.5rem;
     }
   }
   .header {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__left {
         grid-column: span 2 / span 2;
       }
@@ -4671,22 +4795,22 @@ header {
     &__center {
       display: none;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__center {
         grid-column: span 5 / span 5;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__center {
         display: block;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__center {
         align-self: center;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__center {
         justify-self: center;
       }
@@ -4705,12 +4829,12 @@ header {
     &__right {
       gap: 2rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__right {
         grid-column: span 2 / span 2;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__right {
         justify-content: flex-end;
       }
@@ -4730,7 +4854,7 @@ header {
         --tw-text-opacity: 1;
         color: rgb(36 144 168 / var(--tw-text-opacity));
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .link {
           display: none;
         }
@@ -4738,7 +4862,7 @@ header {
       .locales {
         display: none;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .locales {
           display: flex;
         }
@@ -4749,6 +4873,10 @@ header {
     --tw-text-opacity: 1;
     color: rgb(27 108 126 / var(--tw-text-opacity));
   }
+  .logo:hover {
+    --tw-text-opacity: 1;
+    color: rgb(36 144 168 / var(--tw-text-opacity));
+  }
   nav {
     display: none;
   }
@@ -4758,12 +4886,15 @@ header {
   nav {
     gap: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     nav {
       display: flex;
     }
   }
   nav {
+    & > a {
+      border-radius: 0.75rem;
+    }
     & > a {
       padding: 0.75rem;
     }
@@ -4777,6 +4908,10 @@ header {
     & > a {
       --tw-text-opacity: 1;
       color: rgb(36 144 168 / var(--tw-text-opacity));
+    }
+    & > a:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(228 245 255 / var(--tw-bg-opacity));
     }
   }
 }
@@ -4803,7 +4938,7 @@ footer {
       padding-bottom: 2rem;
     }
     &__wrapper {
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         border-radius: 5rem 5rem 0 0;
 
         border-bottom: none;
@@ -4817,7 +4952,7 @@ footer {
     &__mob {
       gap: 2rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__mob {
         display: none;
       }
@@ -4838,12 +4973,10 @@ footer {
       }
       .content-other {
         .logo,
-        .links,
         p {
           margin-bottom: 2rem;
         }
         .logo,
-        .links,
         p {
           display: inline-block;
         }
@@ -4860,23 +4993,6 @@ footer {
         }
         .politics {
           margin-bottom: 1.5rem;
-        }
-        .politics {
-          display: inline-block;
-        }
-        .politics {
-          font-size: 0.875rem;
-          line-height: 140%;
-        }
-        .politics {
-          letter-spacing: -0.035rem;
-        }
-        .politics {
-          --tw-text-opacity: 1;
-          color: rgb(36 144 168 / var(--tw-text-opacity));
-        }
-        .politics {
-          text-decoration-line: underline;
         }
         .yesidea {
           display: flex;
@@ -4911,7 +5027,14 @@ footer {
             border-color: rgb(224 230 235 / var(--tw-border-opacity));
           }
           .separator {
-            height: auto;
+            height: 33px;
+          }
+          svg {
+            margin-bottom: 5px;
+          }
+          svg:hover {
+            --tw-text-opacity: 1;
+            color: rgb(53 162 186 / var(--tw-text-opacity));
           }
         }
         .phone-list {
@@ -4963,12 +5086,12 @@ footer {
     &__desc {
       display: none;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__desc {
         display: grid;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__desc {
         grid-template-columns: 21.25rem 1fr;
       }
@@ -5061,20 +5184,6 @@ footer {
               --tw-text-opacity: 1;
               color: rgb(123 147 167 / var(--tw-text-opacity));
             }
-            & > a {
-              font-size: 0.875rem;
-              line-height: 140%;
-            }
-            & > a {
-              letter-spacing: -0.035rem;
-            }
-            & > a {
-              --tw-text-opacity: 1;
-              color: rgb(36 144 168 / var(--tw-text-opacity));
-            }
-            & > a {
-              text-decoration-line: underline;
-            }
           }
           &__right {
             & > a {
@@ -5110,7 +5219,14 @@ footer {
                 border-color: rgb(224 230 235 / var(--tw-border-opacity));
               }
               .separator {
-                height: auto;
+                height: 33px;
+              }
+              svg {
+                margin-bottom: 5px;
+              }
+              svg:hover {
+                --tw-text-opacity: 1;
+                color: rgb(53 162 186 / var(--tw-text-opacity));
               }
             }
           }
@@ -5123,10 +5239,18 @@ footer {
     color: rgb(27 108 126 / var(--tw-text-opacity));
   }
   .links {
+    margin-bottom: 2rem;
+  }
+  .links {
     display: flex;
   }
   .links {
     gap: 1rem;
+  }
+  @media (min-width: 1200px) {
+    .links {
+      margin-bottom: 0px;
+    }
   }
   .accordeon {
     .item {
@@ -5185,13 +5309,18 @@ footer {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
+    .form {
+      border-radius: 5rem;
+    }
+  }
+  @media (min-width: 1200px) {
     .form {
       padding-top: 5rem;
       padding-bottom: 5rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .form {
       padding-left: 2.5rem;
       padding-right: 2.5rem;
@@ -5201,7 +5330,7 @@ footer {
     .title {
       margin-bottom: 1.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .title {
         margin-bottom: 3rem;
       }
@@ -5218,8 +5347,13 @@ footer {
     .fields {
       gap: 1rem;
     }
+    @media (min-width: 1200px) {
+      .fields {
+        gap: 1.25rem;
+      }
+    }
     .fields {
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         grid-template-areas:
           'a a b b c c'
           'd d d e e e'
@@ -5261,7 +5395,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 4rem;
     }
@@ -5272,12 +5406,12 @@ footer {
   .content {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       height: 39.75rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       gap: 1.25rem;
     }
@@ -5342,8 +5476,21 @@ footer {
         left: 1rem;
       }
       &__title {
+        font-size: 1.5rem;
+        line-height: 130%;
+      }
+      &__title {
+        font-weight: 700;
+      }
+      &__title {
         --tw-text-opacity: 1;
         color: rgb(255 255 255 / var(--tw-text-opacity));
+      }
+      &__title {
+        top: 2rem;
+      }
+      &__title {
+        left: 2rem;
       }
     }
     .item-all {
@@ -5373,16 +5520,18 @@ footer {
       padding-left: 1rem;
       padding-right: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item-all {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding: 2rem;
       }
     }
     .item-all {
       &__title {
         font-size: 1.5rem;
         line-height: 130%;
+      }
+      &__title {
+        font-weight: 700;
       }
       &__title {
         letter-spacing: -0.06rem;
@@ -5403,7 +5552,7 @@ footer {
       .img {
         border-radius: 2rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .img {
           height: 100%;
         }
@@ -5420,7 +5569,7 @@ footer {
         }
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       grid-template-areas:
         'a b d'
         'a c d';
@@ -5451,26 +5600,40 @@ footer {
 .structure {
   display: grid;
   gap: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+  .structure {
+    gap: 4rem;
+  }
+}
+
+.structure {
   &__top {
     display: grid;
   }
   &__top {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       display: flex;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       justify-content: space-between;
     }
   }
   &__top {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .text {
         width: 500px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .text {
+        line-height: 160%;
       }
     }
   }
@@ -5480,10 +5643,13 @@ footer {
   &__bottom {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__bottom {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+  }
+  .item {
+    display: grid;
   }
   .item {
     border-radius: 1.5rem;
@@ -5503,7 +5669,17 @@ footer {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
+    .item {
+      height: 440px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .item {
+      align-content: space-between;
+    }
+  }
+  @media (min-width: 1200px) {
     .item {
       padding: 2.5rem;
     }
@@ -5522,18 +5698,34 @@ footer {
       gap: 2.5rem;
     }
     &__top {
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .map {
           position: absolute;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .map {
           right: -1.5rem;
         }
       }
     }
     &__contacts {
+      &-location {
+        display: flex;
+      }
+      &-location {
+        gap: 0.75rem;
+      }
+      &-location {
+        font-weight: 700;
+      }
+      &-location {
+        letter-spacing: -0.04rem;
+      }
+      &-location {
+        --tw-text-opacity: 1;
+        color: rgb(123 147 167 / var(--tw-text-opacity));
+      }
       &-name {
         margin-bottom: 1.5rem;
       }
@@ -5584,10 +5776,10 @@ footer {
   gap: 2rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .about {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4rem;
+    gap: 0px;
   }
 }
 
@@ -5598,9 +5790,14 @@ footer {
   &__top {
     gap: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       align-content: space-between;
+    }
+  }
+  @media (min-width: 1200px) {
+    &__top {
+      padding-right: 4rem;
     }
   }
   &__top {
@@ -5610,9 +5807,12 @@ footer {
       margin-bottom: 1.5rem;
     }
     .text {
+      line-height: 160%;
+    }
+    .text {
       letter-spacing: -0.06rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .text {
         width: 533px;
       }
@@ -5652,7 +5852,7 @@ footer {
       padding-left: 1rem;
       padding-right: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         padding: 2rem;
       }
@@ -5685,6 +5885,10 @@ footer {
         --tw-text-opacity: 1;
         color: rgb(163 180 194 / var(--tw-text-opacity));
       }
+      &__subtitle {
+        font-size: 1.25rem;
+        line-height: 130%;
+      }
     }
   }
 }
@@ -5695,7 +5899,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 4rem;
     }
@@ -5712,7 +5916,7 @@ footer {
   background-color: rgb(234 247 250 / var(--tw-bg-opacity));
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .mission {
     gap: 4rem;
   }
@@ -5726,7 +5930,7 @@ footer {
     .item {
       gap: 0.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -5735,7 +5939,7 @@ footer {
       &:not(:first-child) {
         padding-top: 1.5rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &:not(:first-child) {
           padding-top: 2rem;
         }
@@ -5750,7 +5954,7 @@ footer {
       &:not(:last-child) {
         padding-bottom: 1.5rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &:not(:last-child) {
           padding-bottom: 2rem;
         }
@@ -5773,14 +5977,20 @@ footer {
         --tw-text-opacity: 1;
         color: rgb(123 147 167 / var(--tw-text-opacity));
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .text,
       .content-text {
           font-size: 1.25rem;
           line-height: 130%;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
+        .text,
+      .content-text {
+          line-height: 160%;
+        }
+      }
+      @media (min-width: 1200px) {
         .text,
       .content-text {
           letter-spacing: -0.05rem;
@@ -5807,7 +6017,7 @@ footer {
       .content-text {
         gap: 0.5rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .content-text {
           gap: 1rem;
         }
@@ -5823,7 +6033,7 @@ footer {
   &__video {
     border-radius: 0.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__video {
       border-radius: 2rem;
     }
@@ -5905,7 +6115,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -5919,7 +6129,7 @@ footer {
   &__list {
     gap: 1.25rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
@@ -5959,6 +6169,9 @@ footer {
         line-height: 140%;
       }
       &__title {
+        font-weight: 700;
+      }
+      &__title {
         letter-spacing: -0.04rem;
       }
       &__title {
@@ -5974,9 +6187,10 @@ footer {
   gap: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .standarts {
-    grid-template-columns: 27.5rem 36.625rem 18.375rem;
+    grid-template-columns: 0.75fr 1fr 0.5fr;
+    gap: 1.25rem;
   }
 }
 
@@ -6011,17 +6225,17 @@ footer {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .item {
       height: 27.5rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .item {
       gap: 0px;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .item {
       padding: 2.5rem;
     }
@@ -6039,12 +6253,12 @@ footer {
     &__bottom {
       gap: 2rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__bottom {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__bottom {
         gap: 3rem;
       }
@@ -6056,10 +6270,13 @@ footer {
       gap: 0.75rem;
     }
     &__content {
+      font-weight: 700;
+    }
+    &__content {
       --tw-text-opacity: 1;
       color: rgb(123 147 167 / var(--tw-text-opacity));
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__content {
         gap: 1rem;
       }
@@ -6090,7 +6307,7 @@ footer {
     & > *:first-child {
       margin-left: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       & > *:first-child {
         margin-left: 2.5rem;
       }
@@ -6098,25 +6315,25 @@ footer {
     & > *:last-child {
       margin-right: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       & > *:last-child {
         margin-right: 2.5rem;
       }
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .tabs {
       margin-left: -2.5rem;
       margin-right: -2.5rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .tabs {
       margin-bottom: 2.5rem;
     }
   }
   .tabs {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       width: calc(100% + 5rem);
     }
   }
@@ -6132,7 +6349,7 @@ footer {
   &__content {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__content {
       gap: 4rem;
     }
@@ -6144,7 +6361,7 @@ footer {
   &__slider {
     overflow: hidden;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__slider {
       margin-left: -2.5rem;
       margin-right: -2.5rem;
@@ -6175,17 +6392,20 @@ footer {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
     }
-    @media (min-width: 1024px) {
+    .swiper-slide {
+      opacity: 0.2;
+    }
+    @media (min-width: 1200px) {
       .swiper-slide {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .swiper-slide {
         gap: 2.5rem;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .swiper-slide {
         padding: 2rem;
       }
@@ -6195,6 +6415,9 @@ footer {
         --tw-bg-opacity: 1;
         background-color: rgb(234 247 250 / var(--tw-bg-opacity));
       }
+      &.swiper-slide-active {
+        opacity: 1;
+      }
     }
     .slide-content {
       display: grid;
@@ -6202,12 +6425,12 @@ footer {
     .slide-content {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .slide-content {
         align-content: center;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .slide-content {
         gap: 2rem;
       }
@@ -6227,7 +6450,7 @@ footer {
         --tw-text-opacity: 1;
         color: rgb(36 144 168 / var(--tw-text-opacity));
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__title {
           font-size: 4rem;
           line-height: 110%;
@@ -6252,7 +6475,7 @@ footer {
       ul::marker {
         color: rgb(123 147 167 );
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         ul {
           line-height: 180%;
         }
@@ -6273,7 +6496,7 @@ footer {
     .img {
       border-radius: 2.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .img {
         height: 22.5rem;
       }
@@ -6297,7 +6520,7 @@ footer {
   gap: 2rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .delusion-system {
     gap: 4rem;
   }
@@ -6310,7 +6533,7 @@ footer {
   &__content {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__content {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -6362,7 +6585,7 @@ footer {
       --tw-text-opacity: 1;
       color: rgb(194 205 214 / var(--tw-text-opacity));
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .swiper-slide {
         padding: 2rem;
       }
@@ -6394,7 +6617,7 @@ footer {
         &__title {
           letter-spacing: -0.08rem;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &__title {
             font-size: 4rem;
             line-height: 110%;
@@ -6403,7 +6626,7 @@ footer {
         &__text {
           letter-spacing: -0.04rem;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &__text {
             line-height: 180%;
           }
@@ -6431,7 +6654,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -6440,9 +6663,9 @@ footer {
     display: grid;
   }
   &__content {
-    gap: 1.5rem;
+    gap: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__content {
       gap: 4rem;
     }
@@ -6484,12 +6707,12 @@ footer {
   .list-contacts {
     padding: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list-contacts {
       align-self: flex-start;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list-contacts {
       padding: 1.5rem;
     }
@@ -6512,12 +6735,12 @@ footer {
     .list {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         gap: 2rem;
       }
@@ -6572,12 +6795,12 @@ footer {
   &__top {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       grid-template-columns: 1fr 31.25rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       gap: 8.5rem;
     }
@@ -6588,7 +6811,7 @@ footer {
   &__bottom {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__bottom {
       gap: 2rem;
     }
@@ -6600,13 +6823,13 @@ footer {
     .list {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         gap: 1.25rem;
       }
     }
     .list {
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         grid-template-areas:
           'a a b b c c'
           'd d d e e e';
@@ -6641,7 +6864,7 @@ footer {
       .item {
         padding: 1rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         .item {
           padding: 2rem;
         }
@@ -6664,13 +6887,13 @@ footer {
           --tw-text-opacity: 1;
           color: rgb(36 144 168 / var(--tw-text-opacity));
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &__title {
             font-size: 3rem;
             line-height: 120%;
           }
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &__title {
             letter-spacing: -0.06rem;
           }
@@ -6694,7 +6917,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 2rem;
     }
@@ -6705,7 +6928,7 @@ footer {
   .list-file {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list-file {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -6716,244 +6939,281 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 2rem;
     }
   }
-  .subitle {
-    margin-bottom: 1.5rem;
-  }
-  .subitle {
-    font-size: 1.5rem;
-    line-height: 130%;
-  }
-  .subitle {
-    font-weight: 700;
-  }
-  .subitle {
-    letter-spacing: -0.06rem;
-  }
-  .subitle {
-    --tw-text-opacity: 1;
-    color: rgb(123 147 167 / var(--tw-text-opacity));
-  }
-  @media (min-width: 1024px) {
-    .subitle {
-      margin-bottom: 2rem;
-    }
-  }
-  .list {
+  &__wrapper {
     display: grid;
   }
-  .list {
-    gap: 1rem;
+  &__wrapper {
+    gap: 2rem;
   }
-  @media (min-width: 1024px) {
-    .list {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+  @media (min-width: 1200px) {
+    &__wrapper {
+      gap: 3rem;
     }
   }
-  @media (min-width: 1024px) {
-    .list {
-      gap: 1.25rem;
+  .indicator {
+    .subtitle {
+      margin-bottom: 1.5rem;
     }
-  }
-  .list {
-    .item {
+    .subtitle {
+      font-size: 1.5rem;
+      line-height: 130%;
+    }
+    .subtitle {
+      font-weight: 700;
+    }
+    .subtitle {
+      letter-spacing: -0.06rem;
+    }
+    .subtitle {
+      --tw-text-opacity: 1;
+      color: rgb(123 147 167 / var(--tw-text-opacity));
+    }
+    @media (min-width: 1200px) {
+      .subtitle {
+        margin-bottom: 2rem;
+      }
+    }
+    &__list {
       display: grid;
     }
-    .item {
-      min-height: 16.25rem;
+    &__list {
+      gap: 1rem;
     }
-    .item {
-      align-content: space-between;
+    @media (min-width: 1200px) {
+      &__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
-    .item {
-      border-radius: 2rem;
+    @media (min-width: 1200px) {
+      &__list {
+        gap: 1.25rem;
+      }
     }
-    .item {
-      --tw-bg-opacity: 1;
-      background-color: rgb(245 251 255 / var(--tw-bg-opacity));
-    }
-    .item {
-      padding: 1.5rem;
-    }
-    @media (min-width: 1024px) {
+    &__list {
       .item {
-        min-height: 15rem;
+        display: grid;
       }
-    }
-    @media (min-width: 1024px) {
       .item {
-        padding: 2rem;
+        min-height: 16.25rem;
       }
-    }
-    .item {
-      &__title {
-        font-family: Intro;
+      .item {
+        align-content: space-between;
       }
-      &__title {
-        font-size: 1.75rem;
-        line-height: 130%;
+      .item {
+        border-radius: 2rem;
       }
-      &__title {
-        text-transform: uppercase;
+      .item {
+        --tw-bg-opacity: 1;
+        background-color: rgb(245 251 255 / var(--tw-bg-opacity));
       }
-      &__title {
-        letter-spacing: -0.035rem;
+      .item {
+        padding: 1.5rem;
       }
-      &__title {
-        --tw-text-opacity: 1;
-        color: rgb(36 144 168 / var(--tw-text-opacity));
-      }
-      @media (min-width: 1024px) {
-        &__title {
-          font-size: 3rem;
-          line-height: 120%;
+      @media (min-width: 1200px) {
+        .item {
+          min-height: 15rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
+        .item {
+          padding: 2rem;
+        }
+      }
+      .item {
+        &__title {
+          font-family: Intro;
+        }
+        &__title {
+          font-size: 1.75rem;
+          line-height: 130%;
+        }
+        &__title {
+          text-transform: uppercase;
+        }
+        &__title {
+          letter-spacing: -0.035rem;
+        }
+        &__title {
+          --tw-text-opacity: 1;
+          color: rgb(36 144 168 / var(--tw-text-opacity));
+        }
+        @media (min-width: 1200px) {
+          &__title {
+            font-size: 3rem;
+            line-height: 120%;
+          }
+        }
+        @media (min-width: 1200px) {
+          &__title {
+            letter-spacing: -0.06rem;
+          }
+        }
+        &__text {
+          font-size: 1rem;
+          line-height: 140%;
+        }
+        &__text {
+          line-height: 160%;
+        }
+        &__text {
+          letter-spacing: -0.04rem;
+        }
+      }
+    }
+  }
+  .advantages {
+    .subtitle {
+      margin-bottom: 1.5rem;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      line-height: 130%;
+    }
+    .subtitle {
+      font-weight: 700;
+    }
+    .subtitle {
+      letter-spacing: -0.06rem;
+    }
+    .subtitle {
+      --tw-text-opacity: 1;
+      color: rgb(123 147 167 / var(--tw-text-opacity));
+    }
+    @media (min-width: 1200px) {
+      .subtitle {
+        margin-bottom: 2rem;
+      }
+    }
+    &__list {
+      display: grid;
+    }
+    &__list {
+      gap: 1rem;
+    }
+    @media (min-width: 1200px) {
+      &__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 1200px) {
+      &__list {
+        gap: 1.25rem;
+      }
+    }
+    &__list {
+      .item {
+        display: grid;
+      }
+      .item {
+        gap: 1.5rem;
+      }
+      .item {
+        border-radius: 1.5rem;
+      }
+      .item {
+        border-width: 1px;
+      }
+      .item {
+        --tw-border-opacity: 1;
+        border-color: rgb(213 240 246 / var(--tw-border-opacity));
+      }
+      .item {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .item {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+      @media (min-width: 1200px) {
+        .item {
+          grid-template-columns: 1fr auto;
+        }
+      }
+      @media (min-width: 1200px) {
+        .item {
+          gap: 3rem;
+        }
+      }
+      @media (min-width: 1200px) {
+        .item {
+          padding: 2rem;
+        }
+      }
+      .item {
+        &__top {
+          display: grid;
+        }
+        &__top {
+          align-content: flex-start;
+        }
+        &__top {
+          gap: 0.75rem;
+        }
+        &__bottom {
+          height: 19.4375rem;
+        }
+        &__bottom {
+          width: 19.4375rem;
+        }
+        &__bottom {
+          overflow: hidden;
+        }
+        &__bottom {
+          border-radius: 3rem;
+        }
+        @media (min-width: 1200px) {
+          &__bottom {
+            height: 9.75rem;
+          }
+        }
+        @media (min-width: 1200px) {
+          &__bottom {
+            width: 9.75rem;
+          }
+        }
+        @media (min-width: 1200px) {
+          &__bottom {
+            border-radius: 1.5rem;
+          }
+        }
+        &__bottom {
+          & > svg {
+            height: 100%;
+          }
+          & > svg {
+            width: 100%;
+          }
+        }
+        &__title {
+          font-size: 1.5rem;
+          line-height: 130%;
+        }
+        &__title {
+          font-weight: 700;
+        }
         &__title {
           letter-spacing: -0.06rem;
         }
-      }
-      &__text {
-        font-size: 1rem;
-        line-height: 140%;
-      }
-      &__text {
-        line-height: 160%;
-      }
-      &__text {
-        letter-spacing: -0.04rem;
-      }
-    }
-  }
-  .advantages {
-    display: grid;
-  }
-  .advantages {
-    gap: 1rem;
-  }
-  @media (min-width: 1024px) {
-    .advantages {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  @media (min-width: 1024px) {
-    .advantages {
-      gap: 1.25rem;
-    }
-  }
-  .advantages {
-    .item {
-      display: grid;
-    }
-    .item {
-      gap: 1.5rem;
-    }
-    .item {
-      border-radius: 1.5rem;
-    }
-    .item {
-      border-width: 1px;
-    }
-    .item {
-      --tw-border-opacity: 1;
-      border-color: rgb(213 240 246 / var(--tw-border-opacity));
-    }
-    .item {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-    .item {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
-    @media (min-width: 1024px) {
-      .item {
-        grid-template-columns: 1fr auto;
-      }
-    }
-    @media (min-width: 1024px) {
-      .item {
-        gap: 3rem;
-      }
-    }
-    @media (min-width: 1024px) {
-      .item {
-        padding: 2rem;
-      }
-    }
-    .item {
-      &__top {
-        display: grid;
-      }
-      &__top {
-        align-content: flex-start;
-      }
-      &__top {
-        gap: 0.75rem;
-      }
-      &__bottom {
-        height: 19.4375rem;
-      }
-      &__bottom {
-        width: 19.4375rem;
-      }
-      &__bottom {
-        overflow: hidden;
-      }
-      &__bottom {
-        border-radius: 3rem;
-      }
-      @media (min-width: 1024px) {
-        &__bottom {
-          height: 9.75rem;
+        &__title {
+          --tw-text-opacity: 1;
+          color: rgb(123 147 167 / var(--tw-text-opacity));
         }
-      }
-      @media (min-width: 1024px) {
-        &__bottom {
-          width: 9.75rem;
+        &__text {
+          font-size: 0.875rem;
+          line-height: 140%;
         }
-      }
-      @media (min-width: 1024px) {
-        &__bottom {
-          border-radius: 1.5rem;
+        &__text {
+          line-height: 160%;
         }
-      }
-      &__bottom {
-        & > svg {
-          height: 100%;
+        &__text {
+          letter-spacing: -0.035rem;
         }
-        & > svg {
-          width: 100%;
-        }
-      }
-      &__title {
-        font-size: 1.5rem;
-        line-height: 130%;
-      }
-      &__title {
-        font-weight: 700;
-      }
-      &__title {
-        letter-spacing: -0.06rem;
-      }
-      &__title {
-        --tw-text-opacity: 1;
-        color: rgb(123 147 167 / var(--tw-text-opacity));
-      }
-      &__text {
-        font-size: 0.875rem;
-        line-height: 140%;
-      }
-      &__text {
-        line-height: 160%;
-      }
-      &__text {
-        letter-spacing: -0.035rem;
       }
     }
   }
@@ -6973,7 +7233,7 @@ footer {
   .filters {
     gap: 1.25rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .filters {
       grid-template-columns: repeat(5, minmax(0, 1fr));
     }
@@ -6984,7 +7244,7 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -6996,7 +7256,7 @@ footer {
   gap: 0.75rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .project-item {
     gap: 3rem;
   }
@@ -7007,7 +7267,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -7018,7 +7278,7 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -7038,7 +7298,7 @@ footer {
   .list {
     row-gap: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
@@ -7050,7 +7310,7 @@ footer {
   gap: 0.75rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .news-item {
     gap: 3rem;
   }
@@ -7069,12 +7329,12 @@ footer {
   .content-img {
     border-radius: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content-img {
       height: 47.8125rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content-img {
       border-radius: 2rem;
     }
@@ -7101,7 +7361,7 @@ footer {
   padding-bottom: 2.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .news-item-head {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -7110,13 +7370,13 @@ footer {
 
 .news-item-head {
   padding-top: calc(89px + 32px);
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     padding-top: calc(89px + 40px);
   }
   .breadcrumb {
     margin-bottom: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .breadcrumb {
       margin-bottom: 3rem;
     }
@@ -7124,7 +7384,7 @@ footer {
   .tag {
     margin-bottom: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .tag {
       margin-bottom: 2rem;
     }
@@ -7132,7 +7392,7 @@ footer {
   .title {
     margin-bottom: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 0.75rem;
     }
@@ -7176,7 +7436,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -7187,12 +7447,12 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 1.25rem;
     }
@@ -7220,7 +7480,7 @@ footer {
     .item {
       padding: 1.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         height: 20.5rem;
       }
@@ -7269,12 +7529,12 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 1.25rem;
     }
@@ -7288,12 +7548,12 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 1.25rem;
     }
@@ -7307,12 +7567,12 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 1.25rem;
     }
@@ -7331,7 +7591,7 @@ footer {
   padding-right: 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .product-all {
     border-radius: 5rem;
     padding-left: 2.5rem;
@@ -7371,12 +7631,12 @@ footer {
   .btns {
     padding-bottom: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .btns {
       gap: 1.25rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .btns {
       padding-bottom: 0px;
     }
@@ -7417,7 +7677,7 @@ footer {
   &__content {
     grid-template-columns: 1fr 31.25rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__content {
       margin-bottom: 3rem;
     }
@@ -7440,7 +7700,7 @@ footer {
     .title {
       letter-spacing: -0.07rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .title {
         font-size: 1.75rem;
         line-height: 130%;
@@ -7450,7 +7710,7 @@ footer {
   .tabs {
     margin-bottom: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .tabs {
       margin-bottom: 3rem;
     }
@@ -7461,12 +7721,12 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 1.25rem;
     }
@@ -7480,7 +7740,7 @@ footer {
   .list {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -7510,22 +7770,22 @@ footer {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         grid-template-columns: 1fr 9.75rem;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         gap: 3.5rem;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         border-radius: 2rem;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         padding: 2rem;
       }
@@ -7600,12 +7860,12 @@ footer {
       &__bottom {
         flex-shrink: 0;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__bottom {
           height: 9.75rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__bottom {
           width: 9.75rem;
         }
@@ -7626,7 +7886,7 @@ footer {
 }
 
 .characteristics {
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -7635,7 +7895,7 @@ footer {
     &-desk {
       display: none;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &-desk {
         display: block;
       }
@@ -7676,7 +7936,7 @@ footer {
         &__content {
           display: grid;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &__content {
             gap: 1.5rem;
           }
@@ -7688,7 +7948,7 @@ footer {
         }
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &-mob {
         display: none;
       }
@@ -7738,7 +7998,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -7813,7 +8073,7 @@ footer {
     font-size: 1.75rem;
     line-height: 130%;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 2rem;
     }
@@ -7827,13 +8087,13 @@ footer {
   &__wrapper {
     gap: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__wrapper {
       justify-content: space-between;
     }
   }
   &__wrapper {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       grid-template-areas:
         'a a b b'
         'c c c c';
@@ -7879,12 +8139,12 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       max-width: 40rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 1.25rem;
     }
@@ -7916,17 +8176,17 @@ footer {
   .contacts-item {
     padding: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       width: 31.25rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       justify-self: end;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       padding: 1.5rem;
     }
@@ -7969,17 +8229,17 @@ footer {
     &__links {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         flex-wrap: wrap;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         gap: 2.5rem;
       }
@@ -8020,12 +8280,12 @@ footer {
   .links {
     gap: 1.25rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .links {
       display: flex;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .links {
       gap: 2.5rem;
     }
@@ -8037,12 +8297,12 @@ footer {
     .item {
       gap: 0.75rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         gap: 1rem;
       }
@@ -8102,13 +8362,13 @@ footer {
         padding-left: 1rem;
         padding-right: 1rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         a {
           padding-top: 1rem;
           padding-bottom: 1rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         a {
           padding-left: 1.5rem;
           padding-right: 1.5rem;
@@ -8150,7 +8410,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -8161,9 +8421,14 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1200px) {
+    .list {
+      gap: 1.25rem;
     }
   }
   .list {
@@ -8171,7 +8436,7 @@ footer {
       position: relative;
     }
     .item {
-      height: 12.25rem;
+      height: 196px;
     }
     .item {
       overflow: hidden;
@@ -8191,15 +8456,25 @@ footer {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
     }
+    @media (min-width: 1200px) {
+      .item {
+        height: 222px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .item {
+        padding: 2rem;
+      }
+    }
     .item {
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &:nth-child(1),
       &:nth-child(2),
       &:nth-child(3) {
           grid-column: span 2 / span 2;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &:nth-child(4),
       &:nth-child(5) {
           grid-column: span 3 / span 3;
@@ -8236,6 +8511,12 @@ footer {
       &__title {
         --tw-text-opacity: 1;
         color: rgb(36 144 168 / var(--tw-text-opacity));
+      }
+      @media (min-width: 1200px) {
+        &__title {
+          font-size: 3rem;
+          line-height: 120%;
+        }
       }
       &__text {
         font-size: 1rem;
@@ -8282,17 +8563,17 @@ footer {
         --tw-bg-opacity: 1;
         background-color: rgb(228 245 255 / var(--tw-bg-opacity));
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__icon {
           right: -5rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__icon {
           height: 20rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__icon {
           width: 20rem;
         }
@@ -8313,7 +8594,7 @@ footer {
   .tabs {
     margin-bottom: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .tabs {
       margin-bottom: 3rem;
     }
@@ -8337,7 +8618,7 @@ footer {
   .title {
     letter-spacing: -0.035rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -8364,7 +8645,7 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 1.5rem;
     }
@@ -8389,12 +8670,12 @@ footer {
     .item {
       padding: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         gap: 2rem;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         padding: 2rem;
       }
@@ -8406,7 +8687,7 @@ footer {
       &__top {
         gap: 0.75rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__top {
           grid-template-columns: 1fr auto;
         }
@@ -8417,12 +8698,12 @@ footer {
       &__middle {
         gap: 1.5rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__middle {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__middle {
           gap: 1.25rem;
         }
@@ -8444,12 +8725,12 @@ footer {
         --tw-text-opacity: 1;
         color: rgb(123 147 167 / var(--tw-text-opacity));
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__title {
           margin-bottom: 0.75rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__title {
           font-size: 1.75rem;
           line-height: 130%;
@@ -8482,13 +8763,13 @@ footer {
         --tw-text-opacity: 1;
         color: rgb(123 147 167 / var(--tw-text-opacity));
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__price {
           font-size: 1.5rem;
           line-height: 130%;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__price {
           line-height: 130%;
         }
@@ -8545,7 +8826,7 @@ footer {
   &__wrapper {
     gap: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__wrapper {
       gap: 3rem;
     }
@@ -8553,12 +8834,12 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       font-size: 1.75rem;
       line-height: 130%;
@@ -8570,7 +8851,7 @@ footer {
   .list {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 3rem;
     }
@@ -8582,7 +8863,7 @@ footer {
     .item {
       gap: 1.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -8636,7 +8917,7 @@ footer {
         &-text {
           letter-spacing: -0.04rem;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &-text {
             width: 33.3125rem;
           }
@@ -8665,17 +8946,17 @@ footer {
       &__contacts {
         padding: 1rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__contacts {
           width: 31.25rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__contacts {
           justify-self: end;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__contacts {
           padding: 1.5rem;
         }
@@ -8701,17 +8982,17 @@ footer {
         &-links {
           gap: 1rem;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &-links {
             display: flex;
           }
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &-links {
             flex-wrap: wrap;
           }
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &-links {
             gap: 2rem;
           }
@@ -8760,12 +9041,12 @@ footer {
         --tw-text-opacity: 1;
         color: rgb(36 144 168 / var(--tw-text-opacity));
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__text {
           width: 31.25rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__text {
           justify-self: end;
         }
@@ -8782,12 +9063,12 @@ footer {
     ul {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       ul {
         width: 50%;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       ul {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -8799,7 +9080,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -8821,18 +9102,18 @@ footer {
     --tw-text-opacity: 1;
     color: rgb(123 147 167 / var(--tw-text-opacity));
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .subtitle {
       margin-bottom: 1.5rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .subtitle {
       font-size: 1.5rem;
       line-height: 130%;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .subtitle {
       letter-spacing: -0.06rem;
     }
@@ -8843,13 +9124,13 @@ footer {
   .content {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   .content {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       & > :first-child {
         width: 40rem;
       }
@@ -8904,22 +9185,22 @@ footer {
   .contacts-item {
     padding: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       width: 31.25rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       align-self: center;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       justify-self: end;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       padding: 1.5rem;
     }
@@ -8945,17 +9226,17 @@ footer {
     &__links {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         flex-wrap: wrap;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         gap: 2.5rem;
       }
@@ -8996,7 +9277,7 @@ footer {
   .title {
     margin-bottom: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -9007,7 +9288,7 @@ footer {
   .content {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .content {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -9035,17 +9316,17 @@ footer {
   .contacts-item {
     padding: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       width: 31.25rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       justify-self: end;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       padding: 1.5rem;
     }
@@ -9071,17 +9352,17 @@ footer {
     &__links {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         flex-wrap: wrap;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         gap: 2.5rem;
       }
@@ -9125,7 +9406,7 @@ footer {
   &__content {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__content {
       gap: 3rem;
     }
@@ -9153,7 +9434,7 @@ footer {
     --tw-text-opacity: 1;
     color: rgb(123 147 167 / var(--tw-text-opacity));
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .subtitle {
       margin-bottom: 1.5rem;
     }
@@ -9182,7 +9463,7 @@ footer {
   ul::marker {
     color: rgb(61 78 92 );
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     ul {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -9193,7 +9474,7 @@ footer {
   .tabs {
     margin-bottom: 0.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .tabs {
       margin-bottom: 3rem;
     }
@@ -9208,7 +9489,7 @@ footer {
   .title {
     letter-spacing: -0.035rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -9240,12 +9521,12 @@ footer {
   &__wrapper {
     gap: 2rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__wrapper {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__wrapper {
       justify-content: space-between;
     }
@@ -9267,12 +9548,12 @@ footer {
   .list {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       max-width: 40rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .list {
       gap: 1.25rem;
     }
@@ -9304,17 +9585,17 @@ footer {
   .contacts-item {
     padding: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       width: 31.25rem;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       justify-self: end;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .contacts-item {
       padding: 1.5rem;
     }
@@ -9357,17 +9638,17 @@ footer {
     &__links {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         flex-wrap: wrap;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &__links {
         gap: 2.5rem;
       }
@@ -9408,12 +9689,12 @@ footer {
   .links {
     gap: 1.25rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .links {
       display: flex;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .links {
       gap: 2.5rem;
     }
@@ -9425,12 +9706,12 @@ footer {
     .item {
       gap: 0.75rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         gap: 1rem;
       }
@@ -9490,13 +9771,13 @@ footer {
         padding-left: 1rem;
         padding-right: 1rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         a {
           padding-top: 1rem;
           padding-bottom: 1rem;
         }
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         a {
           padding-left: 1.5rem;
           padding-right: 1.5rem;
@@ -9539,7 +9820,7 @@ footer {
   gap: 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .contacts-links {
     gap: 2rem;
   }
@@ -9552,12 +9833,12 @@ footer {
   &__top {
     gap: 1rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       display: flex;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__top {
       gap: 1.25rem;
     }
@@ -9615,12 +9896,12 @@ footer {
     .list {
       gap: 0.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         gap: 1.25rem;
       }
@@ -9705,7 +9986,7 @@ footer {
   &__table {
     gap: 1.5rem;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     &__table {
       gap: 2rem;
     }
@@ -9717,17 +9998,17 @@ footer {
     &-top {
       gap: 1.5rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &-top {
         display: flex;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &-top {
         align-items: center;
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       &-top {
         justify-content: space-between;
       }
@@ -9751,7 +10032,7 @@ footer {
     .item {
       line-height: 160%;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .item {
         gap: 0.75rem;
       }
@@ -9777,7 +10058,7 @@ footer {
       &:not(:last-child) {
         padding-bottom: 1rem;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &:not(:last-child) {
           padding-bottom: 1.5rem;
         }
@@ -9791,20 +10072,20 @@ footer {
   gap: 1.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .shareholders-data {
     gap: 3rem;
   }
 }
 
 .shareholders-data {
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .tabs__wrapper {
       flex-wrap: wrap;
     }
   }
   .tabs__wrapper {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       & > button {
         width: -moz-fit-content;
         width: fit-content;
@@ -9818,7 +10099,7 @@ footer {
     font-size: 1.75rem;
     line-height: 130%;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     .title {
       margin-bottom: 3rem;
     }
@@ -9830,12 +10111,12 @@ footer {
     .list {
       gap: 1rem;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         grid-template-columns: repeat(4, minmax(0, 1fr));
       }
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       .list {
         gap: 1.25rem;
       }
@@ -9913,7 +10194,7 @@ footer {
       &__body {
         display: grid;
       }
-      @media (min-width: 1024px) {
+      @media (min-width: 1200px) {
         &__body {
           padding-left: 2.5rem;
           padding-right: 2.5rem;
@@ -9932,7 +10213,7 @@ footer {
         &-wrapper {
           gap: 1.25rem;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
           &-wrapper {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
@@ -9981,7 +10262,7 @@ footer {
     line-height: 130%;
   }
   .checkbox {
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
       height: 58px;
     }
     &__quantity {
@@ -10014,7 +10295,7 @@ footer {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .lg2\:block {
     display: block;
   }

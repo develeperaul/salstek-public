@@ -28,6 +28,21 @@
     &__wrapper {
       @apply rounded-[1rem] p-4 bg-dark grid gap-4;
     }
+    &__top {
+      @apply flex justify-between items-center;
+      &-content {
+        @apply flex items-center gap-3;
+      }
+    }
+    &__close {
+      @apply text-white;
+    }
+    &__flag {
+      @apply rounded-full overflow-hidden;
+    }
+    &__country {
+      @apply text-white text-body_m -tracking-4 font-bold;
+    }
     &__middle {
       @apply overflow-hidden;
       .swiper-slide {

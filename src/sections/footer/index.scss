@@ -16,7 +16,6 @@ footer {
       .content-other {
         @apply pt-8 border-t border-prim_100 grid;
         .logo,
-        .links,
         p {
           @apply inline-block mb-8;
         }
@@ -27,7 +26,7 @@ footer {
           line-height: 140%;
         }
         .politics {
-          @apply underline text-prim_600 text-body_s -tracking-3.5 mb-6 inline-block;
+          @apply mb-6;
         }
         .yesidea {
           @apply text-sec_300 -tracking-3 flex gap-3 items-end;
@@ -35,7 +34,11 @@ footer {
           line-height: 140%;
           .separator {
             @apply border-r border-sec_100 rounded-2xl block;
-            height: auto;
+            height: 33px;
+          }
+          svg {
+            margin-bottom: 5px;
+            @apply hover:text-prim_500;
           }
         }
         .phone-list {
@@ -79,9 +82,6 @@ footer {
               line-height: 140%;
               @apply -tracking-3 text-sec_500;
             }
-            & > a {
-              @apply underline text-body_s text-prim_600 -tracking-3.5;
-            }
           }
           &__right {
             & > a {
@@ -90,7 +90,11 @@ footer {
               line-height: 140%;
               .separator {
                 @apply border-r border-sec_100 rounded-2xl block;
-                height: auto;
+                height: 33px;
+              }
+              svg {
+                margin-bottom: 5px;
+                @apply hover:text-prim_500;
               }
             }
           }
@@ -102,7 +106,8 @@ footer {
     @apply text-prim_700;
   }
   .links {
-    @apply flex gap-4;
+    @apply flex gap-4  mb-8;
+    @apply lg2:mb-0;
   }
 
   .accordeon {

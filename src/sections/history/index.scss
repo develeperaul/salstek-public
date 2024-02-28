@@ -26,9 +26,9 @@
     @apply lg2:-mx-10;
     .swiper-slide {
       @apply rounded-3xl px-4 py-6 border border-prim_100 grid gap-4;
-      @apply lg2:grid-cols-2 lg2:gap-10 lg2:p-8;
+      @apply lg2:grid-cols-2 lg2:gap-10 lg2:p-8 opacity-20;
       &.swiper-slide-active {
-        @apply bg-50;
+        @apply bg-50 opacity-100;
       }
     }
     .slide-content {

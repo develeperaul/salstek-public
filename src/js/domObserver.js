@@ -15,11 +15,12 @@ const rezumeList = document.querySelectorAll('.rezume__content__list');
       });
       //select
 
-      const inputs = addEl.querySelectorAll('input');
+      const inputs = addEl.querySelectorAll('input, textaerea');
       [...inputs].forEach((input) => {
         for (let key in window.constraints.rezume.data) {
           if (input.name === key) {
             input.name = input.name + '_' + index;
+            console.log(input);
 
             const newKey = input.name;
 
@@ -44,7 +45,7 @@ const rezumeList = document.querySelectorAll('.rezume__content__list');
     }
     if (removeEL) {
       console.log(...list.childNodes);
-      const inputs = removeEL.querySelectorAll('input');
+      const inputs = removeEL.querySelectorAll('input,textaerea');
       [...inputs].forEach((input) => {
         if (window.constraints.rezume.data[input.name]) {
           delete window.constraints.rezume.data[input.name];

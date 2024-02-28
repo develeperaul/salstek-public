@@ -209,7 +209,8 @@
     }
   }
   .tabs {
-    @apply grid overflow-hidden w-full;
+    @apply grid overflow-hidden w-full mb-8;
+    @apply mb-12;
     &__wrapper {
       @apply flex gap-5 overflow-auto;
       -ms-overflow-style: none; /* IE и Edge */
@@ -229,7 +230,10 @@
       @apply block;
     }
   }
-
+  .politics {
+    @apply underline text-prim_600 text-body_s -tracking-3.5  inline-block;
+    @apply hover:text-prim_500;
+  }
   .btn-show {
     @apply mt-4;
     @apply lg2:mt-8 lg2:flex lg2:justify-center;
@@ -436,15 +440,55 @@
         }
       }
     }
+    .rezume__content {
+      button {
+        @apply w-fit;
+      }
+    }
     .rezume-fields {
       @apply grid grid-cols-1 gap-6;
       @apply lg2:w-[540px];
+      &__period {
+        @apply grid gap-4;
+        .label {
+          @apply text-body_s -tracking-3 text-sec_500 font-bold;
+        }
+        &-selects {
+          @apply flex items-center gap-4;
+        }
+        &-to,
+        &-from {
+          @apply flex items-center gap-4;
+        }
+      }
+      &__checks {
+        @apply grid gap-4;
+        .label {
+          @apply text-body_s -tracking-3 text-sec_500 font-bold;
+        }
+        &-list {
+          @apply flex gap-5;
+        }
+        .checkbox__wrapper {
+          @apply items-start;
+        }
+        .checkbox__icon {
+          @apply w-4 h-4;
+        }
+        .checkbox__label {
+          @apply text-body_s;
+        }
+
+        .checkbox__input:checked ~ .checkbox__label {
+          color: inherit;
+        }
+      }
     }
   }
 
   .info {
     @apply rounded-3xl p-6 bg-500;
-    &__title  {
+    &__title {
       @apply text-h5 mb-6;
     }
     &__content {
@@ -452,7 +496,7 @@
       @apply lg2:grid-cols-2 lg2:gap-16;
     }
     &__contact {
-      @apply bg-50 grid gap-6 rounded-[32px] p-6 ;
+      @apply bg-50 grid gap-6 rounded-[32px] p-6;
       h4 {
         @apply text-h5 font-bold text-sec_500;
       }
@@ -462,10 +506,8 @@
       &-link {
         @apply flex items-center gap-3 text-sec_500;
         & > a {
-
           @apply text-prim_600 text-body_m -tracking-4;
         }
-        
       }
     }
     &__doc {
@@ -480,15 +522,13 @@
           @apply text-body_m mb-1;
         }
       }
-
     }
     .accordeon {
-      
-      .item{
+      .item {
         &__body {
           @apply mb-0;
         }
-        &__head{
+        &__head {
           @apply justify-start p-0 text-body_s -tracking-4 text-prim_600 gap-2 font-normal;
           .icon {
             @apply w-4 h-4;
@@ -506,7 +546,6 @@
           @apply mb-6;
         }
       }
-
     }
   }
   .rezume__content {
@@ -517,7 +556,7 @@
     &__list {
       @apply grid gap-8;
       .item:not(:first-child) {
-        @apply pt-8 border-t border-prim_100 ;
+        @apply pt-8 border-t border-prim_100;
       }
     }
   }

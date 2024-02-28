@@ -1,7 +1,7 @@
 .write-to-us {
   .form {
     @apply border border-prim_100 rounded-4xl px-4 py-8;
-    @apply lg2:py-20 lg2:px-10;
+    @apply lg2:py-20 lg2:px-10 lg2:rounded-6xl;
     .title {
       @apply mb-6 lg2:mb-12;
     }
@@ -10,6 +10,7 @@
     }
     .fields {
       @apply grid gap-4;
+      @apply lg2:gap-5;
       @screen lg2 {
         grid-template-areas:
           'a a b b c c'

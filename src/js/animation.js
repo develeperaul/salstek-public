@@ -32,27 +32,35 @@ const btns = document.querySelectorAll('[data-action]');
 function clickBtn(e) {
   const target = this.getAttribute('data-target');
   const action = this.getAttribute('data-action');
+  const body = document.querySelector('body');
   if (target) {
     const el = document.querySelector(`#${target}`);
+
     if (el) {
+      const isFull = el.hasAttribute('data-full');
       if (el.dataset?.animateOpen && el.dataset?.animateClose) {
         if (action === 'open') {
+          if (isFull && body) body.style.overflow = 'hidden';
           el.classList.add('open');
           animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
             el.classList.remove('open');
             el.classList.add('active');
           });
         }
-        if (action === 'close')
+        if (action === 'close') {
+          if (isFull && body) body.style.overflow = 'auto';
           animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
             el.classList.remove('active')
           );
+        }
         if (action === 'toggle') {
           if (el.classList.contains('active')) {
+            if (isFull && body) body.style.overflow = 'auto';
             animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
               el.classList.remove('active')
             );
           } else {
+            if (isFull && body) body.style.overflow = 'hidden';
             el.classList.add('open');
             animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
               el.classList.remove('open');

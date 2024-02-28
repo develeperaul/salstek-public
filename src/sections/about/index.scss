@@ -1,16 +1,16 @@
 .about {
   @apply grid gap-8;
-  @apply lg2:grid-cols-2 lg2:gap-16;
+  @apply lg2:grid-cols-2 lg2:gap-0;
   &__top {
     @apply grid gap-8;
-    @apply lg2:content-between;
+    @apply lg2:content-between lg2:pr-16;
     &-content {
     }
     .title {
       @apply mb-6;
     }
     .text {
-      @apply -tracking-6;
+      @apply -tracking-6 leading-160;
       @apply lg2:w-[533px];
     }
   }
@@ -25,6 +25,7 @@
       }
       &__subtitle {
         @apply font-bold text-sec_300 -tracking-4;
+        @apply text-h5;
       }
     }
   }

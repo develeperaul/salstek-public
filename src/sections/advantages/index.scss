@@ -5,9 +5,10 @@
   }
   .list {
     @apply grid gap-4;
-    @apply lg2:grid-cols-6;
+    @apply lg2:grid-cols-6 lg2:gap-5;
     .item {
-      @apply relative px-4 py-6 rounded-3xl bg-500 h-[12.25rem]  overflow-hidden;
+      @apply relative px-4 py-6 rounded-3xl bg-500 h-[196px]  overflow-hidden;
+      @apply lg2:p-8 lg2:h-[222px];
       &:nth-child(1),
       &:nth-child(2),
       &:nth-child(3) {
@@ -24,6 +25,7 @@
       }
       &__title {
         @apply text-h3 font-intro -tracking-3.5 uppercase text-prim_600;
+        @apply lg2:text-h2;
       }
       &__text {
         @apply text-body_m leading-160 -tracking-4;

@@ -1,20 +1,20 @@
 include ../../components/svg.pug
 include ../../components/sidebar/index.pug
 header 
-  .container 
-    .header__wrapper 
-      .header__left
-        a(href="#" class='logo') 
-          +svg('logo', 90, 48)
-      .header__center
-        nav 
-          a(href="#") О компании
-          a(href="#") Карьера
-          a(href="#") Продукты
-          a(href="#") Проекты
-          a(href="#") Контакты 
-      .header__right 
-        a(href="#" class='link') Контакты 
-        include ../../components/locales/index.pug
-        button.btn-fit(data-target='sidebar' data-action='toggle') 
-          +svg('burger')
+  
+  .header__wrapper 
+    .header__left
+      a(href="#" class='logo') 
+        +svg('logo', 90, 48)
+    .header__center
+      nav 
+        a(href="#") О компании
+        a(href="#") Карьера
+        a(href="#") Продукты
+        a(href="#") Проекты
+        a(href="#") Контакты 
+    .header__right 
+      a(href="#" class='link') Контакты 
+      include ../../components/locales/index.pug
+      button.btn-fit(data-target='sidebar' data-action='toggle') 
+        +svg('burger')

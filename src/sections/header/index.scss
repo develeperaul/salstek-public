@@ -26,11 +26,13 @@ header {
   }
   .logo {
     @apply text-prim_700;
+    @apply hover:text-prim_600;
   }
   nav {
     @apply hidden lg2:flex gap-8 items-center;
     & > a {
-      @apply p-3 text-prim_600 text-body_m font-bold;
+      @apply p-3 text-prim_600 text-body_m font-bold rounded-xl;
+      @apply hover:bg-100;
     }
   }
 }

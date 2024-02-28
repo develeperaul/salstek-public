@@ -11,23 +11,24 @@ class Stepper {
     this.progressList = this.el.querySelectorAll('.progresses .progress');
 
     this.stepperIsForm = this.el.tagName === 'FORM' ? true : false;
-
+    this.isValid = false;
     window.constraints[this.el.id].addEventListener('set', /.*/, (res) => {
       setTimeout(() => this.initial(), 0);
     });
     window.constraints[this.el.id].addEventListener('delete', /.*/, (res) => {
       setTimeout(() => this.initial(), 0);
     });
-    this.initial();
+    this.initial('first');
   }
-  initial() {
+  initial(first) {
     if (this.slides) this.slideLength = this.slides.length;
     if (this.stepperIsForm) {
       this.constraints = this.el?.id ? window.constraints[this.el.id].data : {};
     }
     [...this.slides].forEach((slide, index) => {
-      if (index !== 0) slide.classList.add('stepper__content-slide--hide');
-
+      if (index !== 0 && first)
+        slide.classList.add('stepper__content-slide--hide');
+      // if(!first)
       const currentConstraints = {};
       if (this.stepperIsForm) {
         const inputsName = [];
@@ -40,8 +41,10 @@ class Stepper {
             currentConstraints[key] = this.constraints[key];
           }
         }
+
         const errors = validate(this.el, currentConstraints) || {};
         let buttonNext;
+
         if (this.slideLength > 0) {
           if (index === 0) {
             buttonNext = this.el.querySelector(
@@ -52,11 +55,13 @@ class Stepper {
             buttonNext = this.el.querySelector(
               '.stepper__btns:not([data-step="first"]) .btn-next'
             );
+
+          if (!first && index === this.currentSlide)
+            this.checkInvalid(buttonNext, errors);
         }
 
         for (let i = 0; i < inputs.length; ++i) {
           inputs.item(i).addEventListener('change', (ev) => {
-            console.log(currentConstraints);
             const errors = validate(this.el, currentConstraints) || {};
 
             if (buttonNext) this.checkInvalid(buttonNext, errors);
@@ -66,7 +71,7 @@ class Stepper {
     });
 
     [...this.btnsContent].forEach((btnContent) => {
-      if (btnContent.dataset.step !== 'first')
+      if (btnContent.dataset.step !== 'first' && first)
         btnContent.classList.add('stepper__btns-hidden');
       const btnBack = btnContent.querySelector('.btn-back');
       const btnNext = btnContent.querySelector('.btn-next');
@@ -148,7 +153,6 @@ class Stepper {
         this.progressList[this.currentSlide].classList.add('active');
       if (this.currentSlide > 0) {
         [...this.btnsContent].forEach((btnContent) => {
-          console.log(this.currentSlide, this.slideLength);
           if (this.currentSlide === this.slideLength - 1) {
             if (btnContent.dataset.step === 'last') {
               btnContent.classList.remove('stepper__btns-hidden');

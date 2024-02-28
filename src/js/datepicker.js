@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     autohide: true,
     locales: 'ru',
     language: 'ru',
-    format: 'yyyy/mm/dd',
+
     weekStart: 1,
   };
 

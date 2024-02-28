@@ -66,3 +66,12 @@
   /* убираем смещение для отрезков, чтобы включить анимацию галочки */
   stroke-dashoffset: 0;
 }
+.checkbox-politic {
+  @apply text-sec_500;
+  a {
+    @apply text-prim_600;
+  }
+  .checkbox__input:checked ~ .checkbox__label {
+    @apply text-sec_500;
+  }
+}

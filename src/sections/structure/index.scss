@@ -1,10 +1,11 @@
 .structure {
   @apply grid gap-6;
+  @apply lg2:gap-16;
   &__top {
     @apply grid gap-6;
     @apply lg2:flex lg2:justify-between;
     .text {
-      @apply lg2:w-[500px];
+      @apply lg2:w-[500px] lg2:leading-160;
     }
   }
   &__bottom {
@@ -12,8 +13,8 @@
     @apply lg2:grid-cols-3;
   }
   .item {
-    @apply rounded-3xl py-6 px-4 border border-prim_100;
-    @apply lg2:p-10;
+    @apply rounded-3xl py-6 px-4 border border-prim_100 grid;
+    @apply lg2:p-10 lg2:h-[440px] lg2:content-between;
     &__top {
       @apply relative grid gap-10 mb-10;
       .map {
@@ -21,6 +22,10 @@
       }
     }
     &__contacts {
+      &-location {
+        @apply flex gap-3 text-sec_500 font-bold -tracking-4;
+      }
+
       &-name {
         @apply text-prim_600 -tracking-5 font-bold text-h5 mb-6;
       }

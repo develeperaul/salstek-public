@@ -56,12 +56,12 @@ include  ./select/index3.pug
                 +inputFixed('name','Имя', 'Иван')
                 +inputFixed('patronymic','Отчество', 'Иванович')
                 +inputFile('photo','Прикрепить фото')
-                +inputFixed('date_birth','Дата рождения')
+                +inputFixed('date_birth','Дата рождения')(datepicker)
                 +select('family_status','Семейное положение','Выбрать', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                 +select('amount_children','Количество детей', 'Выбрать',{name:1,val:'0',choose:true},{name:2,val:'01'},{name:3,val:'02'})
                 +inputFixed('citizenship','Гражданство', 'Российская Федерация')(value="Российская Федерация")
                 +inputFixed('city','Город', 'Салават')
-                +inputFixed('phone','Контактный телефон', '+7 (999) 999 - 99 - 99')
+                +inputFixed('phone','Контактный телефон', '+7 (999) 999 - 99 - 99')(data-mask="+{7}(000)-000-00-00")
                 +inputFixed('mail','E-mail', 'mail@mail.com')
                 +inputFixed('messengers','Мессенджеры', 'Skype, Telegram и др.')
             .stepper__content-slide
@@ -82,17 +82,20 @@ include  ./select/index3.pug
               h2.stepper__content-title Образование
               .rezume__content
                 .rezume__content__title Основное образование
-                .rezume__content__list
-                  .item(data-content='basic-education')
+                .rezume__content__list(data-content='basic-education')
+                  .item
                     .rezume-fields
+                      +inputFixed('test','test', '100 ')
                       +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                      +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
+                      +textareaFixed('s','Учебное заведение', 'Комментарий ...')
                       +inputFile('rezume','Город', 'Уфа')
-                      div 
-                        span Период учебы
-                        div
-                          +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                          +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                      .rezume-fields__period
+                        .label Период учебы
+                        .rezume-fields__period-selects
+                          +select('family_status','','2005', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                          .rezume-fields__period-from(data-from)
+                            span —
+                            +select('family_status','','2006', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                         label(data-id='1').checkbox 
                           .checkbox__wrapper
                             input(type="checkbox" name="" hidden).checkbox__input
@@ -104,48 +107,65 @@ include  ./select/index3.pug
                       +textareaFixed('comment','Специальность', 'Комментарий ...')
                       +textareaFixed('comment','Квалификация', 'Комментарий ...')
                       +inputFile('rezume','Средний балл', '00')
-                      button.btn-round(type='button' data-add data-id='basic-education')
-                        +svg('plus', 24)
-                        span Добавить
+                button.btn-round(type='button' data-add data-id='basic-education')
+                  +svg('plus', 24)
+                  span Добавить
 
               .rezume__content
                 .rezume__content__title Дополнительное образование <br/> (курсы, семинары)      
-                .rezume__content__list
-                  .item(data-content)
+                .rezume__content__list(data-content)
+                  .item
                     .rezume-fields
                       +inputFile('rezume','Наименование обучающей организации', 'Наименование')
                       +inputFile('rezume','Название программы обучения', 'Название ')
                       +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
-                      +inputFile('rezume','Количество часов', '100 ')
+                      +inputFixed('rezume','Количество часов', '100 ')
                       +select('family_status','Год обучения','2000', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                      +select('name','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                    button.btn-round(type='button' data-add data-id='additional-education')
-                      +svg('plus', 24)
-                      span Добавить
+                      +select('s','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                button.btn-round(type='button' data-add data-id='additional-education')
+                  +svg('plus', 24)
+                  span Добавить
               template#additional-education
                 .item(data-content)
                   .rezume-fields
-                    +inputFile('rezume','Наименование обучающей организации', 'Наименование')
-                    +inputFile('rezume','Название программы обучения', 'Название ')
-                    +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
-                    +inputFile('rezume','Количество часов', '100 ')
-                    +select('family_status','Год обучения','2000', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                    +select('name','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                  button.btn-round(type='button' data-remove)
-                      +svg('trash', 24)
-                      span Удалить
+                    +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    +textareaFixed('a','Учебное заведение', 'Комментарий ...')
+                    +inputFile('rezume','Город', 'Уфа')
+                    .rezume-fields__period
+                      .label Период учебы
+                      .rezume-fields__period-selects
+                        +select('family_status','','2005', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                        .rezume-fields__period-from(data-from)
+                          span —
+                          +select('family_status','','2006', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                      label(data-id='1').checkbox 
+                        .checkbox__wrapper
+                          input(type="checkbox" name="" hidden).checkbox__input
+                          svg.checkbox__icon(viewbox='0 0 22 22')
+                            path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                            rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                          span.checkbox__label По договоренности
+                    +textareaFixed('comment','Факультет', 'Комментарий ...')
+                    +textareaFixed('comment','Специальность', 'Комментарий ...')
+                    +textareaFixed('comment','Квалификация', 'Комментарий ...')
+                    +inputFile('rezume','Средний балл', '00')
+                    button.btn-red(type='button' data-remove)
+                        +svg('trash', 24)
+                        span Удалить
               template#basic-education
                 .item(data-content)
                   .rezume-fields
-                    +select('name','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    +inputFixed('test','test', '100 ')
                     +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                    +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
+                    +textareaFixed('t','Учебное заведение', 'Комментарий ...')
                     +inputFile('rezume','Город', 'Уфа')
-                    div 
-                      span Период учебы
-                      div
-                        +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                        +select('family_status','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    .rezume-fields__period
+                      .label Период учебы
+                      .rezume-fields__period-selects
+                        +select('family_status','','2005', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                        .rezume-fields__period-from(data-from)
+                          span —
+                          +select('family_status','','2006', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                       label(data-id='1').checkbox 
                         .checkbox__wrapper
                           input(type="checkbox" name="" hidden).checkbox__input
@@ -162,8 +182,103 @@ include  ./select/index3.pug
                       span Удалить
             .stepper__content-slide
               h2.stepper__content-title Опыт работы
+              .rezume__content
+                
+                .rezume__content__list(data-content='experience')
+                  .item
+                    .rezume-fields
+                      +inputFixed('d','Должность', 'Должность')
+                      +inputFixed('c','Компания', 'Компания')
+                      +inputFixed('city','Город', 'Уфа')
+                      +inputFixed('o','Отрасль', 'Строительство')
+                      .rezume-fields__period
+                        .label Период учебы
+                        .rezume-fields__period-selects
+                          .rezume-fields__period-from(data-to)
+                            +select('family_status','','Октябрь', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                            +select('family_status','','2005', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                          .rezume-fields__period-from(data-from)
+                            span —
+                            +select('family_status','','Октябрь', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                            
+                            +select('family_status','','2006', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                      +textareaFixed('comment','Обязанности и функции', 'Комментарий ...')
+                button.btn-round(type='button' data-add data-id='experience')
+                  +svg('plus', 24)
+                  span Добавить
+              template#experience
+                .item(data-content)
+                  .rezume-fields
+                    +inputFile('rezume','Наименование обучающей организации', 'Наименование')
+                    +inputFile('rezume','Название программы обучения', 'Название ')
+                    +textareaFixed('comment','Учебное заведение', 'Комментарий ...')
+                    +inputFile('rezume','Количество часов', '100 ')
+                    +select('family_status','Год обучения','2000', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    +select('f','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    button.btn-red(type='button' data-remove)
+                        +svg('trash', 24)
+                        span Удалить
             .stepper__content-slide
               h2.stepper__content-title Дополнительно
+              .rezume-fields
+                +select('family_status','Знание языков','Выберите языки', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                +inputFixed('rezume','Другой язык', 'Другой язык ')
+                +select('family_status','Уровень владения','Выберите уровень владения', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                +select('family_status','Навыки работы с персональным компьютером','Выберите', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                .rezume-fields__checks
+                  .label Водительские права
+                  .rezume-fields__checks-list
+                    label(data-id='1').checkbox 
+                      .checkbox__wrapper
+                        input(type="checkbox" name="" hidden).checkbox__input
+                        svg.checkbox__icon(viewbox='0 0 22 22')
+                          path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                          rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                        span.checkbox__label A
+                    label(data-id='1').checkbox 
+                      .checkbox__wrapper
+                        input(type="checkbox" name="" hidden).checkbox__input
+                        svg.checkbox__icon(viewbox='0 0 22 22')
+                          path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                          rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                        span.checkbox__label B
+                    label(data-id='1').checkbox 
+                      .checkbox__wrapper
+                        input(type="checkbox" name="" hidden).checkbox__input
+                        svg.checkbox__icon(viewbox='0 0 22 22')
+                          path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                          rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                        span.checkbox__label C
+                    label(data-id='1').checkbox 
+                      .checkbox__wrapper
+                        input(type="checkbox" name="" hidden).checkbox__input
+                        svg.checkbox__icon(viewbox='0 0 22 22')
+                          path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                          rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                        span.checkbox__label D
+                    label(data-id='1').checkbox 
+                      .checkbox__wrapper
+                        input(type="checkbox" name="" hidden).checkbox__input
+                        svg.checkbox__icon(viewbox='0 0 22 22')
+                          path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                          rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                        span.checkbox__label E
+                      
+                +select('family_status','Сведения о военной службе','Выберите', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                +select('family_status','Желаемый график работы','Выберите график', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                +textareaFixed('comment','Личные и деловые качества', 'Комментарий ...')
+                +textareaFixed('comment','Увлечения и хобби', 'Комментарий ...')
+                +textareaFixed('comment','Рекомендации (ФИО, должность, организация, телефон)', 'Комментарий ...')
+                +textareaFixed('comment','Другая информация', 'Комментарий ...')
+                +textareaFixed('comment','Расскажите, почему вы хотите работать на этой должности?', 'Комментарий ...')
+                label(data-id='1').checkbox.checkbox-politic
+                  .checkbox__wrapper
+                    input(type="checkbox" name="" hidden).checkbox__input
+                    svg.checkbox__icon(viewbox='0 0 22 22')
+                      path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
+                      rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
+                    span.checkbox__label Согласен на обработку <a href="#"> персональных данных*</a>
+                     
       .stepper__btns(data-step="first") 
         .content__bottom
           button.btn.btn-next(type='button') Продолжить

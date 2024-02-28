@@ -1,7 +1,8 @@
 mixin select(name,label,placeholder, ...items)
   .select 
     input(type="text" name=name hidden)
-    label #{label}
+    if(label)
+      label #{label}
     .select__head #{placeholder}
     .select__body  
       .select__body-wrapper

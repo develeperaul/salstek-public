@@ -20,7 +20,7 @@
       .text,
       .content-text {
         @apply text-sec_500 text-body_m -tracking-4;
-        @apply lg2:text-h5 lg2:-tracking-5;
+        @apply lg2:text-h5 lg2:-tracking-5 lg2:leading-160;
         ul {
           @apply marker:text-sec_500 list-disc pl-5;
         }
