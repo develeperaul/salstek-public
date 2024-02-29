@@ -1,6 +1,6 @@
 .news {
   .list {
     @apply grid gap-4;
-    @apply lg2:grid-cols-4 gap-x-5 gap-y-8;
+    @apply lg2:grid-cols-4 lg2:gap-x-5 lg2:gap-y-8;
   }
 }

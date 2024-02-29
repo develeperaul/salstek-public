@@ -21,7 +21,7 @@
       &__title {
         @apply text-h4 font-bold -tracking-6 text-sec_500;
       }
-      &__text {
+      .text {
         @apply text-body_s leading-160 -tracking-3.5;
       }
       &__top {

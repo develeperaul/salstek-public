@@ -8,9 +8,11 @@
     .item {
       &:not(:last-child) {
         @apply pb-6;
+        @apply lg2:pb-8;
       }
       &:not(:first-child) {
         @apply border-t border-prim_100 pt-6;
+        @apply lg2:pt-8;
       }
       @apply grid gap-4;
       &__title {

@@ -263,12 +263,14 @@
   }
 
   .btn-chips {
-    @apply h-[3.875rem] bg-white px-6 border border-prim_100  rounded-2xl font-medium -tracking-4  text-body_m  text-sec_500 inline-flex gap-3 items-center justify-center whitespace-nowrap;
+    @apply h-[3.875rem] bg-white px-6 border border-prim_100  rounded-2xl font-medium -tracking-4  text-body_m  text-sec_500 inline-flex gap-3 items-center justify-center whitespace-nowrap cursor-pointer;
     @apply [@media(hover:hover)]:hover:bg-prim_200;
     @apply [@media(hover:none)]:active:bg-prim_200 active:bg-prim_200;
     @apply disabled:border-100 disabled:border disabled:bg-white;
     &_disabled {
-      @apply text-100 border-100;
+      @apply text-100 border-100 cursor-not-allowed;
+      @apply [@media(hover:hover)]:hover:bg-white;
+      @apply [@media(hover:none)]:active:bg-white;
     }
   }
   .btn-red {
@@ -303,7 +305,7 @@
   }
 
   .btn-fit {
-    @apply w-12 h-12 grid place-self-center p-3  rounded-xl border border-prim_100 bg-50 text-sec_500;
+    @apply w-12 h-12 grid place-self-center p-3  rounded-xl border border-prim_100 bg-50 text-sec_500 cursor-pointer;
     @apply [@media(hover:hover)]:hover:bg-prim_200 [@media(hover:hover)]:hover:text-prim_700;
     & > svg {
       @apply w-full h-full;

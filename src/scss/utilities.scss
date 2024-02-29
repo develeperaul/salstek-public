@@ -219,7 +219,7 @@
         display: none;
       }
       & > * {
-        @apply w-full;
+        @apply lg2:w-full;
       }
     }
   }

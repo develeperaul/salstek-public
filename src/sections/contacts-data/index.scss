@@ -10,6 +10,7 @@
     }
     &-content {
       @apply grid gap-4;
+      @apply lg2:gap-6;
     }
     .item {
       @apply grid gap-2 leading-160 text-body_m;

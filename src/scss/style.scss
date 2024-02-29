@@ -1748,6 +1748,7 @@ ul.list::marker {
 .btn-chips {
   display: inline-flex;
   height: 3.875rem;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
@@ -1797,12 +1798,27 @@ ul.list::marker {
 
 .btn-chips {
   &_disabled {
+    cursor: not-allowed;
+  }
+  &_disabled {
     --tw-border-opacity: 1;
     border-color: rgb(228 245 255 / var(--tw-border-opacity));
   }
   &_disabled {
     --tw-text-opacity: 1;
     color: rgb(228 245 255 / var(--tw-text-opacity));
+  }
+  @media(hover:hover) {
+    &_disabled:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    }
+  }
+  @media(hover:none) {
+    &_disabled:active {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    }
   }
 }
 
@@ -1947,6 +1963,7 @@ ul.list::marker {
   display: grid;
   height: 3rem;
   width: 3rem;
+  cursor: pointer;
   place-self: center;
   border-radius: 0.75rem;
   border-width: 1px;
@@ -3850,8 +3867,10 @@ caption {
     &::-webkit-scrollbar {
       display: none;
     }
-    & > * {
-      width: 100%;
+    @media (min-width: 1200px) {
+      & > * {
+        width: 100%;
+      }
     }
   }
 }
@@ -7292,15 +7311,19 @@ footer {
   .list {
     gap: 1rem;
   }
-  .list {
-    column-gap: 1.25rem;
-  }
-  .list {
-    row-gap: 2rem;
-  }
   @media (min-width: 1200px) {
     .list {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1200px) {
+    .list {
+      column-gap: 1.25rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .list {
+      row-gap: 2rem;
     }
   }
 }
@@ -7386,7 +7409,7 @@ footer {
   }
   @media (min-width: 1200px) {
     .tag {
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
     }
   }
   .title {
@@ -7394,7 +7417,7 @@ footer {
   }
   @media (min-width: 1200px) {
     .title {
-      margin-bottom: 0.75rem;
+      margin-bottom: 3rem;
     }
   }
   &__date {
@@ -7674,12 +7697,14 @@ footer {
   &__content {
     gap: 1rem;
   }
-  &__content {
-    grid-template-columns: 1fr 31.25rem;
-  }
   @media (min-width: 1200px) {
     &__content {
       margin-bottom: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    &__content {
+      grid-template-columns: 1fr 31.25rem;
     }
   }
   &__content {
@@ -7829,14 +7854,14 @@ footer {
         --tw-text-opacity: 1;
         color: rgb(123 147 167 / var(--tw-text-opacity));
       }
-      &__text {
+      .text {
         font-size: 0.875rem;
         line-height: 140%;
       }
-      &__text {
+      .text {
         line-height: 160%;
       }
-      &__text {
+      .text {
         letter-spacing: -0.035rem;
       }
       &__top {
@@ -8011,6 +8036,11 @@ footer {
       &:not(:last-child) {
         padding-bottom: 1.5rem;
       }
+      @media (min-width: 1200px) {
+        &:not(:last-child) {
+          padding-bottom: 2rem;
+        }
+      }
       &:not(:first-child) {
         border-top-width: 1px;
       }
@@ -8020,6 +8050,11 @@ footer {
       }
       &:not(:first-child) {
         padding-top: 1.5rem;
+      }
+      @media (min-width: 1200px) {
+        &:not(:first-child) {
+          padding-top: 2rem;
+        }
       }
     }
     .item {
@@ -9872,6 +9907,34 @@ footer {
       padding-right: 1rem;
     }
     .link {
+      position: relative;
+    }
+    @media (min-width: 1200px) {
+      .link {
+        min-height: 292px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .link {
+        align-content: space-between;
+      }
+    }
+    @media (min-width: 1200px) {
+      .link {
+        padding: 2.5rem;
+      }
+    }
+    .link {
+      @media (min-width: 1200px) {
+        .map {
+          position: absolute;
+        }
+      }
+      @media (min-width: 1200px) {
+        .map {
+          right: 1rem;
+        }
+      }
       &__title {
         font-size: 1.25rem;
         line-height: 130%;
@@ -9881,11 +9944,17 @@ footer {
       }
       &__title {
         --tw-text-opacity: 1;
-        color: rgb(123 147 167 / var(--tw-text-opacity));
+        color: rgb(36 144 168 / var(--tw-text-opacity));
       }
       &.active {
         --tw-bg-opacity: 1;
         background-color: rgb(234 247 250 / var(--tw-bg-opacity));
+      }
+      &.active {
+        .link__title {
+          --tw-text-opacity: 1;
+          color: rgb(27 108 126 / var(--tw-text-opacity));
+        }
       }
     }
   }
@@ -10018,6 +10087,11 @@ footer {
     }
     &-content {
       gap: 1rem;
+    }
+    @media (min-width: 1200px) {
+      &-content {
+        gap: 1.5rem;
+      }
     }
     .item {
       display: grid;
