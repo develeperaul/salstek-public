@@ -25,7 +25,7 @@
       }
       &__subtitle {
         @apply font-bold text-sec_300 -tracking-4;
-        @apply text-h5;
+        @apply lg2:text-h5;
       }
     }
   }

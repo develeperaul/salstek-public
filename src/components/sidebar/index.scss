@@ -1,11 +1,51 @@
 .sidebar {
-  @apply absolute top-0 left-0 right-0 z-40 bg-500 w-screen h-screen transform -translate-x-full;
+  @apply fixed top-0 left-0 pb-10 right-0 z-50 bg-500 w-screen h-screen transform -translate-x-full;
+  @apply lg2:pb-0;
   &.active {
-    @apply translate-x-0;
+    @apply translate-x-0 overflow-auto;
+  }
+
+  &__header {
+    @apply absolute  top-0 left-0 right-0 z-50 transition-opacity duration-500 ease-in-out;
+
+    .header__wrapper {
+      @apply px-4 py-5 rounded-b-2xl border-b bg-white border-b-prim_100 flex justify-between lg2:grid lg2:grid-cols-9;
+      @apply lg2:px-10 lg2:rounded-b-4xl;
+    }
+    .header {
+      &__left {
+        @apply lg2:col-span-2;
+      }
+      &__center {
+        @apply hidden lg2:block lg2:col-span-5 lg2:self-center lg2:justify-self-center;
+      }
+      &__right {
+        & > * {
+          @apply shrink-0;
+        }
+        @apply flex gap-8 items-center lg2:col-span-2 lg2:justify-end;
+        .link {
+          @apply text-prim_600 text-body_s font-bold -tracking-1.75 lg2:hidden;
+        }
+        .locales {
+          @apply hidden lg2:flex;
+        }
+      }
+    }
+    .logo {
+      @apply text-prim_700;
+      @apply hover:text-prim_600;
+    }
+    nav {
+      @apply hidden lg2:flex gap-8 items-center;
+      & > a {
+        @apply p-3 text-prim_600 text-body_m font-bold rounded-xl;
+        @apply hover:bg-100;
+      }
+    }
   }
   .container,
   &__wrapper,
-  &__mob,
   &__desc {
     @apply h-full;
   }
@@ -123,7 +163,11 @@
             line-height: 140%;
             .separator {
               @apply border-r border-sec_100 rounded-2xl block;
-              height: auto;
+              height: 33px;
+            }
+            svg {
+              margin-bottom: 5px;
+              @apply hover:text-prim_500;
             }
           }
         }

@@ -1,5 +1,5 @@
 .news-item-head {
-  @apply pb-10 px-4 bg-50 rounded-4xl;
+  @apply pb-10 px-4 bg-50 rounded-4xl mb-4 lg2:rounded-6xl;
   @apply lg2:px-10;
   padding-top: calc(89px + 32px);
   @screen lg2 {

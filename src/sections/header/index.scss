@@ -1,5 +1,11 @@
 header {
-  @apply absolute  top-0 left-0 right-0 z-50;
+  @apply absolute  top-0 left-0 right-0 z-40 transition-opacity duration-500 ease-in-out;
+  &.header-fixed {
+    @apply w-full opacity-0;
+    &-active {
+      @apply fixed top-0 left-0 opacity-100;
+    }
+  }
   .header__wrapper {
     @apply px-4 py-5 rounded-b-2xl border-b bg-white border-b-prim_100 flex justify-between lg2:grid lg2:grid-cols-9;
     @apply lg2:px-10 lg2:rounded-b-4xl;

@@ -29,6 +29,7 @@ import './domObserver';
 import './stepper';
 import './datepicker';
 import './addel';
+import './marguee';
 import '../components/generalSlider';
 import '../components/otherSlider';
 import '../components/smallSlider';
@@ -44,4 +45,22 @@ var swiper = new Swiper('.mySwiper', {
   scrollbar: {
     el: '.swiper-scrollbar',
   },
+});
+
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  if (header) {
+    const headerHeight = header?.offsetHeight;
+    if (header && headerHeight) {
+      if (window.scrollY > headerHeight) {
+        if (!header.classList.contains('header-fixed'))
+          header.classList.add('header-fixed');
+      } else header.classList.remove('header-fixed');
+      if (window.scrollY > headerHeight * 2) {
+        if (!header.classList.contains('header-fixed-active'))
+          header.classList.add('header-fixed-active');
+      } else header.classList.remove('header-fixed-active');
+    }
+  }
 });

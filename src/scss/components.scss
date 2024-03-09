@@ -140,7 +140,7 @@
   /* select */
   .select {
     @apply relative;
-    label {
+    & > label {
       @apply text-body_s -tracking-3 font-bold text-sec_500 mb-3 block;
     }
     &__head {
@@ -280,7 +280,7 @@
   }
 
   .btn-section {
-    @apply px-6 py-5 lg2:py-6 lg2:px-10 rounded-3xl lg2:rounded-[2rem] font-bold -tracking-6 text-h5 lg2:text-h4 bg-prim_600 text-white flex gap-3 items-center justify-between;
+    @apply px-6 py-5 lg2:py-6 lg2:px-10 rounded-3xl lg2:rounded-[2rem] font-bold -tracking-6 text-h5 lg2:text-h4 bg-prim_600 text-white flex gap-3 items-center justify-between text-left;
     @apply [@media(hover:hover)]:hover:bg-prim_500;
     @apply [@media(hover:none)]:active:bg-prim_500;
     @apply disabled:border-100 disabled:border disabled:bg-white;
@@ -524,7 +524,6 @@
     }
   }
   [role='region'][aria-labelledby][tabindex]:focus {
-    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
     outline: 0;
   }
 

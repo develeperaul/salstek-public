@@ -2,6 +2,7 @@ const selects = document.querySelectorAll('.select');
 [...selects].forEach((select) => {
   initSelect(select);
 });
+let openSelect;
 export function initSelect(select) {
   select.onclick = actionSelect;
   const initEl = select.querySelector('.select__options [data-init]');
@@ -37,11 +38,11 @@ function actionSelect(e) {
                 opt
               ))
           );
-        } else {
-          opt.onclick = selectOpt.bind(null, opt, head, options, this, null);
         }
+        opt.onclick = selectOpt.bind(null, opt, head, options, this, null);
       });
       window.onclick = windowTarget.bind(null, this);
+      setTimeout(() => (openSelect = this), 0);
     }
   }
 }
@@ -98,10 +99,37 @@ function selectOpt(opt, head, options, _this, parentChild = null, e) {
     //     o.classList.remove('active');
     // });
   }
+  // else {
+  //   console.log(opt);
+  //   const checkboxInput = opt.querySelector('input');
+  //   const optsChild = opt.querySelectorAll('.checkbox__childs > *');
+  //   if (optsChild.length > 0) {
+  //     [...optsChild].forEach(
+  //       (optChild) => {
+  //         const inp = optChild.querySelector('input');
+  //         if (checkboxInput.checked) {
+  //           if (!inp.checked) inp.checked = true;
+  //           else inp.checked = false;
+  //         }
+  //       }
+  //       // (optChild.onclick = selectOpt.bind(
+  //       //   null,
+  //       //   optChild,
+  //       //   head,
+  //       //   optsChild,
+  //       //   this,
+  //       //   opt
+  //       // ))
+  //     );
+  //   }
+  // }
 }
 function windowTarget(_this, e) {
   if (!e.composedPath().includes(_this)) {
     _this.classList.remove('active');
+  } else if (openSelect && openSelect !== _this) {
+    openSelect.classList.remove('active');
+    openSelect = undefined;
   }
 }
 

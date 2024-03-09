@@ -23,7 +23,7 @@
       }
       &__title {
         @apply text-white absolute top-6 left-4 text-h4  font-bold;
-        @apply top-8 left-8;
+        @apply lg2:top-8 lg2:left-8;
       }
     }
     .item-all {

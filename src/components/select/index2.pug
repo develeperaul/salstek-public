@@ -8,7 +8,7 @@ mixin select(name,placeholder, items)
           each item in items
             
             if(item.childs)
-              label(data-valcheck=item.val).checkbox 
+              label.checkbox 
                 .checkbox__wrapper
                   input(type="checkbox" name="" hidden disabled).checkbox__input
                   svg.checkbox__icon(viewbox='0 0 22 22')

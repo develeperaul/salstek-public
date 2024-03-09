@@ -30,7 +30,7 @@ if (targets)
 
     // target.onmousemove = move;
     // target.onmouseleave = leave;
-    // target.onmouseenter = enter;
+    target.onmouseenter = enter;
     target.ontouchstart = enter;
   });
 
@@ -50,10 +50,11 @@ function move(e) {
 }
 
 function enter(e) {
-  console.log(e);
+  console.log(e.type);
   const parentCoords = document
     .querySelector('.map-container')
     ?.getBoundingClientRect();
+  // alert('close');
   const flag = this.querySelector('.flag');
   const mapContinerFlag = mapContainer.querySelector('.card-map__flag');
   const mapContainerCountry = mapContainer.querySelector('.card-map__country');
@@ -97,10 +98,14 @@ function enter(e) {
       leftPos = flagCoords.left;
       if (e.type === 'touchstart') {
         console.log(e.touches[0].clientX);
-        console.log(document.querySelector('.map-container').scrollLeft);
+        console.log(
+          document.querySelector('.map-container').scrollLeft +
+            parentCoords.width / 2 -
+            popupWidth / 2
+        );
         leftPos =
           document.querySelector('.map-container').scrollLeft +
-          e.touches[0].clientX -
+          parentCoords.width / 2 -
           popupWidth / 2;
       }
       topPos = parentCoords.height / 2;

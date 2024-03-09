@@ -33,33 +33,37 @@ function clickBtn(e) {
   const target = this.getAttribute('data-target');
   const action = this.getAttribute('data-action');
   const body = document.querySelector('body');
-  if (target) {
-    const el = document.querySelector(`#${target}`);
+  if (
+    this.closest('.modal') &&
+    this.closest('.modal').querySelector('form') &&
+    action === 'close'
+  ) {
+    const modal = this.closest('.modal');
+    const form = modal.querySelector('form');
+    if (form) {
+      const formData = new FormData(form);
+      let isData = false;
+      for (var pair of formData.entries()) {
+        if (pair[1]) {
+          isData = true;
+          break;
+        }
+      }
+      if (isData) {
+        const el = document.querySelector(`#${target}`);
+        el.classList.remove('active');
+        open('exit');
+      }
+    } else {
+    }
+  } else {
+    if (target) {
+      const el = document.querySelector(`#${target}`);
 
-    if (el) {
-      const isFull = el.hasAttribute('data-full');
-      if (el.dataset?.animateOpen && el.dataset?.animateClose) {
-        if (action === 'open') {
-          if (isFull && body) body.style.overflow = 'hidden';
-          el.classList.add('open');
-          animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
-            el.classList.remove('open');
-            el.classList.add('active');
-          });
-        }
-        if (action === 'close') {
-          if (isFull && body) body.style.overflow = 'auto';
-          animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
-            el.classList.remove('active')
-          );
-        }
-        if (action === 'toggle') {
-          if (el.classList.contains('active')) {
-            if (isFull && body) body.style.overflow = 'auto';
-            animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
-              el.classList.remove('active')
-            );
-          } else {
+      if (el) {
+        const isFull = el.hasAttribute('data-full');
+        if (el.dataset?.animateOpen && el.dataset?.animateClose) {
+          if (action === 'open') {
             if (isFull && body) body.style.overflow = 'hidden';
             el.classList.add('open');
             animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
@@ -67,15 +71,56 @@ function clickBtn(e) {
               el.classList.add('active');
             });
           }
-        }
-      } else {
-        if (action === 'open') el.classList.add('active');
-        if (action === 'close') el.classList.remove('active');
-        if (action === 'toggle') {
-          if (el.classList.contains('active')) el.classList.remove('active');
-          else el.classList.add('active');
+          if (action === 'close') {
+            if (isFull && body) body.style.overflow = 'auto';
+            animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
+              el.classList.remove('active')
+            );
+          }
+          if (action === 'toggle') {
+            if (el.classList.contains('active')) {
+              if (isFull && body) body.style.overflow = 'auto';
+              animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
+                el.classList.remove('active')
+              );
+            } else {
+              if (isFull && body) body.style.overflow = 'hidden';
+              el.classList.add('open');
+              animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
+                el.classList.remove('open');
+                el.classList.add('active');
+              });
+            }
+          }
+        } else {
+          if (action === 'open') el.classList.add('active');
+          if (action === 'close') el.classList.remove('active');
+          if (action === 'toggle') {
+            if (el.classList.contains('active')) el.classList.remove('active');
+            else el.classList.add('active');
+          }
         }
       }
+
+      if (this.hasAttribute('data-stay')) {
+        open(this.dataset.stay);
+      }
+      if (this.hasAttribute('data-exit')) {
+        console.log('очистка полей');
+      }
     }
+  }
+}
+
+function open(target) {
+  const el = document.querySelector(`#${target}`);
+  if (el.dataset?.animateOpen && el.dataset?.animateClose) {
+    const isFull = el.hasAttribute('data-full');
+    if (isFull && body) body.style.overflow = 'hidden';
+    el.classList.add('open');
+    animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
+      el.classList.remove('open');
+      el.classList.add('active');
+    });
   }
 }

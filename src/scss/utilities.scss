@@ -290,22 +290,26 @@
       @apply hidden lg2:grid absolute top-12 right-12;
     }
     .content {
-      @apply lg2:py-8 lg2:px-4 lg2:absolute lg2:top-1/2 lg2:left-1/2 lg2:transform lg2:-translate-x-1/2 lg2:-translate-y-1/2;
-      @media screen and (max-width: 1024px) {
-        height: 100%;
-      }
+      @apply lg2:absolute lg2:top-1/2 lg2:left-1/2 lg2:transform lg2:-translate-x-1/2 lg2:-translate-y-1/2 lg2:p-0;
+      @apply lg2:rounded-4xl;
+      overflow: auto;
+      height: 100%;
       @screen lg2 {
-        padding-top: 0;
-        padding-bottom: 0;
-        max-width: 1160px;
+        height: 90vh;
         width: 100%;
+        max-width: 1024px;
       }
+      @screen lg3 {
+        max-width: 1160px;
+      }
+
       &__wrapper {
         @apply grid grid-rows-[1fr_auto] gap-2.5 overflow-auto;
-        @apply lg2:gap-12 lg2:p-12 lg2:rounded-4xl lg2:bg-white lg2:border lg2:border-prim_100;
-        @media screen and (max-width: 1024px) {
-          padding-top: max(16px, env(safe-area-inset-top, 16px));
+        @apply lg2:gap-12 lg2:p-12  lg2:bg-white lg2:border lg2:border-prim_100;
+        padding-top: max(16px, env(safe-area-inset-top, 16px));
+        @media screen and (min-width: 1200px) {
           height: 100%;
+          padding-bottom: 144px;
         }
       }
       &__title {
@@ -315,7 +319,7 @@
         @apply text-sec_500;
       }
       &__top {
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 1200px) {
           background-color: theme('colors.white');
           border: 1px solid theme('colors.prim_100');
           padding: theme(spacing.8) theme(spacing.4);
@@ -370,20 +374,41 @@
         }
       }
       &__bottom {
-        @apply flex gap-5;
+        @apply flex gap-5 px-4 pt-4;
+        @apply lg2:px-10 lg2:pt-10;
         & button {
           @apply w-full;
         }
-        @media screen and (max-width: 1024px) {
-          background-color: theme('colors.white');
-          padding-inline: theme(spacing.4);
-          padding-top: theme(spacing.4);
-          padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
-          border-radius: theme(spacing.3) theme(spacing.3) 0 0;
-          width: 100%;
-          position: absolute;
-          bottom: 0;
+        background-color: theme('colors.white');
+        padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+        border-radius: theme(spacing.3) theme(spacing.3) 0 0;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @media (min-width: 1200px) {
+          padding-bottom: max(40px, env(safe-area-inset-bottom, 40px));
         }
+      }
+    }
+
+    .content-exit {
+      @apply bg-white rounded-4xl p-10 grid;
+      @apply lg2:absolute lg2:top-1/2 lg2:left-1/2 lg2:transform lg2:-translate-x-1/2 lg2:-translate-y-1/2 lg2:gap-12;
+      @screen lg2 {
+        width: 507px;
+      }
+      &__top {
+        @apply grid gap-3;
+      }
+      &__bottom {
+        @apply grid grid-cols-2 gap-5;
+      }
+      &__title {
+        @apply font-intro uppercase -tracking-3.5 text-h3 text-sec_500;
+      }
+      &__text {
+        @apply text-sec_500;
       }
     }
   }
@@ -558,6 +583,31 @@
       .item:not(:first-child) {
         @apply pt-8 border-t border-prim_100;
       }
+    }
+  }
+
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    gap: 16px;
+    &__direction {
+      overflow: hidden;
+      position: relative;
+    }
+    &__direction-container {
+      margin: auto 0;
+      white-space: nowrap;
+    }
+    &__direction-right:first-child {
+      position: absolute;
+      transform: translateX(-100%);
+      top: 0;
+      left: -16px;
+    }
+    &__direction-left:last-child {
+      position: absolute;
+      top: 0;
     }
   }
 }

@@ -6,9 +6,10 @@ include ../../components/progress.pug
 include ../../components/input.pug
 include ../../components/textarea.pug
 include ../../components/select/index.pug
-button.btn(data-target="popup3" data-action="open") Open
+button.btn(data-target="exit" data-action="open") Open
+button.btn(data-target="rezume-modal" data-action="open") Open
 include ../../components/rezume.pug
-.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup2")
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup2" class="animate__faster")
   button.btn-fit.btn-close(data-target="popup2"  data-action="close") 
     +svg('close')
   .content 
@@ -85,31 +86,19 @@ include ../../components/rezume.pug
           button.btn(type='submit') Подтвердить заказ
           
 
-.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup")
-  button.btn-fit.btn-close(data-target="popup"  data-action="close") 
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="exit" class="animate__faster")
+  button.btn-fit.btn-close(data-target="exit" data-stay="rezume-modal"  data-action="close") 
     +svg('close')
-  .content 
-    form.content__wrapper
-      .content__top 
-        button.btn-close(data-target="popup" data-action="close")
-          +svg('close')
-        .content__top-text--content
-          .content__title Связаться с менеджером
-          .content__text Оставьте контактные данные
-        .form__content
-          .fields
-            +input('name','Фамилия Имя Отчество*')
-            +input('phone','Номер телефона*')(data-mask="+{7}(000)-000-00-00")
-            +input('email','E-mail')
-            +select('institute','Выберите завод', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-            +select('department','Выберите отдел', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-            +textarea('comment','Комментарий ...')
-          p Отправляя форму, вы даёте своё согласие на обработку 
-            a(href="#") персональных данных
-          
-      .content__bottom
-        button.btn(type='submit' inc) Отправить
-      
+  .content-exit 
+    .content-exit__top
+      .content-exit__title Вы точно хотите выйти?
+      .content-exit__text Если покинете это окно, данные будут утеряны без возможности восстановления
+    .content-exit__bottom
+      button.btn-round(data-stay="rezume-modal" data-target="exit" data-action="close") Остаться
+      button.btn-red(data-exit="rezume-modal" data-target="exit" data-action="close") Выйти
+  
+
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup" class="animate__faster")      
 footer
   .container 
     .footer__wrapper
