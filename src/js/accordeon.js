@@ -4,11 +4,15 @@ if (accordeonList)
     const itemHead = item.querySelector('.item__head');
     itemHead.onclick = function (e) {
       const accordeon = closestParent(this, 'accordeon');
-      if (accordeon)
-        [...accordeon.querySelectorAll('.item')].forEach((i) =>
-          i.classList.remove('active')
-        );
-      this.parentNode.classList.add('active');
+      if (this.parentNode.classList.contains('active')) {
+        this.parentNode.classList.remove('active');
+      } else {
+        if (accordeon)
+          [...accordeon.querySelectorAll('.item')].forEach((i) =>
+            i.classList.remove('active')
+          );
+        this.parentNode.classList.add('active');
+      }
     };
   });
 function closestParent(child, className) {

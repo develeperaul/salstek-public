@@ -309,6 +309,7 @@
         padding-top: max(16px, env(safe-area-inset-top, 16px));
         @media screen and (min-width: 1200px) {
           height: 100%;
+          padding-top: 48px;
           padding-bottom: 144px;
         }
       }
@@ -393,8 +394,8 @@
     }
 
     .content-exit {
-      @apply bg-white rounded-4xl p-10 grid;
-      @apply lg2:absolute lg2:top-1/2 lg2:left-1/2 lg2:transform lg2:-translate-x-1/2 lg2:-translate-y-1/2 lg2:gap-12;
+      @apply bg-white rounded-4xl p-10 grid absolute top-1/2 transform -translate-y-1/2 gap-4;
+      @apply lg2:left-1/2 lg2:-translate-x-1/2 lg2:gap-12;
       @screen lg2 {
         width: 507px;
       }
@@ -411,6 +412,29 @@
         @apply text-sec_500;
       }
     }
+
+    .content-success {
+      @apply bg-white rounded-4xl p-10 grid text-center justify-items-center absolute top-1/2 transform -translate-y-1/2 gap-6;
+      @apply lg2:left-1/2 lg2:-translate-x-1/2;
+      &__icon {
+        @apply rounded-xl w-16 h-16 bg-prim_300 grid place-content-center;
+        svg {
+          @apply text-white;
+        }
+      }
+      &__title {
+        @apply font-intro uppercase -tracking-3.5 text-h3 text-sec_500;
+      }
+      &__text {
+        @apply text-sec_500;
+      }
+      &__middle {
+        @apply grid gap-4;
+      }
+      button {
+        @apply w-full;
+      }
+    }
   }
   .progresses {
     @apply grid;
@@ -424,6 +448,39 @@
     }
     & > * {
       width: 100%;
+    }
+  }
+  .manager-form {
+    .form__content {
+      .fields {
+        @apply grid gap-4;
+        @apply lg2:gap-5;
+        @media (min-width: 1200px) {
+          grid-template-areas:
+            'a a b b'
+            'c c d d'
+            'e e e e';
+          & > *:nth-child(1) {
+            grid-area: a;
+          }
+
+          & > *:nth-child(2) {
+            grid-area: b;
+          }
+
+          & > *:nth-child(3) {
+            grid-area: c;
+          }
+
+          & > *:nth-child(4) {
+            grid-area: d;
+          }
+
+          & > *:nth-child(5) {
+            grid-area: e;
+          }
+        }
+      }
     }
   }
   .ordering-samples-form {

@@ -1056,6 +1056,10 @@ include ../svg.pug
         .card-map__middle 
           .swiper.map-slider
             .swiper-wrapper
+            button.prev
+              +svg('back')
+            button.next
+              +svg('forward')
         .card-map__bottom 
           a(href="#" target='_blank').card-map__link
             span Проекты

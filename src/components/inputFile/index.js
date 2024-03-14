@@ -3,15 +3,16 @@ const fileInputs = document.querySelectorAll(".field-file input[type='file']");
   initInput(inp);
 });
 export function initInput(input) {
-  console.log('initinput');
   input.addEventListener('change', changeInputFile);
 }
+
 function changeInputFile(e) {
   let file = this.files[0];
   const parent = this.closest('.field-file');
   const fileNameEl = parent.querySelector('.name');
   const btnDelete = parent.querySelector('.del');
   if (fileNameEl) {
+    parent.classList.add('filled');
     parent.classList.add('active');
     fileNameEl.textContent = file.name;
     btnDelete.addEventListener('click', deleteInputFile);
@@ -21,6 +22,7 @@ function changeInputFile(e) {
 function deleteInputFile() {
   const parent = this.closest('.field-file');
   if (parent) {
+    parent.classList.remove('filled');
     const input = parent.querySelector('input');
     if (input) {
       const dt = new DataTransfer();

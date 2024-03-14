@@ -12,12 +12,14 @@ class Stepper {
 
     this.stepperIsForm = this.el.tagName === 'FORM' ? true : false;
     this.isValid = false;
-    window.constraints[this.el.id].addEventListener('set', /.*/, (res) => {
-      setTimeout(() => this.initial(), 0);
-    });
-    window.constraints[this.el.id].addEventListener('delete', /.*/, (res) => {
-      setTimeout(() => this.initial(), 0);
-    });
+    if (window.constraints[this.el.id]) {
+      window.constraints[this.el.id].addEventListener('set', /.*/, (res) => {
+        setTimeout(() => this.initial(), 0);
+      });
+      window.constraints[this.el.id].addEventListener('delete', /.*/, (res) => {
+        setTimeout(() => this.initial(), 0);
+      });
+    }
     this.initial('first');
   }
   initial(first) {

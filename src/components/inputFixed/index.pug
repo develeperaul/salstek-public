@@ -8,5 +8,6 @@ mixin inputFixed(name, label, placeholder, type='text', afterIcon)
       .field-fixed__after
         if(afterIcon)
           +svg(afterIcon, 24)
-        button(class='del') 
+        button(class='del' type='button') 
           +svg('close', 24)
+    .field-fixed__error

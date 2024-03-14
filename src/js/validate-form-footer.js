@@ -1,32 +1,9 @@
 import validate from 'validate.js';
 import IMask from 'imask';
 import constraintsObj from '../assets/validate.json';
-
+import { toggle } from './animation';
 const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`);
-// const constraints = {
-//   "name": {
-//     "presence": { "message": 'поле обязательно для заполнения' },
-//   },
-//   "institute": {
-//     "presence": true,
-//   },
-//   "department": {
-//     "presence": true,
-//   },
-//   "email": {
-//     "presence": true,
-//     "email": true,
-//   },
-//   "phone": {
-//     "presence": true,
 
-//     "format": {
-//       "pattern": "^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$",
-//       "message": "поле обязательно для заполнения",
-//     },
-//   },
-
-// };
 //форма Напишите нам
 const formFooterForm = document.querySelector('form#footer-form');
 if (formFooterForm) {
@@ -37,11 +14,12 @@ if (formFooterForm) {
   });
 }
 function requestFooterForm() {
-  alert('Отправить запрос на сервер');
+  toggle('success', 'open');
+  
 }
 
 //форма Заказа
-const formOrdering = document.querySelector('form#ordering');
+const formOrdering = document.querySelector('form#order');
 if (formOrdering) {
   initialChangeInput(formOrdering);
   formOrdering.addEventListener('submit', function (ev) {
@@ -50,7 +28,24 @@ if (formOrdering) {
   });
 }
 function requestOrdering() {
-  alert('Отправить запрос на сервер');
+  toggle('order-modal', 'close');
+  toggle('order-success', 'open');
+  
+}
+
+//форма Резюме
+const formRezume = document.querySelector('form#rezume');
+if (formRezume) {
+  initialChangeInput(formRezume);
+  formRezume.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    handleFormSubmit(formRezume, requestRezume);
+  });
+}
+function requestRezume() {
+  toggle('rezume-modal', 'close');
+  toggle('rezume-success', 'open');
+  
 }
 
 export function initialChangeInput(form) {
@@ -100,6 +95,7 @@ export function showErrorsForInput(input, errors) {
   const field = closestParent(input.parentNode, 'field');
   const select = closestParent(input.parentNode, 'select');
   // console.log(form.submit.disabled);
+  console.log(errors);
   if (field) {
     if (errors) {
       field.classList.add('field__invalid');

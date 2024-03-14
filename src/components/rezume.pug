@@ -279,9 +279,31 @@ include  ./select/index3.pug
       .stepper__btns
         .content__bottom
           button.btn-round.btn-back(type='button') Назад
-          button.btn.btn-next(type='button') Продолжитьa
+          button.btn.btn-next(type='button') Продолжить
       .stepper__btns(data-step="last") 
         .content__bottom
           button.btn-round.btn-back(type='button') Назад
-          button.btn(type='submit') Подтвердить заказ
+          button.btn(type='submit') Отправить резюме
+
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="rezume-success" class="animate__faster")
+  button.btn-fit.btn-close(data-target="rezume-success"  data-action="close") 
+    +svg('close')
+  .content-success
+    .content-success__icon
+      +svg('check-circle', 32) 
+    .content-success__middle
+      .content-success__title резюме успешно <br/> отправлено!
+      .content-success__text  Наш менеджер по персоналу свяжется с вами  <br/> в течении 1-2 дней
+    button.btn(type='button' data-target="rezume-success"  data-action="close") Отлично
+
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="exit" class="animate__faster")
+  button.btn-fit.btn-close(data-target="exit" data-stay="rezume-modal"  data-action="close") 
+    +svg('close')
+  .content-exit 
+    .content-exit__top
+      .content-exit__title Вы точно хотите выйти?
+      .content-exit__text Если покинете это окно, данные будут утеряны без возможности восстановления
+    .content-exit__bottom
+      button.btn-round(data-stay="rezume-modal" data-target="exit" data-action="close") Остаться
+      button.btn-red(data-exit="rezume-modal" data-target="exit" data-action="close") Выйти
 

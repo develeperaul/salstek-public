@@ -21,7 +21,7 @@
       }
     }
   },
-  "ordering": {
+  "order": {
     "organization": {
       "presence": { "message": "поле обязательно для заполнения" }
     },
@@ -46,9 +46,6 @@
 
   "rezume": {
     "name": {
-      "presence": { "message": "поле обязательно для заполнения" }
-    },
-    "test": {
       "presence": { "message": "поле обязательно для заполнения" }
     }
   },

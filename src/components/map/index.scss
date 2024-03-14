@@ -1,5 +1,6 @@
 .map-container {
-  @apply relative overflow-auto bg-white rounded-[2rem];
+  @apply relative overflow-auto bg-white rounded-[2rem] mt-6;
+  @apply mt-16;
   &__wrapper {
     height: 540px;
     overflow: auto;
@@ -50,6 +51,20 @@
         & > img {
           @apply w-full h-full object-cover;
         }
+      }
+      .prev,
+      .next {
+        @apply absolute top-1/2 transform -translate-y-1/2 w-8 h-8 grid place-content-center p-0;
+        z-index: 1;
+        & > svg {
+          @apply w-4 h-4 text-white;
+        }
+      }
+      .prev {
+        @apply left-0;
+      }
+      .next {
+        @apply right-0;
       }
     }
     &__link {

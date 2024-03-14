@@ -1,6 +1,5 @@
 export const animateCSS = (element, animation, prefix = 'animate__') => {
   let node;
-  // console.log(element);
   if (typeof element === 'string') {
     node = document.querySelector(element);
   } else {
@@ -29,7 +28,59 @@ const btns = document.querySelectorAll('[data-action]');
 [...btns].forEach((btn) => {
   btn.onclick = clickBtn;
 });
-function clickBtn(e) {
+
+export function toggle(target, action) {
+  const el = document.querySelector(`#${target}`);
+  const body = document.querySelector('body');
+
+  if (target) {
+    const el = document.querySelector(`#${target}`);
+
+    if (el) {
+      const isFull = el.hasAttribute('data-full');
+      if (el.dataset?.animateOpen && el.dataset?.animateClose) {
+        if (action === 'open') {
+          if (isFull && body) body.style.overflow = 'hidden';
+          el.classList.add('open');
+          animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
+            el.classList.remove('open');
+            el.classList.add('active');
+          });
+        }
+        if (action === 'close') {
+          if (isFull && body) body.style.overflow = 'auto';
+          animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
+            el.classList.remove('active')
+          );
+        }
+        if (action === 'toggle') {
+          if (el.classList.contains('active')) {
+            if (isFull && body) body.style.overflow = 'auto';
+            animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
+              el.classList.remove('active')
+            );
+          } else {
+            if (isFull && body) body.style.overflow = 'hidden';
+            el.classList.add('open');
+            animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
+              el.classList.remove('open');
+              el.classList.add('active');
+            });
+          }
+        }
+      } else {
+        if (action === 'open') el.classList.add('active');
+        if (action === 'close') el.classList.remove('active');
+        if (action === 'toggle') {
+          if (el.classList.contains('active')) el.classList.remove('active');
+          else el.classList.add('active');
+        }
+      }
+    }
+  }
+}
+
+function clickBtn() {
   const target = this.getAttribute('data-target');
   const action = this.getAttribute('data-action');
   const body = document.querySelector('body');
@@ -39,7 +90,7 @@ function clickBtn(e) {
     action === 'close'
   ) {
     const modal = this.closest('.modal');
-    const form = modal.querySelector('form');
+    const form = modal.querySelector('form#rezume');
     if (form) {
       const formData = new FormData(form);
       let isData = false;
@@ -55,59 +106,21 @@ function clickBtn(e) {
         open('exit');
       }
     } else {
-    }
-  } else {
-    if (target) {
-      const el = document.querySelector(`#${target}`);
-
-      if (el) {
-        const isFull = el.hasAttribute('data-full');
-        if (el.dataset?.animateOpen && el.dataset?.animateClose) {
-          if (action === 'open') {
-            if (isFull && body) body.style.overflow = 'hidden';
-            el.classList.add('open');
-            animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
-              el.classList.remove('open');
-              el.classList.add('active');
-            });
-          }
-          if (action === 'close') {
-            if (isFull && body) body.style.overflow = 'auto';
-            animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
-              el.classList.remove('active')
-            );
-          }
-          if (action === 'toggle') {
-            if (el.classList.contains('active')) {
-              if (isFull && body) body.style.overflow = 'auto';
-              animateCSS(`#${target}`, el.dataset.animateClose).then(() =>
-                el.classList.remove('active')
-              );
-            } else {
-              if (isFull && body) body.style.overflow = 'hidden';
-              el.classList.add('open');
-              animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
-                el.classList.remove('open');
-                el.classList.add('active');
-              });
-            }
-          }
-        } else {
-          if (action === 'open') el.classList.add('active');
-          if (action === 'close') el.classList.remove('active');
-          if (action === 'toggle') {
-            if (el.classList.contains('active')) el.classList.remove('active');
-            else el.classList.add('active');
-          }
-        }
-      }
-
+      toggle(target, action);
       if (this.hasAttribute('data-stay')) {
         open(this.dataset.stay);
       }
       if (this.hasAttribute('data-exit')) {
         console.log('очистка полей');
       }
+    }
+  } else {
+    toggle(target, action);
+    if (this.hasAttribute('data-stay')) {
+      open(this.dataset.stay);
+    }
+    if (this.hasAttribute('data-exit')) {
+      console.log('очистка полей');
     }
   }
 }

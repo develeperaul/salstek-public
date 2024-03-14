@@ -8,10 +8,14 @@
   /* input */
   .field {
     @apply w-full relative;
+    &:hover input {
+      @apply border-prim_200;
+    }
     input ~ label {
       @apply text-body_m -tracking-4 text-sec_500;
       @apply absolute left-4 top-1/2 transform -translate-y-1/2;
       @apply transition-all duration-300 ease-in-out;
+      pointer-events: none;
     }
     input {
       @apply rounded-xl border border-prim_100 pl-4 pr-12 text-body_m  h-14.5 w-full;
@@ -55,10 +59,13 @@
       @apply border-error;
     }
     textarea ~ button {
-      @apply absolute top-4  right-4;
+      @apply absolute top-4  right-4 hidden;
     }
     input ~ button {
-      @apply absolute top-1/2 transform -translate-y-1/2 right-4;
+      @apply absolute top-1/2 transform -translate-y-1/2 right-4 hidden;
+    }
+    button.active {
+      display: block;
     }
   }
   .field-fixed {
@@ -82,14 +89,24 @@
     &__invalid input {
       @apply border-error;
     }
+    &.filled input {
+      @apply border-prim_100;
+    }
     textarea ~ button {
-      @apply absolute top-4  right-4;
+      @apply absolute top-4  right-4 hidden;
     }
     input ~ &__after {
       @apply flex gap-1.5 items-center absolute top-1/2  right-4 transform -translate-y-1/2;
+      & > button {
+        @apply hidden;
+      }
     }
     input:focus {
       @apply shadow-input border-prim_400;
+    }
+
+    button.active {
+      display: block;
     }
   }
   .field-file {
@@ -98,7 +115,7 @@
       @apply text-body_s -tracking-3 font-bold text-sec_500;
     }
     &__input {
-      @apply relative flex items-center justify-between border border-dashed border-prim_100 rounded-xl h-[58px] px-4;
+      @apply relative flex items-center justify-between border border-dashed border-prim_100 rounded-xl h-[58px] px-4 cursor-pointer;
 
       &-left {
         @apply flex items-center gap-3;
@@ -112,6 +129,9 @@
 
       &-right {
         @apply flex items-center;
+        & > button {
+          @apply hidden;
+        }
       }
       input[type='file'] {
         position: absolute;
@@ -126,6 +146,13 @@
         z-index: 10;
         position: static;
       }
+    }
+
+    &.filled .del {
+      display: block;
+    }
+    &.filled &__input {
+      @apply border-prim_100 border-solid;
     }
     &.active .name {
       @apply block;
@@ -144,7 +171,10 @@
       @apply text-body_s -tracking-3 font-bold text-sec_500 mb-3 block;
     }
     &__head {
-      @apply rounded-xl border border-100 h-14.5 w-full bg-white pl-4 pr-12 flex items-center text-body_m relative cursor-pointer;
+      &[data-select] {
+        @apply text-dark;
+      }
+      @apply rounded-xl border border-100 h-14.5 w-full bg-white pl-4 pr-12 flex items-center text-body_m relative cursor-pointer text-sec_200;
       &:after {
         content: '';
         position: absolute;
@@ -157,6 +187,9 @@
         background-repeat: no-repeat;
         background-position: center;
         @apply transition-all duration-300 ease-in-out;
+      }
+      &:hover {
+        @apply border-prim_200;
       }
     }
     &__body {

@@ -4,18 +4,45 @@ include ../../components/edit.pug
 include ../../components/quantity/index.pug
 include ../../components/progress.pug
 include ../../components/input.pug
+
 include ../../components/textarea.pug
 include ../../components/select/index.pug
 button.btn(data-target="exit" data-action="open") Open
 button.btn(data-target="rezume-modal" data-action="open") Open
+button.btn(data-target="manager-modal" data-action="open") Open
+button.btn(data-target="rezume-success" data-action="open") rezume-success
+
 include ../../components/rezume.pug
-.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup2" class="animate__faster")
-  button.btn-fit.btn-close(data-target="popup2"  data-action="close") 
+
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="manager-modal" class="animate__faster")
+  button.btn-fit.btn-close(data-target="manager-modal"  data-action="close") 
     +svg('close')
   .content 
-    form#ordering.content__wrapper.stepper.ordering-samples-form
+    form#manager.content__wrapper.manager-form
       .content__top 
-        button.btn-close(data-target="popup2" data-action="close" type='button')
+        button.btn-close(data-target="manager-modal" data-action="close" type='button')
+          +svg('close')
+        .content__top-text--content 
+          .content__title Связаться с менеджером
+          .content__text Оставьте контактные данные
+        .form__content
+          .fields
+            +input('name-org','Название организации*')
+            +input('name','Фамилия Имя Отчество*')
+            +input('phone','Номер телефона*')(data-mask="+{7}(000)-000-00-00")
+            +input('email','E-mail')
+            +textarea('comment','Комментарий ...')
+          p Отправляя форму, вы даёте своё согласие на обработку 
+            a(href="#") персональных данных
+      .content__bottom
+        button.btn.btn-next(type='button') Отправить
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="order-modal" class="animate__faster")
+  button.btn-fit.btn-close(data-target="order-modal"  data-action="close") 
+    +svg('close')
+  .content 
+    form#order.content__wrapper.stepper.ordering-samples-form
+      .content__top 
+        button.btn-close(data-target="order-modal" data-action="close" type='button')
           +svg('close')
         .content__top-text--content 
           .content__title проверьте комплектацию заказа
@@ -84,18 +111,29 @@ include ../../components/rezume.pug
         .content__bottom
           button.btn.btn-back(type='button') Назад
           button.btn(type='submit') Подтвердить заказ
-          
 
-.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="exit" class="animate__faster")
-  button.btn-fit.btn-close(data-target="exit" data-stay="rezume-modal"  data-action="close") 
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="order-success" class="animate__faster")
+  button.btn-fit.btn-close(data-target="order-success"  data-action="close") 
     +svg('close')
-  .content-exit 
-    .content-exit__top
-      .content-exit__title Вы точно хотите выйти?
-      .content-exit__text Если покинете это окно, данные будут утеряны без возможности восстановления
-    .content-exit__bottom
-      button.btn-round(data-stay="rezume-modal" data-target="exit" data-action="close") Остаться
-      button.btn-red(data-exit="rezume-modal" data-target="exit" data-action="close") Выйти
+  .content-success
+    .content-success__icon
+      +svg('check-circle', 32) 
+    .content-success__middle
+      .content-success__title Заказ успешно офомлен
+      .content-success__text  *Добавить текст описания*
+    button.btn(type='button' data-target="order-success"  data-action="close") Отлично          
+
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="success" class="animate__faster")
+  button.btn-fit.btn-close(data-target="success"  data-action="close") 
+    +svg('close')
+  .content-success
+    .content-success__icon
+      +svg('check-circle', 32) 
+    .content-success__middle
+      .content-success__title title
+      .content-success__text  text
+    button.btn(type='button' data-target="success"  data-action="close") Отлично          
+
   
 
 .modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="popup" class="animate__faster")      

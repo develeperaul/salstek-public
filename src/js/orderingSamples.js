@@ -244,7 +244,7 @@ function createProxy(target) {
         //если это один из дочерних элементов
         if (target[prop].id.split('_').length > 1) {
           const idList = target[prop].id.split('_');
-          const parentObj = window.ordering_samples.find(
+          const parentObj = Object.values(window.ordering_samples).find(
             (o) => o.id === idList[0]
           );
 
@@ -290,7 +290,6 @@ function createProxy(target) {
             }
             const quantity = itemChild.querySelector('.quantity');
             initialEl(quantity);
-
             orderingContentParentNode.append(itemChild);
 
             //отслеживаем изменение в контейнере с чекбоксом
@@ -298,13 +297,16 @@ function createProxy(target) {
               mutations
             ) {
               mutations.forEach(function (mutation) {
-                target[prop].count = mutation.target.textContent;
-                orderingContentParentNode.querySelector(
-                  `[data-id='${target[prop].id}'] .item-child__btns .item-child__count`
-                ).textContent = target[prop].count;
-                orderingContentParentNode.querySelector(
-                  `[data-id='${target[prop].id}'] .item-child__btns .item-quantity .quantity__count`
-                ).textContent = target[prop].count;
+                console.log(target[prop]);
+                if (target[prop]) {
+                  target[prop].count = mutation.target.textContent;
+                  orderingContentParentNode.querySelector(
+                    `[data-id='${target[prop].id}'] .item-child__btns .item-child__count`
+                  ).textContent = target[prop].count;
+                  orderingContentParentNode.querySelector(
+                    `[data-id='${target[prop].id}'] .item-child__btns .item-quantity .quantity__count`
+                  ).textContent = target[prop].count;
+                }
               });
             });
             observerInCheckbox.observe(
@@ -415,7 +417,11 @@ function createProxy(target) {
           checkbox.checked = false;
         });
       }
-      orderingContent.querySelector(`[data-id='${target[prop].id}']`).remove();
+
+      if (orderingContent.querySelector(`[data-id='${target[prop].id}']`))
+        orderingContent
+          .querySelector(`[data-id='${target[prop].id}']`)
+          .remove();
 
       const checkbox = el.querySelector('input[type="checkbox"]');
       if (checkbox) checkbox.checked = false;

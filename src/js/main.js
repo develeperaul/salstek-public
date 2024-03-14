@@ -30,6 +30,7 @@ import './stepper';
 import './datepicker';
 import './addel';
 import './marguee';
+import './fields';
 import '../components/generalSlider';
 import '../components/otherSlider';
 import '../components/smallSlider';
