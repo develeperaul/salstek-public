@@ -1,9 +1,20 @@
 import validate from 'validate.js';
 import IMask from 'imask';
-import constraintsObj from '../assets/validate.json';
 import { toggle } from './animation';
-const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`);
+//dev
+// import constraintsObj from '../assets/validate.json';
+//prod
 
+let constraintsObj = {};
+(() => {
+  const res = fetch(
+    'http://salstek.yes-idea.ru/bitrix/templates/salstek/assets/validate.json'
+  )
+    .then((response) => response.json())
+    .then((json) => (constraintsObj = json));
+})();
+
+const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`);
 //форма Напишите нам
 const formFooterForm = document.querySelector('form#footer-form');
 if (formFooterForm) {
@@ -14,8 +25,11 @@ if (formFooterForm) {
   });
 }
 function requestFooterForm() {
-  toggle('success', 'open');
-  
+  formReq(
+    formFooterForm,
+    'http://salstek.yes-idea.ru/ajax/createform.php',
+    () => toggle('success', 'open')
+  );
 }
 
 //форма Заказа
@@ -30,7 +44,6 @@ if (formOrdering) {
 function requestOrdering() {
   toggle('order-modal', 'close');
   toggle('order-success', 'open');
-  
 }
 
 //форма Резюме
@@ -43,9 +56,29 @@ if (formRezume) {
   });
 }
 function requestRezume() {
-  toggle('rezume-modal', 'close');
-  toggle('rezume-success', 'open');
-  
+  formReq(formRezume, 'http://salstek.yes-idea.ru/ajax/rezume.php', () => {
+    toggle('rezume-modal', 'close');
+    toggle('rezume-success', 'open');
+  });
+}
+
+const formManagerrForm = document.querySelector('form#manager');
+if (formManagerrForm) {
+  initialChangeInput(formManagerrForm);
+  formManagerrForm.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    handleFormSubmit(formManagerrForm, requestManagerForm);
+  });
+}
+function requestManagerForm() {
+  formReq(
+    formManagerrForm,
+    'http://salstek.yes-idea.ru/ajax/reqmanagerform.php',
+    () => {
+      toggle('manager-modal', 'close');
+      toggle('success', 'open');
+    }
+  );
 }
 
 export function initialChangeInput(form) {
@@ -130,3 +163,45 @@ export function checkInvalid(form, errors) {
     form.querySelector("button[type='submit']").setAttribute('disabled', true);
   }
 }
+
+const formReq = async (form, url, action, options = {}) => {
+  // const url = ;
+  action();
+  const formData = new FormData();
+  const fields = form.querySelectorAll('input, textarea, checkbox');
+  const theme = form.getAttribute('data-theme');
+  const id = document.getElementById('visitor_uid')?.value;
+  const clientID = document.getElementById('clientID')?.value
+    ? document.getElementById('clientID')?.value
+    : '';
+  formData.append('theme', theme ? theme : '');
+  // formData.append('visitor_uid', id ? id : '');
+  // formData.append('clientID', clientID ? clientID : '');
+  for (let key in options) {
+    formData.append(key, options.key);
+  }
+  console.log(fields);
+  Array.from(fields).forEach((field) => {
+    if (field.name) {
+      if (field.type === 'checkbox') {
+        formData.append(field.name, field.checked);
+      } else {
+        formData.append(field.name, field.value);
+      }
+    }
+  });
+
+  let success = false;
+  const res = await fetch(url, {
+    method: 'POST',
+    body: formData,
+  })
+    .then((responce) => {
+      if (responce.status === 200) {
+        suc = true;
+        action();
+      }
+    })
+    .catch((e) => console.log(e));
+  return success;
+};

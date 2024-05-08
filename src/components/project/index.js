@@ -22,22 +22,34 @@ const setElsProjects = () => {
     [...childsForTypesVisible].forEach((i) => typesVisible.append(i));
     count.insertAdjacentHTML(
       'afterbegin',
-      `<span>${childs.length > 2 ? '2+' : childs.length}</span>`
+      `<span>${childs.length > 2 ? '2+' : `${childs.length}+`}</span>`
     );
     [...childs].forEach((i) => typesHidden.append(i));
-    count.onclick = function () {
-      if (activeType && activeType !== this.parentElement) {
-        activeType.classList.remove('active');
-        activeType = undefined;
-      }
-      if (this.parentElement.classList.contains('active')) {
-        activeType.classList.remove('active');
-        activeType = undefined;
-      } else {
-        this.parentElement.classList.add('active');
-        activeType = this.parentElement;
-        window.onclick = windowTarget;
-      }
+    count.onmouseover = function () {
+      // if (activeType && activeType !== this.parentElement) {
+      //   activeType.classList.remove('active');
+      //   activeType = undefined;
+      // }
+      // if (this.parentElement.classList.contains('active')) {
+      //   activeType.classList.remove('active');
+      //   activeType = undefined;
+      // } else {
+      //   window.onmouseleave = windowTarget;
+      // }
+      this.parentElement.classList.add('active');
+      activeType = this.parentElement;
+    };
+
+    count.ontouchstart = function () {
+      this.parentElement.classList.add('active');
+      activeType = this.parentElement;
+    };
+
+    count.onmouseleave = function () {
+      this.parentElement.classList.remove('active');
+    };
+    count.ontouchend = function () {
+      this.parentElement.classList.remove('active');
     };
   });
 };

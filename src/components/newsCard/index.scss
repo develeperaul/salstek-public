@@ -1,5 +1,5 @@
 .news-card {
-  @apply rounded-[2rem] p-6 border border-prim_100 grid gap-6 w-fit;
+  @apply rounded-[2rem] p-6 border border-prim_100 grid gap-6;
   @apply hover:bg-50;
   &__top {
     @apply relative rounded-[1rem] overflow-hidden h-[18.4375rem];

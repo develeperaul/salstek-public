@@ -11,6 +11,11 @@
     @apply mb-6 text-h3;
     @apply lg2:mb-12;
   }
+  &__list {
+    ul {
+      @apply grid gap-4 lg2:grid-cols-4 lg2:gap-5;
+    }
+  }
   .ads {
     .list {
       @apply grid gap-4;
@@ -26,6 +31,55 @@
       }
       &__title {
         @apply text-h5 font-bold text-sec_500 -tracking-5;
+      }
+    }
+  }
+
+  .appeal {
+    h3.appeal__title {
+      @apply text-h4 lg2:text-h3 mb-4;
+    }
+    &__wrapper {
+      @apply grid gap-6 lg2:grid-cols-[1fr_500px] lg2:gap-[180px];
+    }
+    &__left {
+      @apply text-body_m text-dark -tracking-4;
+    }
+    &__right {
+      @apply grid gap-6 lg2:gap-12;
+    }
+    &__contacts {
+      @apply rounded-[32px] p-6 bg-50;
+      &-title {
+        @apply text-h5 font-bold text-sec_500 mb-2;
+      }
+      &-subtitle {
+        @apply text-sec_500 -tracking-4 mb-6;
+      }
+      &-links {
+        @apply flex flex-wrap gap-y-4 gap-x-8;
+      }
+      &-link {
+        @apply font-bold text-prim_600 flex  gap-3;
+        svg {
+          @apply w-6 h-6 text-sec_500 shrink-0;
+        }
+        &_addrr {
+          @apply text-sec_500;
+        }
+      }
+    }
+  }
+
+  .meeting {
+    @apply grid gap-6 lg2:gap-8;
+    &__title {
+      @apply text-h4 lg2:text-h3 font-bold text-sec_500;
+    }
+
+    &__list {
+      ul {
+        @apply grid gap-4 lg2:grid-cols-4 lg2:gap-5;
       }
     }
   }

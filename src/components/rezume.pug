@@ -57,8 +57,8 @@ include  ./select/index3.pug
                 +inputFixed('patronymic','Отчество', 'Иванович')
                 +inputFile('photo','Прикрепить фото')
                 +inputFixed('date_birth','Дата рождения')(datepicker)
-                +select('family_status','Семейное положение','Выбрать', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                +select('amount_children','Количество детей', 'Выбрать',{name:1,val:'0',choose:true},{name:2,val:'01'},{name:3,val:'02'})
+                +select('family_status','Семейное положение','Выбрать', {name:"Женат(Замужем)",val:'Женат(Замужем)'},{name:"Холост",val:'Холост'})
+                +select('amount_children','Количество детей', 'Выбрать',{name:1,val:'1',choose:true},{name:2,val:'3'},{name:4,val:'4'},{name:5,val:'5'},{name:6,val:'6'},{name:7,val:'7'},{name:8,val:'8'})
                 +inputFixed('citizenship','Гражданство', 'Российская Федерация')(value="Российская Федерация")
                 +inputFixed('city','Город', 'Салават')
                 +inputFixed('phone','Контактный телефон', '+7 (999) 999 - 99 - 99')(data-mask="+{7}(000)-000-00-00")
@@ -67,12 +67,13 @@ include  ./select/index3.pug
             .stepper__content-slide
               h2.stepper__content-title Должность
               .rezume-fields
-                +select('family_status','Желаемая должность','Выберите должность', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                +textareaFixed('comment','Условия работы', 'Комментарий ...')
+              
+                +select('job_title','Желаемая должность','Выберите должность', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                +textareaFixed('working_conditions','Условия работы', 'Комментарий ...')
                 +inputFixed('income','Доход от', '000 000', 'text', 'rub')
                 label(data-id='1').checkbox 
                   .checkbox__wrapper
-                    input(type="checkbox" name="" hidden).checkbox__input
+                    input(type="checkbox" name="income_agreement" hidden).checkbox__input
                     svg.checkbox__icon(viewbox='0 0 22 22')
                       path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                       rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
@@ -85,10 +86,9 @@ include  ./select/index3.pug
                 .rezume__content__list(data-content='basic-education')
                   .item
                     .rezume-fields
-                      //- +inputFixed('test','test', '100 ')
                       +select('level_education','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                       +textareaFixed('educational_institution','Учебное заведение', 'Комментарий ...')
-                      +inputFile('city_education','Город', 'Уфа')
+                      +inputFixed('city_education','Город', 'Уфа')
                       .rezume-fields__period
                         .label Период учебы
                         .rezume-fields__period-selects
@@ -98,15 +98,15 @@ include  ./select/index3.pug
                             +select('period_to','','2006', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                         label(data-id='1').checkbox 
                           .checkbox__wrapper
-                            input(type="checkbox" name="" hidden).checkbox__input
+                            input(type="checkbox" name="continue_education" hidden).checkbox__input
                             svg.checkbox__icon(viewbox='0 0 22 22')
                               path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                               rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
-                            span.checkbox__label По договоренности
+                            span.checkbox__label Продолжаю учиться
                       +textareaFixed('faculty','Факультет', 'Комментарий ...')
                       +textareaFixed('speciality','Специальность', 'Комментарий ...')
                       +textareaFixed('qualification','Квалификация', 'Комментарий ...')
-                      +inputFile('average_score','Средний балл', '00')
+                      +inputFixed('average_score','Средний балл', '00')
                 button.btn-round(type='button' data-add data-id='basic-education')
                   +svg('plus', 24)
                   span Добавить
@@ -116,24 +116,24 @@ include  ./select/index3.pug
                 .rezume__content__list(data-content)
                   .item
                     .rezume-fields
-                      +inputFile('name_training_organization','Наименование обучающей организации', 'Наименование')
-                      +inputFile('name_training_program','Название программы обучения', 'Название ')
-                      +textareaFixed('educational_institution','Учебное заведение', 'Комментарий ...')
+                      +inputFixed('name_training_organization','Наименование обучающей организации', 'Наименование')
+                      +inputFixed('name_training_program','Название программы обучения', 'Название ')
+                      +textareaFixed('educational_institution_org','Учебное заведение', 'Комментарий ...')
                       +inputFixed('number_hours','Количество часов', '100 ')
                       +select('year_study','Год обучения','2000', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                      +select('level_education','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                      +select('level_education_org','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                 button.btn-round(type='button' data-add data-id='additional-education')
                   +svg('plus', 24)
                   span Добавить
               template#additional-education
                 .item(data-content)
                   .rezume-fields
-                    +inputFile('name_training_organization','Наименование обучающей организации', 'Наименование')
-                    +inputFile('name_training_program','Название программы обучения', 'Название ')
-                    +textareaFixed('educational_institution','Учебное заведение', 'Комментарий ...')
+                    +inputFixed('name_training_organization','Наименование обучающей организации', 'Наименование')
+                    +inputFixed('name_training_program','Название программы обучения', 'Название ')
+                    +textareaFixed('educational_institution_org','Учебное заведение', 'Комментарий ...')
                     +inputFixed('number_hours','Количество часов', '100 ')
                     +select('year_study','Год обучения','2000', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-                    +select('level_education','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                    +select('level_education_org','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                     button.btn-red(type='button' data-remove)
                         +svg('trash', 24)
                         span Удалить
@@ -142,7 +142,7 @@ include  ./select/index3.pug
                   .rezume-fields
                     +select('level_education','Уровень образования','Выберите уровень образования', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                     +textareaFixed('educational_institution','Учебное заведение', 'Комментарий ...')
-                    +inputFile('city_education','Город', 'Уфа')
+                    +inputFixed('city_education','Город', 'Уфа')
                     .rezume-fields__period
                       .label Период учебы
                       .rezume-fields__period-selects
@@ -152,15 +152,15 @@ include  ./select/index3.pug
                           +select('period_to','','2006', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
                       label(data-id='1').checkbox 
                         .checkbox__wrapper
-                          input(type="checkbox" name="" hidden).checkbox__input
+                          input(type="checkbox" name="continue_education" hidden).checkbox__input
                           svg.checkbox__icon(viewbox='0 0 22 22')
                             path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                             rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
-                          span.checkbox__label По договоренности
+                          span.checkbox__label Продолжаю учиться
                     +textareaFixed('faculty','Факультет', 'Комментарий ...')
                     +textareaFixed('speciality','Специальность', 'Комментарий ...')
                     +textareaFixed('qualification','Квалификация', 'Комментарий ...')
-                    +inputFile('average_score','Средний балл', '00')
+                    +inputFixed('average_score','Средний балл', '00')
                     button.btn-red(type='button' data-remove)
                       +svg('trash', 24)
                       span Удалить
@@ -171,10 +171,10 @@ include  ./select/index3.pug
                 .rezume__content__list(data-content='experience')
                   .item
                     .rezume-fields
-                      +inputFixed('job_title','Должность', 'Должность')
-                      +inputFixed('company','Компания', 'Компания')
-                      +inputFixed('city_company','Город', 'Уфа')
-                      +inputFixed('industry','Отрасль', 'Строительство')
+                      +inputFixed('job_title_history','Должность', 'Должность')
+                      +inputFixed('company_history','Компания', 'Компания')
+                      +inputFixed('city_company_history','Город', 'Уфа')
+                      +inputFixed('industry_history','Отрасль', 'Строительство')
                       .rezume-fields__period
                         .label Период работы
                         .rezume-fields__period-selects
@@ -192,10 +192,10 @@ include  ./select/index3.pug
               template#experience
                 .item(data-content)
                   .rezume-fields
-                    +inputFixed('job_title','Должность', 'Должность')
-                    +inputFixed('company','Компания', 'Компания')
-                    +inputFixed('city_company','Город', 'Уфа')
-                    +inputFixed('industry','Отрасль', 'Строительство')
+                    +inputFixed('job_title_history','Должность', 'Должность')
+                    +inputFixed('company_history','Компания', 'Компания')
+                    +inputFixed('city_company_history','Город', 'Уфа')
+                    +inputFixed('industry_history','Отрасль', 'Строительство')
                     .rezume-fields__period
                       .label Период работы
                       .rezume-fields__period-selects
@@ -220,37 +220,37 @@ include  ./select/index3.pug
                 .rezume-fields__checks
                   .label Водительские права
                   .rezume-fields__checks-list
-                    label(data-id='1').checkbox 
+                    label().checkbox 
                       .checkbox__wrapper
-                        input(type="checkbox" name="" hidden).checkbox__input
+                        input(type="checkbox" name="driver_license_a" hidden).checkbox__input
                         svg.checkbox__icon(viewbox='0 0 22 22')
                           path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                           rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
                         span.checkbox__label A
                     label(data-id='1').checkbox 
                       .checkbox__wrapper
-                        input(type="checkbox" name="" hidden).checkbox__input
+                        input(type="checkbox" name="driver_license_b" hidden).checkbox__input
                         svg.checkbox__icon(viewbox='0 0 22 22')
                           path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                           rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
                         span.checkbox__label B
                     label(data-id='1').checkbox 
                       .checkbox__wrapper
-                        input(type="checkbox" name="" hidden).checkbox__input
+                        input(type="checkbox" name="driver_license_c" hidden).checkbox__input
                         svg.checkbox__icon(viewbox='0 0 22 22')
                           path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                           rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
                         span.checkbox__label C
                     label(data-id='1').checkbox 
                       .checkbox__wrapper
-                        input(type="checkbox" name="" hidden).checkbox__input
+                        input(type="checkbox" name="driver_license_d" hidden).checkbox__input
                         svg.checkbox__icon(viewbox='0 0 22 22')
                           path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                           rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
                         span.checkbox__label D
                     label(data-id='1').checkbox 
                       .checkbox__wrapper
-                        input(type="checkbox" name="" hidden).checkbox__input
+                        input(type="checkbox" name="driver_license_e" hidden).checkbox__input
                         svg.checkbox__icon(viewbox='0 0 22 22')
                           path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                           rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')
@@ -265,7 +265,7 @@ include  ./select/index3.pug
                 +textareaFixed('why','Расскажите, почему вы хотите работать на этой должности?', 'Комментарий ...')
                 label(data-id='1').checkbox.checkbox-politic
                   .checkbox__wrapper
-                    input(type="checkbox" name="" hidden).checkbox__input
+                    input(type="checkbox" hidden).checkbox__input
                     svg.checkbox__icon(viewbox='0 0 22 22')
                       path.tick(stroke='#366EF6' fill='none' stroke-linecap='round' stroke-width='2' d='M6 10l4 4 6-6')
                       rect(width='21' height='21' x='.5' y='.5' fill='#FFF' stroke='#7B93A7' stroke-width='1.4' rx='3')

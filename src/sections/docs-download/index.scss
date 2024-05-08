@@ -4,7 +4,9 @@
     @apply lg2:mb-8;
   }
   .list-file {
-    @apply grid gap-4;
-    @apply lg2:grid-cols-2;
+    & > ul {
+      @apply grid gap-4;
+      @apply lg2:grid-cols-2;
+    }
   }
 }

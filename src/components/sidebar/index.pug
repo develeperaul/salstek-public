@@ -57,19 +57,38 @@ include ../svg.pug
             +svg('yesidea',76,24)
       .sidebar__desc
         .sidebar__desc-left 
-          ul.list 
-            li.active  
-              +svg('warning', 24)
-              span О компании 
-            li  
-              +svg('scan', 24)
-              span Продукты
+          ul 
+            li.active(data-id="test1")  
+              a(href="#" ) 
+                +svg('warning', 24)
+                span О компании 
+            li(data-id="test2")  
+              a(href="#") 
+                +svg('scan', 24)
+                span Продукты
           .links 
             a.btn-fit(href="#") 
               +svg('telega', 24)
             a.btn-fit(href="#") 
               +svg('youtube', 24)
         .sidebar__desc-right
+          template#test1 
+            h2.title О компании 
+              +svg('top-line-r', 24)
+            nav   
+              a(href="#") Структура холдинга
+              a(href="#") Экология
+              a(href="#") История холдинга
+              a(href="#") Инновации
+              a(href="#") Менеджмент качества
+          template#test2
+            h2.title О 
+              +svg('top-line-r', 24)
+            nav   
+              a(href="#") Структура холдинга
+              a(href="#") История холдинга
+              a(href="#") Инновации
+              a(href="#") Менеджмент качества  
           .content
             h2.title О компании 
               +svg('top-line-r', 24)

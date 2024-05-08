@@ -2,5 +2,7 @@ include ../../components/downlItem.pug
 section.section.docs-download 
   h2.title Документы для скачивания
   .list-file
-    each val in [1, 2, 3, 4, 5]
-      +downlItem('Название документа', 'doc, 247.0 Кб','file')
+    ul
+      each val in [1, 2, 3, 4, 5]
+        li
+          +downlItem('Название документа', 'doc, 247.0 Кб','file')

@@ -28,49 +28,99 @@ section.section.shareholders-data
   #data-2.tab-content     
     div 
       h2.title Информация о существенных фактах и сообщения эмитента   
-      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
-        each val in [1, 2, 3, 4, 5]
-          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+      div(class='shareholders-data__list ')
+        ul
+          li
+            each val in [1, 2, 3, 4, 5]
+              +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
   #data-3.tab-content     
     div 
       h2.title Информация об аффилированных лицах
-      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
-        each val in [1, 2, 3, 4, 5]
-          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+      div(class='shareholders-data__list ')
+        ul
+          li
+            each val in [1, 2, 3, 4, 5]
+              +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+  #data-4.tab-content
+    div
+      h2.title Выплата дивидендов 
+      .appeal
+        h3.appeal__title Уважаемые акционеры
+        .appeal__wrapper
+          div.appeal__left 
+            p По результатам голосования акционерами на общем годовом собрании АО «Салаватстекло» 30.06.2023г. было принято решение о  выплате дивидендов за оконченный финансовый 2022 год в размере 500 руб. (пятьсот рублей) на 1 обыкновенную акцию.
+          div.appeal__right
+            .appeal__contacts 
+              h4.appeal__contacts-title Контакты регистратора
+              p.appeal__contacts-subtitle «Регистраторское общество «СТАТУС»
+              .appeal__contacts-links
+                a.appeal__contacts-link.appeal__contacts-link_addrr(href="#")
+                  +svg("location")
+                  span  450030, РБ, г. Уфа, Индустриальное шоссе, 119. Уфимский филиал Акционерного общества «Регистраторское общество «СТАТУС»
+                a.appeal__contacts-link(href="tel:+7 (347) 23-81-881") 
+                  +svg("phone")
+                  span +7 (347) 23-81-881
+                a.appeal__contacts-link(href="mailto:ufa@rostatus.ru") 
+                  +svg("mail")
+                  span ufa@rostatus.ru
+                a.appeal__contacts-link(href="rostatus.ru/for-shareholders/")
+                  +svg("browser")
+                  span rostatus.ru/for-shareholders/
+            .appeal__file
+              h3.appeal__title Документы для скачивания
+              +downlItem('2019 ЗАЯВЛЕНИЕ на перечисление неполученных дивидендов банком', 'xls, 247.0 Кб','xls')  
   #data-5.tab-content     
     div 
       h2.title Сведения, которые могут оказать существенное влияние на стоимость ценных бумаг эмитента
-      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
-        each val in [1, 2, 3, 4, 5]
-          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+      div(class='shareholders-data__list ')
+        ul
+          li
+            each val in [1, 2, 3, 4, 5]
+              +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
   #data-6.tab-content     
     div 
       div(class='grid lg2:flex lg2:justify-between')
         h2.title Собрание акционеров
         p.content-text(class='lg2:w-[31.25rem]') Уважаемые акционеры АО «Салаватстекло», в связи с произошедшими изменениями в гражданском законодательстве РФ и внесенными в Устав Общества измененяими и дополнениями от 15.10.2014г. на официальном сайте АО "Салаватстекло" в данном разделе будет размещаться информация об итогах голосования по принятым решениям на общих собраниях акционеров.
+      .meeting 
+        h3.meeting__title Собрание акционеров
+        div(class='meeting__list ')
+          ul 
+            li
+              each val in [1, 2, 3, 4, 5]
+                +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
   #data-7.tab-content     
     div 
       h2.title Ежеквартальные отчёты эмитента
-      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
-        each val in [1, 2, 3, 4, 5]
-          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file') 
+      div(class='shareholders-data__list ')
+        ul
+          li
+            each val in [1, 2, 3, 4, 5]
+              +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+      
   #data-8.tab-content     
     div 
       h2.title Проспект эмиссии ценных бумаг эмитента, отчёт об итогах выпуска ценных бумаг
-      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
-        each val in [1, 2, 3, 4, 5]
-          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file') 
+      div(class='shareholders-data__list ')
+        ul
+          li
+            each val in [1, 2, 3, 4, 5]
+              +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
   #data-9.tab-content     
     div 
       h2.title Прочие документы
-      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
-        each val in [1, 2, 3, 4, 5]
-          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+      div(class='shareholders-data__list ')
+        ul
+          li
+            each val in [1, 2, 3, 4, 5]
+              +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
   #data-10.tab-content     
     div 
       h2.title Материалы к годовому собранию
-      div(class='grid gap-4 lg2:grid-cols-4 lg2:gap-5')
-        each val in [1, 2, 3, 4, 5]
-          +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
+      div(class='shareholders-data__list ')
+        ul
+          li
+            each val in [1, 2, 3, 4, 5]
+              +downlItem('Существенный факт о выплаченных дивидендах 16.08.23', 'doc, 247.0 Кб','file')  
             
       

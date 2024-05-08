@@ -4,8 +4,7 @@
   }
   &__list {
     &-desk {
-      @apply hidden lg2:block;
-      width: 640px;
+      max-width: 640px;
       .item {
         &:not(:first-child) {
           @apply pt-8;
@@ -19,13 +18,15 @@
         &__content {
           @apply grid lg2:gap-6;
           &-col2 {
-            @apply grid-cols-2;
+            ul {
+              @apply grid lg2:gap-6;
+              @apply lg2:grid-cols-2;
+            }
           }
         }
       }
     }
     &-mob {
-      @apply lg2:hidden;
       .accordeon {
         .item {
           @apply py-6 px-4 rounded-3xl border border-prim_200;

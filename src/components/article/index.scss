@@ -1,0 +1,14 @@
+.article {
+  @apply rounded-xl bg-50 border-prim_100 text-sec_500 grid place-content-center w-0 h-0 fixed right-5 lg2:right-20 bottom-12 cursor-pointer overflow-hidden opacity-0;
+  @apply transition-opacity duration-500 ease-in-out;
+  &:hover {
+    @apply bg-100 border-prim_200 text-prim_700;
+  }
+  &-fixed {
+    @apply w-12 h-12;
+    z-index: 50;
+    &-active {
+      @apply opacity-100;
+    }
+  }
+}

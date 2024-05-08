@@ -6,6 +6,7 @@ import './globalObj';
 import '../components/select';
 import '../components/inputFile';
 //components
+import '../components/article';
 import '../components/locales';
 import '../components/sidebar';
 import '../components/project';

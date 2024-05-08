@@ -6,8 +6,10 @@ section.section.download-docs
     div
       .content 
         .list 
-          each val in [1, 2, 3, 4, 5]
-            +downlItem('Название документа', 'doc, 247.0 Кб','file')
+          ul
+            each val in [1, 2, 3, 4, 5]
+              li
+                +downlItem('Название документа', 'doc, 247.0 Кб','file')
     div 
       h2.title Скачать Салаватстекло конфигуратор
       .links 
