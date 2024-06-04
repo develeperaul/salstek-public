@@ -13,8 +13,11 @@
       &__title {
         @apply text-h5 text-prim_600 font-bold;
       }
+      &:hover {
+        @apply bg-500;
+      }
       &.active {
-        @apply bg-50;
+        @apply bg-50 border-transparent;
         .link__title {
           @apply text-prim_700;
         }

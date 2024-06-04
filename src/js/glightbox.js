@@ -1,14 +1,15 @@
 import 'glightbox/dist/css/glightbox.css';
 import GLightbox from 'glightbox';
-const lightbox = GLightbox({
-  touchNavigation: false,
-  keyboardNavigation: false,
-  height: 'auto',
-  loop: true,
-  autoplayVideos: true,
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = GLightbox({
+    touchNavigation: false,
+    keyboardNavigation: false,
+    height: 'auto',
+    loop: true,
+    autoplayVideos: true,
+  });
 
-const customLightboxHTML = `<div id="glightbox-body" class="glightbox-container">
+  const customLightboxHTML = `<div id="glightbox-body" class="glightbox-container">
     <div class="gloader visible"></div>
     <div class="goverlay"></div>
     <div class="gcontainer">
@@ -22,7 +23,7 @@ const customLightboxHTML = `<div id="glightbox-body" class="glightbox-container"
 </div>
 </div>`;
 
-let customSlideHTML = `<div class="gslide">
+  let customSlideHTML = `<div class="gslide">
     <div class="gslide-inner-content">
         <div class="ginner-container">
             <div class="gslide-media">
@@ -32,23 +33,24 @@ let customSlideHTML = `<div class="gslide">
     </div>
 </div>`;
 
-const lightboxPlay = GLightbox({
-  selector: '.gl-play',
-  // lightboxHTML: customLightboxHTML,
-  // slideHTML: customSlideHTML,
-  touchNavigation: false,
-  keyboardNavigation: false,
-  height: 'auto',
-  loop: true,
-  autoplayVideos: true,
-});
-const lightboxPhoto = GLightbox({
-  selector: '.gl-photo',
-  // lightboxHTML: customLightboxHTML,
-  // slideHTML: customSlideHTML,
-  touchNavigation: false,
-  keyboardNavigation: false,
-  height: 'auto',
-  loop: true,
-  autoplayVideos: true,
+  const lightboxPlay = GLightbox({
+    selector: '.gl-play',
+    // lightboxHTML: customLightboxHTML,
+    // slideHTML: customSlideHTML,
+    touchNavigation: false,
+    keyboardNavigation: false,
+    height: 'auto',
+    loop: true,
+    autoplayVideos: true,
+  });
+  const lightboxPhoto = GLightbox({
+    selector: '.gl-photo',
+    // lightboxHTML: customLightboxHTML,
+    // slideHTML: customSlideHTML,
+    touchNavigation: false,
+    keyboardNavigation: false,
+    height: 'auto',
+    loop: true,
+    autoplayVideos: true,
+  });
 });

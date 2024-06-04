@@ -4,9 +4,6 @@ import './index.scss';
 export const initital = () => {
   const quantityList = document.querySelectorAll('.quantity');
   if (quantityList.length > 0) {
-    // Array.prototype.forEach.call(quantityList, (el) => {
-    //   console.log(el);
-    // });
     [...quantityList].forEach((el) => {
       const countEl = el.querySelector('.quantity__count');
       const incBtn = el.querySelector('.quantity__inc');

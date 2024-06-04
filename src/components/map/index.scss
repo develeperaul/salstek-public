@@ -19,6 +19,9 @@
       left: 50%;
       transform: translateX(-50%);
     }
+    &__slider {
+      border-radius: 1rem;
+    }
   }
   .card-map {
     @apply absolute hidden w-[17.5rem]  overflow-hidden opacity-0;
@@ -69,6 +72,7 @@
     }
     &__link {
       @apply rounded-xl py-3 px-4 border border-sec_500 h-12 flex items-center justify-between w-full text-sec_500 text-body_m  font-bold -tracking-4;
+      @apply hover:text-prim_200 active:text-prim_500 hover:border-prim_200 active:border-prim_500;
     }
   }
 }

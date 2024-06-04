@@ -1,5 +1,5 @@
 .sidebar {
-  @apply fixed top-0 left-0 pb-10 right-0 z-50 bg-500 w-screen h-screen transform -translate-x-full;
+  @apply fixed top-0 left-0 pb-10 right-0 z-40 bg-500 w-screen h-screen transform -translate-x-full;
   @apply lg2:pb-0;
   &.active {
     @apply translate-x-0 overflow-auto;
@@ -119,9 +119,14 @@
       ul {
         @apply grid gap-4;
         & > li {
-          @apply text-sec_500 text-body_m -tracking-4 p-3 rounded-xl font-bold;
-          a {
-            @apply grid grid-cols-[24px_1fr] gap-3 items-center;
+          @apply text-sec_500 text-body_m -tracking-4  rounded-xl font-bold;
+          &:not(:has(a)) {
+            @apply grid grid-cols-[24px_1fr] gap-3 items-center p-3 cursor-pointer;
+          }
+          &:has(a) {
+            a {
+              @apply grid grid-cols-[24px_1fr] gap-3 items-center p-3;
+            }
           }
           &.active {
             @apply text-prim_600 bg-100;

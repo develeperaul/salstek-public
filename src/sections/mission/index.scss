@@ -19,7 +19,7 @@
       }
       .text,
       .content-text {
-        @apply text-sec_500 text-body_m -tracking-4;
+        @apply text-sec_500 text-body_m -tracking-4 leading-[25.6px];
         @apply lg2:text-h5 lg2:-tracking-5 lg2:leading-160;
         ul {
           @apply marker:text-sec_500 list-disc pl-5;
@@ -33,7 +33,7 @@
   }
   &__video {
     @apply rounded-lg relative overflow-hidden;
-    @apply lg2:rounded-[2rem];
+    @apply lg2:rounded-[2rem] lg2:h-[756px];
     &::before {
       content: '';
       position: absolute;
@@ -44,6 +44,9 @@
         rgba(0, 0, 0, 0.16) 0%,
         rgba(0, 0, 0, 0.16) 100%
       );
+    }
+    img {
+      @apply w-full h-full object-cover;
     }
     .play {
       @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;

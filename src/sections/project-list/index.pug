@@ -1,6 +1,7 @@
 include ../../components/svg.pug
 include ../../components/project/index.pug  
-include ../../components/select/index2.pug
+include ../../components/select/index.pug
+include ../../components/select/index4.pug
 section.section.project-list 
   div(class='overflow-hidden')
     //- .swiper.mySwiper
@@ -14,11 +15,28 @@ section.section.project-list
     //-     .swiper-slide
     //-       +select('institute','Категория объекта', {name:1,val:'0'})
     //-   .swiper-scrollbar
-  form.filters
-    +select('institute','Категория объекта', [{name:1,val:'0',childs:[{name:1,val:'0'},{name:2,val:'1'},{name:4,val:'04'}]},{name:2,val:'1'},{name:3,val:'2'}])
-    +select('institute','Продукт', [{name:2,val:'1'},{name:3,val:'2'}])
-    +select('institute','Вид стекла', [{name:2,val:'1'},{name:3,val:'2'}])
-    +select('institute','Все города', [{name:2,val:'1'},{name:3,val:'2'}])
+  form.filters#filterForm
+    +select('institute','Категория объекта', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+    
+    .select(data-sel2)
+      input(type="text" name='prod' hidden)
+      .select__head Подукты
+      .select__body  
+        .select__body-wrapper
+          .select__options
+            .select__option
+              .select__option-label Lable
+              .select__option-list
+                div(data-val="0" ) Test
+                div(data-val="12") Test2
+            .select__option
+              .select__option-label Lable
+              .select__option-list
+                div(data-val="13") Test21
+                div(data-val="124") Test2w
+
+    +select('institute','Вид стекла', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+    +select('institute','Все города', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})        
     button.btn Применить
   .list 
     each val in [1, 2, 3, 4, 5]

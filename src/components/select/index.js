@@ -1,6 +1,8 @@
-const selects = document.querySelectorAll('.select');
-[...selects].forEach((select) => {
-  initSelect(select);
+document.addEventListener('DOMContentLoaded', () => {
+  const selects = document.querySelectorAll('.select ');
+  [...selects].forEach((select) => {
+    initSelect(select);
+  });
 });
 let openSelect;
 export function initSelect(select) {
@@ -18,7 +20,16 @@ export function initSelect(select) {
 function actionSelect(e) {
   const head = this.querySelector('.select__head');
   const body = this.querySelector('.select__body');
-  const options = this.querySelectorAll('.select__options > *');
+  // .select2__option - list > *
+  console.log(this.dataset);
+  let options;
+  if (this.hasAttribute('data-sel')) {
+    options = this.querySelectorAll('.select__options > *');
+  }
+  if (this.hasAttribute('data-sel2')) {
+    options = this.querySelectorAll('.select__option-list > *');
+  }
+
   const currentTarget = e.target;
   if (currentTarget === head) {
     if (this.classList.contains('active')) this.classList.remove('active');

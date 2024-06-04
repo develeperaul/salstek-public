@@ -1,7 +1,7 @@
 include ../svg.pug
 #sidebar.sidebar(data-animate-open='fadeInLeft' data-animate-close='fadeOutLeft' data-full class="animate__faster")
   .container 
-    .sidebar__header
+    //- .sidebar__header
       .header__wrapper 
         .header__left
           a(href="#" class='logo') 
@@ -59,10 +59,12 @@ include ../svg.pug
         .sidebar__desc-left 
           ul 
             li.active(data-id="test1")  
-              a(href="#" ) 
-                +svg('warning', 24)
-                span О компании 
+              +svg('warning', 24)
+              span О компании 
             li(data-id="test2")  
+              +svg('warning', 24)
+              span О компании 
+            li
               a(href="#") 
                 +svg('scan', 24)
                 span Продукты

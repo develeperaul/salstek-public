@@ -1,4 +1,8 @@
 .trade-union {
+  .tabs {
+    @apply mb-8;
+    @apply lg2:mb-12;
+  }
   &__wrapper {
     @apply grid gap-8;
     @apply lg2:gap-12;

@@ -1,5 +1,5 @@
 mixin select(name,label,placeholder, ...items)
-  .select 
+  .select(data-sel)
     input(type="text" name=name hidden)
     if(label)
       label #{label}
@@ -9,4 +9,7 @@ mixin select(name,label,placeholder, ...items)
         .select__options 
           each item in items
             div(data-val=item.val data-init=item.choose) #{item.name}
+
+
+            
   

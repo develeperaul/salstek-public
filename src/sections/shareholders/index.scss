@@ -1,6 +1,8 @@
 .shareholders-data {
-  @apply grid gap-6;
-  @apply lg2:gap-12;
+  .tabs {
+    @apply mb-8;
+    @apply lg2:mb-12;
+  }
   .tabs__wrapper {
     @apply lg2:flex-wrap;
     & > button {

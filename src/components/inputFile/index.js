@@ -1,6 +1,10 @@
-const fileInputs = document.querySelectorAll(".field-file input[type='file']");
-[...fileInputs].forEach((inp) => {
-  initInput(inp);
+document.addEventListener('DOMContentLoaded', () => {
+  const fileInputs = document.querySelectorAll(
+    ".field-file input[type='file']"
+  );
+  [...fileInputs].forEach((inp) => {
+    initInput(inp);
+  });
 });
 export function initInput(input) {
   input.addEventListener('change', changeInputFile);

@@ -110,6 +110,14 @@
     }
   }
 
+  .header-sticky {
+    @apply lg2:grid-cols-2 lg2:h-screen lg2:sticky lg2:top-0 mb-0;
+  }
+
+  .header-sticky + .characteristics {
+    @apply lg2:mt-8;
+  }
+
   .header-project {
     @apply grid content-between relative  rounded-b-4xl mb-4;
     @apply lg2:rounded-b-6xl;
@@ -209,8 +217,8 @@
     }
   }
   .tabs {
-    @apply grid overflow-hidden w-full mb-8;
-    @apply mb-12;
+    @apply grid overflow-hidden w-full;
+
     &__wrapper {
       @apply flex gap-5 overflow-auto;
       -ms-overflow-style: none; /* IE и Edge */

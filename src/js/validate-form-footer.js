@@ -2,17 +2,17 @@ import validate from 'validate.js';
 import IMask from 'imask';
 import { toggle } from './animation';
 //dev
-// import constraintsObj from '../assets/validate.json';
+import constraintsObj from '../assets/validate.json';
 //prod
 
-let constraintsObj = {};
-(() => {
-  const res = fetch(
-    'http://salstek.yes-idea.ru/bitrix/templates/salstek/assets/validate.json'
-  )
-    .then((response) => response.json())
-    .then((json) => (constraintsObj = json));
-})();
+// let constraintsObj = {};
+// (() => {
+//   const res = fetch(
+//     'http://salstek.yes-idea.ru/bitrix/templates/salstek/assets/validate.json'
+//   )
+//     .then((response) => response.json())
+//     .then((json) => (constraintsObj = json));
+// })();
 
 const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`);
 //форма Напишите нам
@@ -42,8 +42,15 @@ if (formOrdering) {
   });
 }
 function requestOrdering() {
-  toggle('order-modal', 'close');
-  toggle('order-success', 'open');
+  console.log('test');
+  formReqOrder(
+    formOrdering,
+    'http://salstek.yes-idea.ru/ajax/order_samples.php',
+    () => {
+      toggle('order-modal', 'close');
+      toggle('order-success', 'open');
+    }
+  );
 }
 
 //форма Резюме
@@ -111,7 +118,7 @@ function handleFormSubmit(form, nameFunc) {
   checkInvalid(form, errors);
 
   showErrors(form, errors || {});
-  console.log(errors);
+
   if (Object.keys(errors).length === 0) {
     nameFunc();
     // alert('success');
@@ -128,7 +135,7 @@ export function showErrorsForInput(input, errors) {
   const field = closestParent(input.parentNode, 'field');
   const select = closestParent(input.parentNode, 'select');
   // console.log(form.submit.disabled);
-  console.log(errors);
+  errors;
   if (field) {
     if (errors) {
       field.classList.add('field__invalid');
@@ -165,26 +172,135 @@ export function checkInvalid(form, errors) {
 }
 
 const formReq = async (form, url, action, options = {}) => {
-  // const url = ;
   action();
   const formData = new FormData();
   const fields = form.querySelectorAll('input, textarea, checkbox');
   const theme = form.getAttribute('data-theme');
-  const id = document.getElementById('visitor_uid')?.value;
-  const clientID = document.getElementById('clientID')?.value
-    ? document.getElementById('clientID')?.value
-    : '';
+  // const id = document.getElementById('visitor_uid')?.value;
+  // const clientID = document.getElementById('clientID')?.value
+  //   ? document.getElementById('clientID')?.value
+  //   : '';
   formData.append('theme', theme ? theme : '');
   // formData.append('visitor_uid', id ? id : '');
   // formData.append('clientID', clientID ? clientID : '');
   for (let key in options) {
     formData.append(key, options.key);
   }
-  console.log(fields);
+
   Array.from(fields).forEach((field) => {
     if (field.name) {
       if (field.type === 'checkbox') {
         formData.append(field.name, field.checked);
+      } else if (field.type === 'file') {
+        formData.append(field.name, field.files[0]);
+      } else {
+        formData.append(field.name, field.value);
+      }
+    }
+  });
+
+  let success = false;
+  const res = await fetch(url, {
+    method: 'POST',
+    body: formData,
+  })
+    .then((responce) => {
+      if (responce.status === 200) {
+        suc = true;
+        action();
+      }
+    })
+    .catch((e) => console.log(e));
+  return success;
+};
+
+const formReqOrder = async (form, url, action, options = {}) => {
+  const list = [];
+  const orderingEl = form.querySelector('#ordering');
+  console.log(orderingEl);
+  if (orderingEl) {
+    const childs = orderingEl.children;
+    if (childs) {
+      [...childs].forEach((el) => {
+        if (el.classList.contains('item-parent'))
+          list.push(`
+              <div>
+                <span>Наименование</span>
+                <span>${el.querySelector('.checkbox__label').textContent}</span>
+              </div>
+              <br/>
+              <div>
+                <span>Количество</span>
+                <span>${
+                  el.querySelector('.item-parent__count').textContent
+                }</span>
+              </div>
+            `);
+        if (el.classList.contains('item-label')) {
+          let item = '';
+          let itemChild = [];
+
+          [...el.querySelectorAll('.item-child')].forEach((child) => {
+            itemChild.push(`
+            <div>
+                <span>Наименование</span>
+                <span>${
+                  child.querySelector('.item-child__label .checkbox__label')
+                    .textContent
+                }</span>
+              </div>
+              <br/>
+              <div>
+                <span>Количество</span>
+                <span>${
+                  child.querySelector(' .item-child__count').textContent
+                }</span>
+              </div>
+            `);
+          });
+          console.log(itemChild);
+          item = `
+            <div>
+                <span>Наименование раздела</span>
+                <span>${
+                  el.querySelector('.item-label__head .checkbox__label')
+                    .textContent
+                }</span>
+              </div>
+              <br/>
+              <div>
+                ${itemChild.join('<br/>')}
+              </div>
+          `;
+
+          list.push(item);
+        }
+      });
+    }
+  }
+  console.log(list);
+  action();
+  const formData = new FormData();
+  const fields = form.querySelectorAll('input, textarea, checkbox');
+
+  // const id = document.getElementById('visitor_uid')?.value;
+  // const clientID = document.getElementById('clientID')?.value
+  //   ? document.getElementById('clientID')?.value
+  //   : '';
+  // formData.append('theme', theme ? theme : '');
+  formData.append('order', list.join('<br/>'));
+  // formData.append('visitor_uid', id ? id : '');
+  // formData.append('clientID', clientID ? clientID : '');
+  for (let key in options) {
+    formData.append(key, options.key);
+  }
+
+  Array.from(fields).forEach((field) => {
+    if (field.name) {
+      if (field.type === 'checkbox') {
+        formData.append(field.name, field.checked);
+      } else if (field.type === 'file') {
+        formData.append(field.name, field.files[0]);
       } else {
         formData.append(field.name, field.value);
       }

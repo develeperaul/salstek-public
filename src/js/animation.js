@@ -3,7 +3,6 @@ export const animateCSS = (element, animation, prefix = 'animate__') => {
   if (typeof element === 'string') {
     node = document.querySelector(element);
   } else {
-    console.log('dsds');
     node = element;
   }
   return new Promise((resolve, reject) => {
@@ -30,7 +29,6 @@ const btns = document.querySelectorAll('[data-action]');
 });
 
 export function toggle(target, action) {
-  console.log(target);
   const el = document.querySelector(`#${target}`);
   const body = document.querySelector('body');
 

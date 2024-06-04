@@ -90,12 +90,12 @@ include ../../components/rezume.pug
                 h2.stepper__content-title Оставьте контакные данные
                 .form__content
                   .fields
-                    +input('organization','Название организации*')
-                    +input('name','Фамилия Имя Отчество*')
-                    +input('phone','Номер телефона*')(data-mask="+{7}(000)-000-00-00")
-                    +input('email','E-mail')
-                    +input('address','Адрес поставки*')
-                    +textarea('comment','Комментарий ...')
+                    +input('PROP1','Название организации*')
+                    +input('PROP2','Фамилия Имя Отчество*')
+                    +input('PROP3','Номер телефона*')(data-mask="+{7}(000)-000-00-00")
+                    +input('PROP4','E-mail')
+                    +input('PROP5','Адрес поставки*')
+                    +textarea('PROP6','Комментарий ...')
                   p Отправляя форму, вы даёте своё согласие на обработку 
                     a(href="#") персональных данных
       .stepper__btns(data-step="first") 

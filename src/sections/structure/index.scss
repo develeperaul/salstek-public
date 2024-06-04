@@ -5,7 +5,7 @@
     @apply grid gap-6;
     @apply lg2:flex lg2:justify-between;
     .text {
-      @apply lg2:w-[500px] lg2:leading-160;
+      @apply leading-[25.6px] lg2:w-[500px] lg2:leading-160;
     }
   }
   &__bottom {

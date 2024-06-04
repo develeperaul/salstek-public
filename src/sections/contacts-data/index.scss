@@ -1,6 +1,9 @@
 .contacts-data {
   @apply grid gap-8;
   @apply gap-12;
+  &__tables {
+    @apply grid gap-8 lg2:gap-12;
+  }
   &__table {
     @apply grid gap-6;
     @apply lg2:gap-8;

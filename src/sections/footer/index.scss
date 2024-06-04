@@ -70,7 +70,7 @@ footer {
         .list {
           @apply grid grid-cols-3 gap-x-7;
           .item {
-            @apply p-3 text-prim_600 text-body_m -tracking-4;
+            @apply p-3 text-prim_600 font-bold text-body_m -tracking-4;
           }
         }
         .content-other {

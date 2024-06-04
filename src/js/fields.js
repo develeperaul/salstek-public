@@ -1,6 +1,8 @@
-const inputs = document.querySelectorAll('input, textarea');
-[...inputs].forEach((inp) => {
-  initInput(inp);
+document.addEventListener('DOMContentLoaded', () => {
+  const inputs = document.querySelectorAll('input, textarea');
+  [...inputs].forEach((inp) => {
+    initInput(inp);
+  });
 });
 export function initInput(input) {
   input.addEventListener('input', editInput);

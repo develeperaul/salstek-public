@@ -15,8 +15,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      intro: 'Intro',
-      avenit: 'Avenir',
+      intro: ['Intro', 'sans-serif'],
+      avenit: ['Avenir', 'sans-serif'],
     },
     colors: {
       sec_500: '#7B93A7',
