@@ -6839,10 +6839,10 @@ svg-element-attributes@^1.3.1:
   resolved "https://registry.yarnpkg.com/svg-element-attributes/-/svg-element-attributes-1.3.1.tgz#0c55afac6284291ab563d0913c062cf78a8c0ddb"
   integrity sha512-Bh05dSOnJBf3miNMqpsormfNtfidA/GxQVakhtn0T4DECWKeXQRQUceYjJ+OxYiiLdGe4Jo9iFV8wICFapFeIA==
 
-svg-spritemap-webpack-plugin@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/svg-spritemap-webpack-plugin/-/svg-spritemap-webpack-plugin-4.5.0.tgz#3281edd1ec65daf1e5f6153f1628af853407baa1"
-  integrity sha512-ee1k1ZCEbWIOq4pPv9fWTqIhsdPfmzHPXupyqSzoIhsVumvhyNYkN0GIW9gtLsuQUvLt+7GHRhwMMwbVVAbS5w==
+svg-spritemap-webpack-plugin@^4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/svg-spritemap-webpack-plugin/-/svg-spritemap-webpack-plugin-4.5.1.tgz#cc0f9835feedb6e4f9bdf10ef349d3c6fd23613e"
+  integrity sha512-D8g0k38/zO79QMItq79InNfKkRmSn+iEg76GM1Qa9m3Ex7GXgPVNAZP34zr+drIdBEkmN+mTjus7VLXDl4ZGNA==
   dependencies:
     "@xmldom/xmldom" "^0.8.2"
     glob "^8.0.3"

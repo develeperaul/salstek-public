@@ -32,6 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
         _this.classList.remove('btn-round');
         _this.classList.add(...['btn', 'active']);
         targetActive.classList.add('active');
+        // const swiper = targetActive.querySelector('.swiper').swiper;
+        // if (swiper) {
+        //   // swiper.enabled();
+
+        //   swiper.slideToLoop(0);
+        // }
       }
     }
   }

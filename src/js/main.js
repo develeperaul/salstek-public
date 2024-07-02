@@ -47,6 +47,12 @@ import '../components/smallSlider';
 import Swiper from 'swiper';
 import { Scrollbar } from 'swiper/modules';
 
+{
+  const yakor = document.querySelector('[data-yakor]');
+  if (yakor) {
+    yakor.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 document.addEventListener('DOMContentLoaded', () => {
   var swiper = new Swiper('.mySwiper', {
     modules: [Scrollbar],
@@ -80,24 +86,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let mm = gsap.matchMedia();
+if (document.querySelector('.characteristics')) {
+  mm.add('(min-width: 1200px)', () => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.characteristics ',
+        start: 'top bottom',
+        end: `${
+          document.querySelector('.header-second .header-second__top')
+            ?.offsetHeight
+        } bottom`,
+        scrub: true,
+        // markers: true,
+      },
+    });
 
-mm.add('(min-width: 1200px)', () => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.characteristics ',
-      start: 'top bottom',
-      end: `${
-        document.querySelector('.header-second .header-second__top')
-          ?.offsetHeight
-      } bottom`,
-      scrub: true,
-      // markers: true,
-    },
+    tl.to('.header-sticky.header-second .header-second__top ', {
+      yPercent: -100,
+      ease: 'none',
+    });
+    return () => {};
   });
-
-  tl.to('.header-sticky.header-second .header-second__top ', {
-    yPercent: -100,
-    ease: 'none',
-  });
-  return () => {};
-});
+}

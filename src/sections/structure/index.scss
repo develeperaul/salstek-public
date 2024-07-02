@@ -24,6 +24,9 @@
     &__contacts {
       &-location {
         @apply flex gap-3 text-sec_500 font-bold -tracking-4;
+        svg {
+          @apply shrink-0;
+        }
       }
 
       &-name {

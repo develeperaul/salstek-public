@@ -37,8 +37,12 @@ section.section.characteristics
                   .left-title
                     +svg('light-bulb',24)
                     span Светопропускание (LT)
-                each val in [1, 2, 3, 4, 5,6]
-                  td= val
+                //- each val in [1, 2, 3, 4, 5,6]
+                //-   td= val
+                td 
+                  table.small 
+                    td 1
+                    td 1
         +downlItem('Технические характеристики стекла с покрытием', 'pdf, 247.0 Кб','pdf') 
     .item 
       h4.item__title Применение

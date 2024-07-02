@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     centeredSlides: true,
     loop: true,
     spaceBetween: 16,
+    init: true,
     // autoHeight: true,
     // fadeEffect: {
     //   crossFade: true,
