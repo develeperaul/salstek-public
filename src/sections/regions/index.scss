@@ -9,11 +9,14 @@
     &-wrapper {
       @apply flex flex-nowrap gap-5;
       .item {
-        @apply text-h5 p-6 text-sec_300 font-bold -tracking-4 flex gap-4 items-center rounded-4xl border border-prim_200 w-fit;
+        @apply text-h5 p-6 text-sec_300 font-bold -tracking-4 flex justify-center gap-4 items-center rounded-4xl border border-prim_200 w-fit;
         @apply lg2:text-h4;
 
         @screen lg2 {
           padding: 30px;
+        }
+        img {
+          @apply w-6 h-6 rounded-md;
         }
         svg {
           @apply rounded-md w-6 h-6 overflow-hidden;

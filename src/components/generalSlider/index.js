@@ -1,11 +1,14 @@
 import './index.scss';
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 document.addEventListener('DOMContentLoaded', () => {
   const swiper = new Swiper('.general-slider', {
-    modules: [EffectFade, Navigation, Pagination],
+    modules: [EffectFade, Navigation, Pagination, Autoplay],
     effect: 'fade',
     autoHeight: true,
+    autoplay: {
+      delay: 2500,
+    },
     loop: true,
     fadeEffect: {
       crossFade: true,

@@ -13,6 +13,14 @@ import constraintsObj from '../assets/validate.json';
 //     .then((response) => response.json())
 //     .then((json) => (constraintsObj = json));
 // })();
+let mailList = {};
+// (() => {
+//   const res = fetch(
+//     'http://salstek.yes-idea.ru/bitrix/templates/salstek/assets/writetous-mails.json'
+//   )
+//     .then((response) => response.json())
+//     .then((json) => (mailList = json));
+// })();
 
 const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`);
 //форма Напишите нам
@@ -25,10 +33,20 @@ if (formFooterForm) {
   });
 }
 function requestFooterForm() {
+  const s1Val = formFooterForm.querySelector('input[data-s1]')?.value;
+  const s2Val = formFooterForm.querySelector('input[data-s2]')?.value;
+  let opts = {};
+
+  if (s1Val && s2Val) {
+    opts = {
+      mail: mailList[s1Val][s2Val],
+    };
+  }
   formReq(
     formFooterForm,
     'http://salstek.yes-idea.ru/ajax/createform.php',
-    () => toggle('success', 'open')
+    () => toggle('success', 'open'),
+    opts
   );
 }
 
@@ -42,7 +60,6 @@ if (formOrdering) {
   });
 }
 function requestOrdering() {
-  console.log('test');
   formReqOrder(
     formOrdering,
     'http://salstek.yes-idea.ru/ajax/order_samples.php',
@@ -184,7 +201,7 @@ const formReq = async (form, url, action, options = {}) => {
   // formData.append('visitor_uid', id ? id : '');
   // formData.append('clientID', clientID ? clientID : '');
   for (let key in options) {
-    formData.append(key, options.key);
+    formData.append(key, options[key]);
   }
 
   Array.from(fields).forEach((field) => {

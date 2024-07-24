@@ -1,10 +1,11 @@
 import './index.scss';
 import Swiper from 'swiper';
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination, FreeMode } from 'swiper/modules';
 document.addEventListener('DOMContentLoaded', () => {
   const swiper = new Swiper('.other-slider', {
-    modules: [EffectFade, Navigation, Pagination],
+    modules: [EffectFade, Navigation, Pagination, FreeMode],
     slidesPerView: 1.2,
+    // freeMode: true,
     centeredSlides: true,
     loop: true,
     spaceBetween: 16,
@@ -27,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
       dynamicBullets: true,
     },
   });
+  console.log(swiper);
 });

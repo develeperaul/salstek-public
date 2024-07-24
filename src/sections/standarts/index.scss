@@ -1,9 +1,28 @@
 .standarts {
   @apply grid gap-6;
-  @apply lg2:grid-cols-[0.75fr_1fr_0.5fr] lg2:gap-5;
+  @apply lg2:grid-cols-2 lg2:gap-5;
+  @screen lg2 {
+    grid-template-areas:
+      'a b'
+      'a c';
+  }
   .item {
-    @apply min-h-[21.4375rem] rounded-3xl border border-prim_100 px-4 py-6 grid content-between gap-16;
-    @apply lg2:h-[27.5rem] lg2:p-10 lg2:gap-0;
+    @apply min-h-[21.4375rem] rounded-3xl border border-prim_100 grid gap-8 px-4 py-6;
+    @apply lg2:p-10;
+    @screen lg2 {
+      &:nth-child(1) {
+        grid-area: a;
+      }
+      &:nth-child(2) {
+        grid-area: b;
+      }
+      &:nth-child(3) {
+        grid-area: c;
+      }
+    }
+    &__wrapper {
+      @apply grid gap-8 content-start;
+    }
     img {
       @apply w-[6.25rem] h-[6.25rem];
     }

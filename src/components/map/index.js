@@ -65,7 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (flag.dataset.name)
       mapContinerFlag.insertAdjacentHTML(
         'afterbegin',
-        `<svg width="24" height='24'><use xlink:href="${
+        `
+        <img src="${
+          location.href.split('#')[0].split('?')[0] + url + flag.dataset.name
+        }.svg"/>
+        <svg width="24" height='24'><use xlink:href="${
           location.href.split('#')[0].split('?')[0] + url
         }/svg/sprite.svg#${flag.dataset.name}"></use></svg>`
       );

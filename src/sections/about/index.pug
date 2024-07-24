@@ -1,31 +1,42 @@
 section.section.about
   .about__top 
+    img(src=require("/assets/images/about.jpeg"), alt="")
     .about__top-content
-      h2.title О компании
-      p.text АО «Салаватстекло» — это комплекс современных высокотехнологичных производств стекольной отрасли, предлагающий множество актуальных решений для строительства и промышленности.
-    img(src=require("/assets/images/about.png"), alt="")
+      h3.subtitle Группа компаний
+      h2.title салаватстекло
+      img(src=require("/assets/images/about.jpeg"), alt="")
+      p.main-text Сегодня это один из крупнейших производителей листового стекла в РФ, включающий в себя комплекс высокотехнологичных производств стекольной отрасли, расположенных на территориях Саратовской области, республик Башкортостан и Дагестан.
+      div.text-list
+        p.text Весь производственный цикл построен на основе современного высокотехнологичного оборудования, что позволяет выпускать стекло превосходного качества с уникальными характеристиками.
+        p.text Ведется постоянная работа по совершенствованию процессов производства, по разработке и выпуску новых видов стекол, согласно меняющимся требованиям рынка.
   .about__bottom
-    .item
-      .item__title >60 лет
-      .item__subtitle на рынке
-    .item
-      .item__title >100 видов
-      .item__subtitle выпускаемой продукции
-    .item
-      .item__title 3 завода
-      .item__subtitle производственные площадки
-    .item
-      .item__title 2 линии
-      .item__subtitle производства архитектурного стекла и стекла с покрытием
-    .item
-      .item__title 4 флоат-линии
-      .item__subtitle производства листового стекла
-    .item
-      .item__title 2450 тонн
-      .item__subtitle листового стекла в сутки
-    .item
-      .item__title 14 млн м²/г
-      .item__subtitle стекла с покрытием
-    .item
-      .item__title  4 млн м²/г
-      .item__subtitle зеркала и стекла с лакокрасочным покрытием
+    .list 
+      .item
+        .item__title >60 лет
+        .item__subtitle на рынке
+      .item
+        .item__title >100 видов
+        .item__subtitle выпускаемой продукции
+      
+      .item
+        .item__title 4 флоат-линии
+        .item__subtitle производства листового стекла
+      
+      .item
+        .item__title  >50 млн м²
+        .item__subtitle листового стекла в сутки
+
+    .contacts-links
+      .contacts-links__top
+        a(href="#").link.active
+          +svg('logo-agidel', 175, 93)
+          +svg('map-r-bash', 175, 175)(class="map")
+          h4.link__title АО «Салаватстекло»
+        a(href="#").link 
+          +svg('logo-volga', 175, 93)
+          +svg('map-r-sar', 175, 175)(class="map")
+          h4.link__title АО «Саратовстройстекло»
+        a(href="#").link 
+          +svg('logo-kasp', 175, 93)
+          +svg('map-r-kasp', 175, 175)(class="map")
+          h4.link__title ООО «Салаватстекло Каспий»

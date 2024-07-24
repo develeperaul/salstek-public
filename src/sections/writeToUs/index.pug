@@ -7,11 +7,12 @@ section.write-to-us
       h2.title Напишите нам
       .form__content
         .fields
-          +input('name','Фамилия Имя Отчество*')
-          +input('phone','Номер телефона*')(data-mask="+{7}(000)-000-00-00")
+          +input('name','Фамилия Имя Отчество')
+          +input('phone','Номер телефона')(data-mask="+{7}(000)-000-00-00")
           +input('email','E-mail')
-          +select('institute','Выберите завод', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
-          +select('department','Выберите отдел', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+          +input('name','Тема письма')
+          //- +select('institute','Выберите завод', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+          //- +select('department','Выберите отдел', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
           +textarea('comment','Комментарий ...')
         p Отправляя форму, вы даёте своё согласие на обработку 
           a(href="#") персональных данных

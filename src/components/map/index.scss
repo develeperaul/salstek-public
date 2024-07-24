@@ -42,7 +42,10 @@
       @apply text-white;
     }
     &__flag {
-      @apply rounded-full overflow-hidden;
+      @apply rounded-full overflow-hidden w-6 h-6;
+      img {
+        @apply object-cover w-full h-full;
+      }
     }
     &__country {
       @apply text-white text-body_m -tracking-4 font-bold;

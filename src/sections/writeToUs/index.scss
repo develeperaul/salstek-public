@@ -13,9 +13,8 @@
       @apply lg2:gap-5;
       @screen lg2 {
         grid-template-areas:
-          'a a b b c c'
-          'd d d e e e'
-          'f f f f f f';
+          'a b c d'
+          'e e e e';
         & > *:nth-child(1) {
           grid-area: a;
         }
@@ -30,9 +29,6 @@
         }
         & > *:nth-child(5) {
           grid-area: e;
-        }
-        & > *:nth-child(6) {
-          grid-area: f;
         }
       }
     }

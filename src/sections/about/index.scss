@@ -1,10 +1,31 @@
 .about {
   @apply grid gap-8;
-  @apply lg2:grid-cols-2 lg2:gap-0;
+
   &__top {
     @apply grid gap-8;
-    @apply lg2:content-between lg2:pr-16;
+    @apply lg2:grid-cols-[640px_1fr] lg2:gap-10;
+    & > img {
+      @apply rounded-[32px] overflow-hidden hidden lg2:block;
+    }
     &-content {
+      @apply lg2:w-[507px] lg2:grid lg2:content-center;
+      .subtitle {
+        @apply text-body_m leading-140 text-sec_500 mb-4 -tracking-4 lg2:text-h4 lg2:leading-130;
+      }
+      .title {
+        @apply mb-8;
+      }
+      .main-text {
+        @apply -tracking-4 text-h5 leading-160 text-prim_600 font-bold mb-4 lg2:w-[481px];
+      }
+
+      .text-list {
+        @apply grid gap-4;
+      }
+
+      & > img {
+        @apply lg2:hidden;
+      }
     }
     .title {
       @apply mb-6;
@@ -15,17 +36,20 @@
     }
   }
   &__bottom {
-    @apply grid grid-cols-2;
-    .item {
-      @apply py-6 px-4 rounded-3xl border border-prim_100 h-[244px] grid content-between;
-      @apply lg2:p-8;
+    @apply grid gap-8 lg2:gap-12;
+    .list {
+      @apply grid lg2:flex;
+      .item {
+        @apply py-6 px-4 rounded-3xl border border-prim_100 h-[244px] grid content-between w-full;
+        @apply lg2:p-8;
 
-      &__title {
-        @apply text-h3 font-intro uppercase text-prim_600 -tracking-3.5;
-      }
-      &__subtitle {
-        @apply font-bold text-sec_300 -tracking-4;
-        @apply lg2:text-h5;
+        &__title {
+          @apply text-h3 font-intro uppercase text-prim_600 -tracking-3.5;
+        }
+        &__subtitle {
+          @apply font-bold text-sec_300 -tracking-4;
+          @apply lg2:text-h5;
+        }
       }
     }
   }

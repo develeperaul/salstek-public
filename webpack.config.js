@@ -123,14 +123,14 @@ module.exports = {
     new SVGSpritemapPlugin('./src/assets/icons/**/*.svg', {
       output: {
         filename: './svg/sprite.svg',
-        svg4everybody: true,
+        // svg4everybody: true,
         // svgo: true,
       },
       sprite: {
         prefix: false,
         generate: {
           use: true,
-          symbol: true,
+          // symbol: true,
           // view: true,
           //   title: false,
         },

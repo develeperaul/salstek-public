@@ -1,14 +1,10 @@
 .characteristics {
-  @apply min-h-screen mt-4;
+  @apply min-h-screen;
   .title {
     @apply lg2:text-h3 lg2:mb-12;
-    @screen lg2 {
-      max-width: 640px;
-    }
   }
   &__list {
     &-desk {
-      max-width: 640px;
       .item {
         &:not(:first-child) {
           @apply pt-8;

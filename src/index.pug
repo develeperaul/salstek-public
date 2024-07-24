@@ -1,3 +1,5 @@
+include ./components/newsCard/index.pug
+
 
 doctype html
 html(lang="ru")
@@ -18,6 +20,12 @@ html(lang="ru")
       include ./sections/structure/index.pug  
       include ./sections/about/index.pug  
       include ./sections/regions/index.pug  
+      section.section.news 
+        h2.title Новости и события
+        .list 
+          each val in [1, 2, 3, 4]
+            +newsCard()
+        a(href="#").btn Все новости
       include ./sections/writeToUs/index.pug  
           
     include ./sections/footer/index.pug
