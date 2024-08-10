@@ -19,7 +19,7 @@
         @apply p-6 rounded-[2rem] bg-500 grid content-start gap-6;
         @apply lg2:p-8 lg2:flex lg2:items-center lg2:gap-[66px];
         &__img {
-          @apply w-[295px] h-[295px] lg2:w-[180px] lg2:h-[180px] rounded-3xl overflow-hidden shrink-0;
+          @apply w-[295px] h-[295px] lg2:w-[180px] lg2:h-[180px] rounded-3xl overflow-hidden shrink-0 object-cover;
         }
         &__text {
           @apply text-body_m leading-160 -tracking-4;

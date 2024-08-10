@@ -10,13 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: true,
     spaceBetween: 16,
     init: true,
-    // autoHeight: true,
+    autoHeight: true,
     // fadeEffect: {
     //   crossFade: true,
     // },
     breakpoints: {
       1024: {
         slidesPerView: 1.4,
+        autoHeight: false,
       },
     },
     navigation: {

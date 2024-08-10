@@ -2,21 +2,20 @@ import validate from 'validate.js';
 import IMask from 'imask';
 import { toggle } from './animation';
 //dev
-import constraintsObj from '../assets/validate.json';
+// import constraintsObj from '../assets/validate.json';
 //prod
 
-// let constraintsObj = {};
-// (() => {
-//   const res = fetch(
-//     'http://salstek.yes-idea.ru/bitrix/templates/salstek/assets/validate.json'
-//   )
-//     .then((response) => response.json())
-//     .then((json) => (constraintsObj = json));
-// })();
+let constraintsObj = {};
+(() => {
+  const res = fetch('/bitrix/templates/salstek/assets/validate.json')
+    .then((response) => response.json())
+    .then((json) => (constraintsObj = json));
+})();
+console.log(constraintsObj);
 let mailList = {};
 // (() => {
 //   const res = fetch(
-//     'http://salstek.yes-idea.ru/bitrix/templates/salstek/assets/writetous-mails.json'
+//     '/bitrix/templates/salstek/assets/writetous-mails.json'
 //   )
 //     .then((response) => response.json())
 //     .then((json) => (mailList = json));
@@ -44,7 +43,7 @@ function requestFooterForm() {
   }
   formReq(
     formFooterForm,
-    'http://salstek.yes-idea.ru/ajax/createform.php',
+    '/ajax/createform.php',
     () => toggle('success', 'open'),
     opts
   );
@@ -60,14 +59,10 @@ if (formOrdering) {
   });
 }
 function requestOrdering() {
-  formReqOrder(
-    formOrdering,
-    'http://salstek.yes-idea.ru/ajax/order_samples.php',
-    () => {
-      toggle('order-modal', 'close');
-      toggle('order-success', 'open');
-    }
-  );
+  formReqOrder(formOrdering, '/ajax/order_samples.php', () => {
+    toggle('order-modal', 'close');
+    toggle('order-success', 'open');
+  });
 }
 
 //форма Резюме
@@ -80,7 +75,7 @@ if (formRezume) {
   });
 }
 function requestRezume() {
-  formReq(formRezume, 'http://salstek.yes-idea.ru/ajax/rezume.php', () => {
+  formReq(formRezume, '/ajax/rezume.php', () => {
     toggle('rezume-modal', 'close');
     toggle('rezume-success', 'open');
   });
@@ -95,14 +90,10 @@ if (formManagerrForm) {
   });
 }
 function requestManagerForm() {
-  formReq(
-    formManagerrForm,
-    'http://salstek.yes-idea.ru/ajax/reqmanagerform.php',
-    () => {
-      toggle('manager-modal', 'close');
-      toggle('success', 'open');
-    }
-  );
+  formReq(formManagerrForm, '/ajax/reqmanagerform.php', () => {
+    toggle('manager-modal', 'close');
+    toggle('success', 'open');
+  });
 }
 
 export function initialChangeInput(form) {

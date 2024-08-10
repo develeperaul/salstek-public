@@ -1,0 +1,27 @@
+.project-used {
+  @apply bg-500 border-none;
+  .title {
+    @apply mb-6 lg2:text-h3 lg2:leading-130 lg2:mb-12;
+  }
+  &__content {
+    @apply grid gap-4 lg2:gap-6 lg2:grid-cols-2 bg-white rounded-3xl border border-prim_100 p-4;
+    &--top {
+      @apply rounded-3xl overflow-hidden h-[300px];
+      & img {
+        @apply object-cover w-full h-full;
+      }
+    }
+    &--bottom {
+      @apply grid gap-6;
+    }
+  }
+  &__products {
+    @apply flex flex-wrap gap-2;
+  }
+  &__tag {
+    @apply text-sec_300 -tracking-4 text-body_m leading-160 mb-2;
+  }
+  &__name {
+    @apply text-h4 leading-130 -tracking-4 font-bold text-sec_500 mb-6;
+  }
+}

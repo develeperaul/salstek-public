@@ -11,6 +11,6 @@
     @apply border-100 text-100;
   }
   & > button {
-    @apply text-sec_500;
+    @apply text-sec_500 hover:text-prim_600;
   }
 }

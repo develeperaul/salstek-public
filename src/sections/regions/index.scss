@@ -24,4 +24,8 @@
       }
     }
   }
+
+  .marquee {
+    @apply -mx-4 lg2:-mx-10;
+  }
 }

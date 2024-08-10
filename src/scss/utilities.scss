@@ -6,12 +6,14 @@
   }
   .section-first {
     @apply bg-500 rounded-b-4xl  px-4 pb-10  overflow-hidden mb-4;
-    @apply lg2:h-[544px] lg2:px-10 lg2:pb-20 lg2:rounded-b-6xl;
+    @apply lg2:px-10 lg2:pb-20 lg2:rounded-b-6xl;
     @apply grid gap-12;
     @apply lg2:grid-cols-2 lg2:gap-0;
     padding-top: calc(89px + 32px);
     @screen lg2 {
       padding-top: calc(89px + 40px);
+      height: max-content;
+      min-height: 544px;
     }
     .breadcrumbs {
       @apply mb-8;
@@ -100,18 +102,10 @@
       @apply grid gap-2;
       @apply lg2:flex lg2:gap-4;
     }
-    .header-second__bottom {
-      @screen lg2 {
-        padding-top: calc(89px + 40px);
-      }
-    }
   }
   .header-second.header-glass-configurator {
     .header-second__bottom {
       @apply bg-75;
-      @screen lg2 {
-        padding-top: calc(89px + 40px);
-      }
     }
   }
 
@@ -119,7 +113,8 @@
     @apply grid content-between relative  rounded-b-4xl mb-4;
     @apply lg2:rounded-b-6xl;
     height: 594px;
-
+    background-size: cover;
+    background-repeat: no-repeat;
     padding-bottom: 40px;
     padding-inline: 16px;
     position: relative;
@@ -175,7 +170,12 @@
       }
     }
   }
-
+  .btn-close {
+    @apply lg2:w-16 lg2:h-16 grid place-content-center;
+    & svg {
+      @apply h-8 w-8;
+    }
+  }
   .not-found {
     @apply bg-500 rounded-b-4xl  px-4 pb-10  overflow-hidden mb-4 h-screen relative;
     @apply lg2:p-10 lg2:rounded-6xl;
@@ -225,6 +225,15 @@
       }
       & > * {
         @apply lg2:w-full;
+      }
+    }
+    &__col {
+      @media screen and (max-width: 1199px) {
+        display: grid !important;
+      }
+
+      & > * {
+        white-space: normal;
       }
     }
   }
@@ -339,7 +348,8 @@
       overflow: auto;
       height: 100%;
       @screen lg2 {
-        height: 90vh;
+        height: auto;
+
         width: 100%;
         max-width: 1024px;
       }
@@ -348,8 +358,8 @@
       }
 
       &__wrapper {
-        @apply grid grid-rows-[1fr_auto] gap-2.5 overflow-auto;
-        @apply lg2:gap-12 lg2:p-12  lg2:bg-white lg2:border lg2:border-prim_100;
+        @apply gap-2.5 overflow-auto;
+        @apply lg2:p-12  lg2:bg-white lg2:border lg2:border-prim_100;
         padding-top: max(16px, env(safe-area-inset-top, 16px));
         @media screen and (min-width: 1200px) {
           height: 100%;
@@ -436,7 +446,11 @@
         }
       }
     }
-
+    .content__full {
+      @screen lg2 {
+        height: 90vh;
+      }
+    }
     .content-exit {
       @apply bg-white rounded-4xl p-10 grid absolute top-1/2 transform -translate-y-1/2 gap-4;
       @apply lg2:left-1/2 lg2:-translate-x-1/2 lg2:gap-12;
@@ -529,7 +543,7 @@
   }
   .ordering-samples-form {
     @screen lg2 {
-      height: 880px;
+      height: 880px !important;
     }
 
     .form__content {
@@ -567,6 +581,9 @@
       }
     }
     .rezume__content {
+      &:not(:first-child) {
+        @apply mt-6 lg2:mt-8;
+      }
       button {
         @apply w-fit;
       }
@@ -655,12 +672,14 @@
           @apply mb-0;
         }
         &__head {
-          @apply justify-start p-0 text-body_s -tracking-4 text-prim_600 gap-2 font-normal;
+          --before-content: 'Показать';
+          @apply justify-start p-0 text-body_s -tracking-4
+            text-prim_600 gap-2 font-normal;
           .icon {
             @apply w-4 h-4;
           }
           &::before {
-            content: 'Показать';
+            content: var(--before-content);
           }
         }
         &.active .item__head {

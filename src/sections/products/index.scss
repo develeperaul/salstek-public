@@ -22,7 +22,7 @@
         @apply object-cover w-full h-full;
       }
       &__title {
-        @apply text-white absolute top-6 left-4 text-h4  font-bold;
+        @apply text-white absolute top-6 left-4 text-h4 lg2:text-h3  font-bold;
         @apply lg2:top-8 lg2:left-8;
       }
     }
@@ -43,6 +43,7 @@
     }
 
     @screen lg2 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-template-areas:
         'a b d'
         'a c d';

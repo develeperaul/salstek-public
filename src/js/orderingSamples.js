@@ -177,6 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let windowTargetBind;
   function openEdit(parent, e) {
     const editContainer = parent.querySelector('.item-edit');
+    const allEditContainer = document.querySelectorAll('.item-edit');
+    [...allEditContainer].forEach((el) => {
+      if (el !== editContainer) {
+        el.classList.remove('active');
+      }
+    });
     if (editContainer) {
       windowTargetBind = windowTarget.bind(this, editContainer);
       window.addEventListener('click', windowTargetBind);

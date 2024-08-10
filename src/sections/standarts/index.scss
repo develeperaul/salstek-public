@@ -42,3 +42,27 @@
     }
   }
 }
+
+.standarts-other {
+  @apply grid gap-4 lg2:flex lg2:gap-5;
+  .item {
+    @apply p-6 border border-prim_100 rounded-3xl grid gap-12 lg2:w-full content-start lg2:gap-8;
+    img {
+      @apply w-[6.25rem] h-[6.25rem];
+    }
+    &__bottom {
+      @apply grid gap-8;
+      @apply lg2:flex lg2:gap-12;
+    }
+    &__content {
+      @apply text-sec_500 grid gap-3 font-bold;
+      @apply lg2:gap-4;
+      &-title {
+        @apply text-h5;
+      }
+      &-text {
+        @apply text-body_m;
+      }
+    }
+  }
+}

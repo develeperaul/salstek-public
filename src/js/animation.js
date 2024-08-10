@@ -31,7 +31,7 @@ const btns = document.querySelectorAll('[data-action]');
 export function toggle(target, action) {
   const el = document.querySelector(`#${target}`);
   const body = document.querySelector('body');
-
+  const modalEL = document.querySelector(`#${target}`);
   if (target) {
     const el = document.querySelector(`#${target}`);
 
@@ -39,6 +39,10 @@ export function toggle(target, action) {
       const isFull = el.hasAttribute('data-full');
       if (el.dataset?.animateOpen && el.dataset?.animateClose) {
         if (action === 'open') {
+          if (modalEL) {
+            modalEL.addEventListener('click', modalClick, false);
+          }
+
           if (isFull && body) body.style.overflow = 'hidden';
           el.classList.add('open');
           animateCSS(`#${target}`, el.dataset.animateOpen).then(() => {
@@ -47,6 +51,10 @@ export function toggle(target, action) {
           });
         }
         if (action === 'close') {
+          if (modalEL) {
+            modalEL.removeEventListener('click', modalClick);
+          }
+
           if (el.querySelector('form')?.hasAttribute('data-theme'))
             el.querySelector('form').removeAttribute('data-theme');
           if (isFull && body) body.style.overflow = 'auto';
@@ -70,8 +78,18 @@ export function toggle(target, action) {
           }
         }
       } else {
-        if (action === 'open') el.classList.add('active');
-        if (action === 'close') el.classList.remove('active');
+        if (action === 'open') {
+          if (modalEL) {
+            window.addEventListener('click', modalClick);
+          }
+          el.classList.add('active');
+        }
+        if (action === 'close') {
+          if (modalEL) {
+            modalEL.removeEventListener('click', modalClick);
+          }
+          el.classList.remove('active');
+        }
         if (action === 'toggle') {
           if (el.classList.contains('active')) el.classList.remove('active');
           else el.classList.add('active');
@@ -147,5 +165,15 @@ function open(target) {
       el.classList.remove('open');
       el.classList.add('active');
     });
+    const modalEL = document.querySelector(`${target}`);
+    console.log(modalEL);
+    if (modalEL) {
+      window.addEventListener('click', modalClick);
+    }
   }
+}
+
+function modalClick(e) {
+  if (e.target === this) if (this.id) toggle(this.id, 'close');
+  //  data-target="rezume-modal"  data-action="close"
 }

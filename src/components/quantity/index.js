@@ -37,7 +37,7 @@ export function inc(countEl, e) {
 }
 // убавляем
 export function dec(countEl, e) {
-  if (countEl.textContent > 0) {
+  if (countEl.textContent > 1) {
     --countEl.textContent;
   }
 }

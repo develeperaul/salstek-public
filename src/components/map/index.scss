@@ -22,6 +22,12 @@
     &__slider {
       border-radius: 1rem;
     }
+    .target:hover > path {
+      transition: fill 0.3s;
+    }
+    .target:hover > path {
+      fill: rgba(36, 144, 168, 0.8);
+    }
   }
   .card-map {
     @apply absolute hidden w-[17.5rem]  overflow-hidden opacity-0;

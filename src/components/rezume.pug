@@ -7,7 +7,7 @@ include  ./select/index3.pug
 .modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="rezume-modal" class="animate__faster")
   button.btn-fit.btn-close(data-target="rezume-modal"  data-action="close") 
     +svg('close')
-  .content 
+  .content.content__full 
     form#rezume.content__wrapper.stepper.ordering-samples-form
       .content__top 
         button.btn-close(data-target="rezume-modal" data-action="close" type='button')
@@ -34,7 +34,7 @@ include  ./select/index3.pug
                         .info__doc 
                           h4 Документ для скачивания
                           +downlItem('Название документа', 'doc, 247.0 Кб','file')
-                .item__head 
+                .item__head(style="--before-content:'test'")
                   +svg('down',24)(class='icon')
         div 
           .progresses 

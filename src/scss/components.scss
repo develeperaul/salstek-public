@@ -747,6 +747,9 @@
       content: '';
       @apply w-2.5 h-2.5 rounded-full  mb-0.5 mx-2 bg-[#90B1DA];
     }
+    &__border {
+      @apply border border-sec_100;
+    }
   }
 
   .progress {
@@ -769,6 +772,9 @@
       }
       &::after {
         @apply w-full;
+      }
+      .progress__title {
+        @apply text-prim_600;
       }
     }
   }

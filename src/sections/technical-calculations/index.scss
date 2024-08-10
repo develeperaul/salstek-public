@@ -18,7 +18,9 @@
       }
     }
   }
-
+  .contacts-list {
+    @apply grid gap-4;
+  }
   .contacts-item {
     @apply p-4 bg-50 rounded-3xl grid gap-6 content-start h-fit;
     @apply lg2:p-6 lg2:w-[31.25rem] lg2:justify-self-end lg2:self-center;
