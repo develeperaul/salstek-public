@@ -13,16 +13,19 @@
   .list {
     @apply grid gap-4;
     @apply lg2:gap-6;
-    .item {
+    & .vacancy {
       @apply rounded-[2rem] p-4 border border-prim_100 grid gap-6;
       @apply lg2:p-8 lg2:gap-8;
+      & > * {
+        @apply lg2:w-[640px];
+      }
+
       &__top {
         @apply grid gap-3;
         @apply lg2:grid-cols-[1fr_auto];
       }
       &__middle {
-        @apply grid gap-6;
-        @apply lg2:grid-cols-2 lg2:gap-5;
+        @apply grid gap-6 mb-6;
       }
       &__title {
         @apply text-h4 text-sec_500 -tracking-6 font-bold mb-2;

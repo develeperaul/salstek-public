@@ -11,6 +11,13 @@ section.section.history
       .history__slider
         .swiper.other-slider
           .swiper-wrapper
+            .swiper-slide
+                .slide-content
+                  h4.slide-content__title #{val}  1978 год
+                  ul 
+                    li Начало производства хрустальных изделий
+                .img
+                  img(src=require("/assets/images/test.jpg"), alt="")
             each val in [1, 2, 3, 4, 5]
               .swiper-slide
                 .slide-content

@@ -285,32 +285,58 @@
   .content-share {
     @apply grid gap-6 lg2:gap-8;
     &__imgs {
-      @apply grid gap-2 lg2:gap-5 grid-cols-6;
+      @apply grid gap-2 lg2:gap-5 grid-cols-2 grid-rows-2;
+      grid-template-areas:
+        'a b'
+        'a c'
+        'd f'
+        'e f'
+        'g h'
+        'g j';
       & img {
-        @apply w-full  object-cover col-span-2;
-        height: 61px;
-        border-radius: 12px;
+        @apply w-full  object-cover row-span-1;
+        height: 97px;
+        border-radius: 16px;
         @screen lg2 {
-          height: 247px;
+          height: 383px;
           border-radius: 32px;
         }
       }
       & > img:nth-child(1) {
-        @apply col-span-6;
-        height: 193px;
-        border-radius: 24px;
-        @screen lg2 {
-          height: 765px;
-          border-radius: 32px;
-        }
+        grid-area: a;
       }
-      & > img:nth-child(2),
+      & > img:nth-child(2) {
+        grid-area: b;
+      }
       & > img:nth-child(3) {
-        @apply col-span-3;
-        height: 94px;
+        grid-area: c;
+      }
+      & > img:nth-child(4) {
+        grid-area: d;
+      }
+      & > img:nth-child(5) {
+        grid-area: e;
+      }
+      & > img:nth-child(6) {
+        grid-area: f;
+      }
+      & > img:nth-child(7) {
+        grid-area: g;
+      }
+
+      & > img:nth-child(8) {
+        grid-area: h;
+      }
+      & > img:nth-child(9) {
+        grid-area: j;
+      }
+      & > img:nth-child(1),
+      & > img:nth-child(6),
+      & > img:nth-child(7) {
+        height: 202px;
         border-radius: 16px;
         @screen lg2 {
-          height: 377px;
+          height: 786px;
           border-radius: 32px;
         }
       }
@@ -672,21 +698,11 @@
           @apply mb-0;
         }
         &__head {
-          --before-content: 'Показать';
-          @apply justify-start p-0 text-body_s -tracking-4
-            text-prim_600 gap-2 font-normal;
           .icon {
             @apply w-4 h-4;
           }
-          &::before {
-            content: var(--before-content);
-          }
         }
-        &.active .item__head {
-          &::before {
-            content: 'Скрыть';
-          }
-        }
+
         &.active .item__body {
           @apply mb-6;
         }

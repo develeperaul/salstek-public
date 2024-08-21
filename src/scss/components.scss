@@ -464,9 +464,10 @@
   /* accordeon */
   .accordeon {
     @apply grid gap-4;
+
     .item {
       &__head {
-        @apply p-3 rounded-xl font-bold text-sec_500 flex justify-between items-center;
+        @apply p-3 rounded-xl font-bold text-sec_500 flex justify-between items-center cursor-pointer;
         .icon {
           @apply transition duration-300 ease-in-out;
         }
@@ -489,6 +490,33 @@
 
       &.active .item__body {
         grid-template-rows: 1fr;
+      }
+    }
+    &__info {
+      .item {
+        .item__head {
+          @apply font-normal text-prim_600 -tracking-4 text-body_s;
+          justify-content: flex-start;
+          gap: 8px;
+          padding: 0;
+          line-height: 22.4px;
+        }
+        .item__head span {
+          --before-content: 'Показать';
+          --before-content-close: 'Скрыть';
+          &::before {
+            content: var(--before-content);
+          }
+        }
+      }
+      .item.active .item__head span {
+        &::before {
+          display: none;
+        }
+        &::after {
+          content: var(--before-content-close);
+          display: block;
+        }
       }
     }
   }

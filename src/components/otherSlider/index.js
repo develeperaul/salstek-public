@@ -8,14 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // freeMode: true,
     centeredSlides: true,
     loop: true,
-    spaceBetween: 16,
+    spaceBetween: 8,
     init: true,
-    autoHeight: true,
+    autoHeight: false,
     // fadeEffect: {
     //   crossFade: true,
     // },
     breakpoints: {
       1024: {
+        spaceBetween: 16,
         slidesPerView: 1.4,
         autoHeight: false,
       },

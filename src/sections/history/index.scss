@@ -25,8 +25,8 @@
     @apply overflow-hidden -mx-4;
     @apply lg2:-mx-10;
     .swiper-slide {
-      @apply rounded-3xl px-4 py-6 border border-prim_100 grid gap-4;
-      @apply lg2:grid-cols-2 lg2:gap-10 lg2:p-8 opacity-20;
+      @apply rounded-3xl px-4 py-6 border border-prim_100 grid gap-4 content-start h-fit;
+      @apply lg2:grid-cols-2 lg2:gap-10 lg2:p-8 opacity-20 h-auto;
       &.swiper-slide-active {
         @apply bg-50 opacity-100;
       }

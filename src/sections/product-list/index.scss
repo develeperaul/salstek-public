@@ -26,6 +26,7 @@
       }
       &__top {
         @apply grid gap-3;
+        align-content: start;
       }
       &__bottom {
         @apply rounded-3xl h-[19.4375rem] w-full  overflow-hidden;

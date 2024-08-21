@@ -1,4 +1,7 @@
 .innovative-activity {
+  & > .title {
+    @apply mb-8 lg2:mb-12;
+  }
   &__item {
     &:not(:last-child) {
       @apply pb-8 lg2:pb-12;

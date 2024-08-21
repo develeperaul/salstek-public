@@ -1,5 +1,6 @@
 import '../scss/style.scss';
 import 'animate.css';
+
 import 'swiper/css/bundle';
 import './globalObj';
 
@@ -30,6 +31,7 @@ import '../pages/test.pug';
 //modules
 import './validate-form-footer';
 import './animation';
+import { toggle } from './animation.js';
 import './accordeon';
 import './tabs';
 import './orderingSamples';
@@ -83,6 +85,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  // copy href
+
+  const btnsCopy = document.querySelectorAll('.copy');
+
+  [...btnsCopy].forEach((btn) => {
+    btn.onclick = copyHref;
+  });
+
+  function copyHref() {
+    const href = location.href;
+    if (navigator && navigator.clipboard != undefined) {
+      navigator.clipboard.writeText(href);
+      toggle('href', 'open');
+      setTimeout(() => toggle('href', 'close'), 2000);
+    }
+  }
 });
 
 let mm = gsap.matchMedia();

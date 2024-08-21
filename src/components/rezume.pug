@@ -16,7 +16,7 @@ include  ./select/index3.pug
           .content__title проверьте комплектацию заказа
           .info
             .info__title Вы можете воспользоваться формой ниже, или скачать шаблон резюме, <br class='hidden lg2:block'> заполнить его, и отправить по адресу puu7@salstek.ru
-            .accordeon  
+            .accordeon.accordeon__info  
               .item
                 .item__body 
                   .item__body-wrapper
@@ -34,7 +34,8 @@ include  ./select/index3.pug
                         .info__doc 
                           h4 Документ для скачивания
                           +downlItem('Название документа', 'doc, 247.0 Кб','file')
-                .item__head(style="--before-content:'test'")
+                .item__head 
+                  span(style="--before-content:'test'")
                   +svg('down',24)(class='icon')
         div 
           .progresses 
@@ -295,6 +296,16 @@ include  ./select/index3.pug
       .content-success__title резюме успешно <br/> отправлено!
       .content-success__text  Наш менеджер по персоналу свяжется с вами  <br/> в течении 1-2 дней
     button.btn(type='button' data-target="rezume-success"  data-action="close") Отлично
+.modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="href" class="animate__faster")
+  button.btn-fit.btn-close(data-target="href"  data-action="close") 
+    +svg('close')
+  .content-success
+    .content-success__icon
+      +svg('check-circle', 32) 
+    .content-success__middle
+      .content-success__title Cсылка успешно скопирована
+      
+    button.btn(type='button' data-target="href"  data-action="close") Отлично
 
 .modal(data-animate-open="fadeIn" data-animate-close="fadeOut" id="exit" class="animate__faster")
   button.btn-fit.btn-close(data-target="exit" data-stay="rezume-modal"  data-action="close") 

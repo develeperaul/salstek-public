@@ -14,7 +14,7 @@
   }
   .item {
     @apply rounded-3xl py-6 px-4 border border-prim_100 grid;
-    @apply lg2:p-10 lg2:h-[440px] lg2:content-between;
+    @apply lg2:p-10 lg2:min-h-[440px] lg2:content-between;
     &__top {
       @apply relative grid gap-10 mb-10;
       .map {

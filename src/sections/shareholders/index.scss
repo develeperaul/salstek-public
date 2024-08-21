@@ -5,7 +5,7 @@
   }
   .tabs__wrapper {
     @apply lg2:flex-wrap;
-    & > button {
+    & > * {
       @apply lg2:w-fit;
     }
   }
