@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const paramrSplit = q.split('=');
           const paramKey = paramrSplit[0];
           const paramValue = paramrSplit[1];
-          const input = filterForm.querySelector(`[name=${paramKey}]`);
+          const input = filterForm.querySelector(`[name='${paramKey}']`);
           if (input) {
             const select = input.closest('.select,.select2');
             if (select) {
@@ -24,6 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
         });
+      }
+
+      const clearBtn = filterForm.querySelector('button[type="button"]');
+      if (clearBtn) {
+        clearBtn.onclick = () => {
+          window.location.href = base;
+        };
       }
     }
     filterForm.addEventListener('submit', function (ev) {

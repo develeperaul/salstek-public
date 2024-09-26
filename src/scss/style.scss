@@ -3960,6 +3960,19 @@ caption {
       }
     }
   }
+  &__other {
+    margin-top: -1rem;
+  }
+  @media (min-width: 1200px) {
+    &__other {
+      grid-column: span 2 / span 2;
+    }
+  }
+  @media (min-width: 1200px) {
+    &__other {
+      margin-top: 3rem;
+    }
+  }
 }
 
 .header-second {
@@ -7625,6 +7638,9 @@ footer {
   &__slider {
     overflow: hidden;
   }
+  &__slider {
+    padding-bottom: 2rem;
+  }
   @media (min-width: 1200px) {
     &__slider {
       margin-left: -2.5rem;
@@ -8368,6 +8384,13 @@ footer {
   @media (min-width: 1200px) {
     .filters {
       grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+  .filters {
+    .btns {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
     }
   }
   .list {

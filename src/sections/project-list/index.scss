@@ -3,6 +3,11 @@
   .filters {
     @apply grid gap-5 mb-6;
     @apply lg2:grid-cols-5;
+    .btns {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+    }
   }
   .list {
     @apply grid gap-4;

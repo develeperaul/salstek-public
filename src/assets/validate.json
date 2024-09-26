@@ -26,6 +26,13 @@
   "rezume": {
     "name": {
       "presence": { "message": "поле обязательно для заполнения" }
+    },
+    "phone": {
+      "presence": true,
+      "format": {
+        "pattern": "^\\+7\\(\\d{3}\\)-\\d{3}-\\d{2}-\\d{2}$",
+        "message": "поле обязательно для заполнения"
+      }
     }
   },
   "desired_position": {

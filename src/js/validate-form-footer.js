@@ -7,96 +7,87 @@ import { toggle } from './animation';
 
 let constraintsObj = {};
 (() => {
-  const res = fetch('/bitrix/templates/salstek/assets/validate.json')
+  const res = fetch(
+    'https://salstek.ru/bitrix/templates/salstek/assets/validate.json'
+  )
     .then((response) => response.json())
-    .then((json) => (constraintsObj = json));
+    .then((json) => {
+      //форма Напишите нам
+      const formFooterForm = document.querySelector('form#footer-form');
+      if (formFooterForm) {
+        initialChangeInput(formFooterForm, json);
+        formFooterForm.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          handleFormSubmit(formFooterForm, json, requestFooterForm);
+        });
+      }
+      function requestFooterForm() {
+        formReq(
+          formFooterForm,
+          '/ajax/createform.php',
+          () => toggle('success', 'open'),
+          opts
+        );
+      }
+      //форма Заказа
+      const formOrdering = document.querySelector('form#order');
+      if (formOrdering) {
+        initialChangeInput(formOrdering, json);
+        formOrdering.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          handleFormSubmit(formOrdering, json, requestOrdering);
+        });
+      }
+      function requestOrdering() {
+        formReqOrder(formOrdering, '/ajax/order_samples.php', () => {
+          toggle('order-modal', 'close');
+          toggle('order-success', 'open');
+        });
+      }
+
+      //форма Резюме
+      const formRezume = document.querySelector('form#rezume');
+      if (formRezume) {
+        initialChangeInput(formRezume, json);
+        formRezume.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          handleFormSubmit(formRezume, json, requestRezume);
+        });
+      }
+      function requestRezume() {
+        formReq(formRezume, '/ajax/rezume.php', () => {
+          toggle('rezume-modal', 'close');
+          toggle('rezume-success', 'open');
+        });
+      }
+
+      const formManagerrForm = document.querySelector('form#manager');
+      if (formManagerrForm) {
+        initialChangeInput(formManagerrForm, json);
+        formManagerrForm.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+          handleFormSubmit(formManagerrForm, json, requestManagerForm);
+        });
+      }
+      function requestManagerForm() {
+        formReq(formManagerrForm, '/ajax/reqmanagerform.php', () => {
+          toggle('manager-modal', 'close');
+          toggle('success', 'open');
+        });
+      }
+    });
 })();
-console.log(constraintsObj);
-let mailList = {};
+// console.log(constraintsObj);
+// let mailList = {};
 // (() => {
-//   const res = fetch(
-//     '/bitrix/templates/salstek/assets/writetous-mails.json'
-//   )
+//   const res = fetch('/bitrix/templates/salstek/assets/writetous-mails.json')
 //     .then((response) => response.json())
-//     .then((json) => (mailList = json));
+//     .then((json) => {
+
+//     });
 // })();
 
-const r = new RegExp(`^\\+7\\(\\d{3}\\)-\\d{3}\-\\d{2}\-\\d{2}$`);
-//форма Напишите нам
-const formFooterForm = document.querySelector('form#footer-form');
-if (formFooterForm) {
-  initialChangeInput(formFooterForm);
-  formFooterForm.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    handleFormSubmit(formFooterForm, requestFooterForm);
-  });
-}
-function requestFooterForm() {
-  const s1Val = formFooterForm.querySelector('input[data-s1]')?.value;
-  const s2Val = formFooterForm.querySelector('input[data-s2]')?.value;
-  let opts = {};
-
-  if (s1Val && s2Val) {
-    opts = {
-      mail: mailList[s1Val][s2Val],
-    };
-  }
-  formReq(
-    formFooterForm,
-    '/ajax/createform.php',
-    () => toggle('success', 'open'),
-    opts
-  );
-}
-
-//форма Заказа
-const formOrdering = document.querySelector('form#order');
-if (formOrdering) {
-  initialChangeInput(formOrdering);
-  formOrdering.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    handleFormSubmit(formOrdering, requestOrdering);
-  });
-}
-function requestOrdering() {
-  formReqOrder(formOrdering, '/ajax/order_samples.php', () => {
-    toggle('order-modal', 'close');
-    toggle('order-success', 'open');
-  });
-}
-
-//форма Резюме
-const formRezume = document.querySelector('form#rezume');
-if (formRezume) {
-  initialChangeInput(formRezume);
-  formRezume.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    handleFormSubmit(formRezume, requestRezume);
-  });
-}
-function requestRezume() {
-  formReq(formRezume, '/ajax/rezume.php', () => {
-    toggle('rezume-modal', 'close');
-    toggle('rezume-success', 'open');
-  });
-}
-
-const formManagerrForm = document.querySelector('form#manager');
-if (formManagerrForm) {
-  initialChangeInput(formManagerrForm);
-  formManagerrForm.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    handleFormSubmit(formManagerrForm, requestManagerForm);
-  });
-}
-function requestManagerForm() {
-  formReq(formManagerrForm, '/ajax/reqmanagerform.php', () => {
-    toggle('manager-modal', 'close');
-    toggle('success', 'open');
-  });
-}
-
-export function initialChangeInput(form) {
+export function initialChangeInput(form, constraintsObj) {
   const inputs = form.querySelectorAll('input, textarea, select');
 
   const constraints = form?.id ? constraintsObj[form.id] : {};
@@ -119,7 +110,7 @@ export function initialChangeInput(form) {
     });
 });
 
-function handleFormSubmit(form, nameFunc) {
+function handleFormSubmit(form, constraintsO, nameFunc) {
   const constraints = form?.id ? constraintsObj[form.id] : {};
   var errors = validate(form, constraints) || {};
 

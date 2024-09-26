@@ -67,10 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'afterbegin',
         `
         <img src="${
-          location.href.split('#')[0].split('?')[0] + url + flag.dataset.name
+          // location.href.split('#')[0].split('?')[0] + url + flag.dataset.name
+          url + flag.dataset.name
         }.svg"/>
         <svg width="24" height='24'><use xlink:href="${
-          location.href.split('#')[0].split('?')[0] + url
+          // location.href.split('#')[0].split('?')[0] + url
+          url
         }/svg/sprite.svg#${flag.dataset.name}"></use></svg>`
       );
     if (flag.dataset.country)

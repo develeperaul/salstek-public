@@ -64,6 +64,9 @@
         }
       }
     }
+    &__other {
+      @apply lg2:col-span-2 -mt-4  lg2:mt-12;
+    }
   }
 
   .header-second {

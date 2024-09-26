@@ -37,7 +37,10 @@ section.section.project-list
 
     +select('institute','Вид стекла', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
     +select('institute','Все города', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})        
-    button.btn Применить
+    .btns
+      button.btn(type="submit") Применить
+      button.btn-round(type="button")
+        +svg('close', 24)
   .list 
     each val in [1, 2, 3, 4, 5]
       +project()
