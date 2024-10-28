@@ -53,7 +53,8 @@ include  ./select/index3.pug
               h2.stepper__content-title Личная информация
               .rezume-fields
                 +inputFile('rezume','Прикрепить резюме')
-                +inputFixed('surname','Фамилия', 'Иванов')
+                div()
+                  +inputFixed('surname','Фамилия', 'Иванов')
                 +inputFixed('name','Имя', 'Иван')
                 +inputFixed('patronymic','Отчество', 'Иванович')
                 +inputFile('photo','Прикрепить фото')
@@ -68,8 +69,18 @@ include  ./select/index3.pug
             .stepper__content-slide
               h2.stepper__content-title Должность
               .rezume-fields
-              
-                +select('job_title','Желаемая должность','Выберите должность', {name:1,val:'0'},{name:2,val:'01'},{name:3,val:'02'})
+                
+                .field-fixed(data-field-target)
+                  label Выберите должность
+                  .field-fixed__input
+                    input(type='text', name='job_title', placeholder='должность')
+                    .field-fixed__after
+                      if(afterIcon)
+                        +svg(afterIcon, 24)
+                      button(class='del' type='button') 
+                        +svg('close', 24)
+                  .field-fixed__error
+                
                 +textareaFixed('working_conditions','Условия работы', 'Комментарий ...')
                 +inputFixed('income','Доход от', '000 000', 'text', 'rub')
                 label(data-id='1').checkbox 
@@ -129,6 +140,7 @@ include  ./select/index3.pug
               template#additional-education
                 .item(data-content)
                   .rezume-fields
+                  
                     +inputFixed('name_training_organization','Наименование обучающей организации', 'Наименование')
                     +inputFixed('name_training_program','Название программы обучения', 'Название ')
                     +textareaFixed('educational_institution_org','Учебное заведение', 'Комментарий ...')

@@ -55,6 +55,12 @@ export function toggle(target, action) {
             modalEL.removeEventListener('click', modalClick);
           }
 
+          if (el.querySelector('form [data-field-target] input'))
+            setTimeout(
+              () =>
+                (el.querySelector('form [data-field-target] input').value = ''),
+              1000
+            );
           if (el.querySelector('form')?.hasAttribute('data-theme'))
             el.querySelector('form').removeAttribute('data-theme');
           if (isFull && body) body.style.overflow = 'auto';
@@ -139,6 +145,11 @@ function clickBtn() {
     if (this.hasAttribute('data-theme')) {
       const el = document.querySelector(`#${target} form`);
       if (el) {
+        if (el.querySelector('[data-field-target] input')) {
+          el.querySelector('[data-field-target] input').value =
+            this.getAttribute('data-theme');
+          console.log(el.querySelector('[data-field-target] input').value);
+        }
         el.setAttribute('data-theme', this.getAttribute('data-theme'));
       }
     }
@@ -148,8 +159,12 @@ function clickBtn() {
     }
     if (this.hasAttribute('data-exit')) {
       const el = document.querySelector(`#${this.dataset.exit} form`);
-      if (el && el?.hasAttribute('data-theme'))
+      if (el && el?.hasAttribute('data-theme')) {
+        if (el.querySelector('[data-field-target] input'))
+          el.querySelector('[data-field-target] input').value = '';
+
         el.removeAttribute('data-theme');
+      }
       console.log('очистка полей');
     }
   }
